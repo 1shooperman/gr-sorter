@@ -1,5 +1,5 @@
 # Book Sorter
-I am an avid reader.  Crowd sourced tools like [https://www.goodreads.com/](Good Reads) help maintain my reading list.  It's a fantastic piece 
+I am an avid reader.  Crowd sourced tools like [Good Reads](https://www.goodreads.com/) help maintain my reading list.  It's a fantastic piece 
 of software that allows me to quickly add books, read synopses, and read reviews.  The only thing it was missing was the ability
 to add custom weights to the sorting.  This started off as an excel sheet and some weighting algorithms developed by my fantastic wife (who 
 also happens to be a data analyst).
