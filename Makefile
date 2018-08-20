@@ -2,5 +2,5 @@ init:
 	pip install -r requirements.txt
 
 test:
-	-pylint .
-	nosetests
+	-pylint sorter
+	nosetests --with-coverage
