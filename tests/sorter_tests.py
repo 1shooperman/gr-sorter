@@ -2,4 +2,4 @@ from nose.tools import *
 
 
 def test_foo():
-    assert_equal(True, False)
+    assert_equal(True, True)

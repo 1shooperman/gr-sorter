@@ -7,5 +7,5 @@ test:
 
 clean:
 	-rm *.pyc
-	-rm sorted/*.pyc
+	-rm sorter/*.pyc
 	-rm tests/*.pyc
