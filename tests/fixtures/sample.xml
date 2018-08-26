@@ -1,0 +1,1556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+      <key><![CDATA[oy124UdAXi0bwIQ2tKRwAw]]></key>
+    <method><![CDATA[review_list]]></method>
+  </Request>
+  
+<reviews start="1" end="20" total="491">
+    <review>
+  <id>2503817653</id>
+    <book>
+  <id type="integer">453444</id>
+  <isbn>1562828991</isbn>
+  <isbn13>9781562828998</isbn13>
+  <text_reviews_count type="integer">12</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.uI7aoks40bG6nJmp0Po80w</uri>
+  <title>Disney's Art of Animation #1</title>
+  <title_without_series>Disney's Art of Animation #1</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1</link>
+  <num_pages>208</num_pages>
+  <format>Hardcover</format>
+  <edition_information/>
+  <publisher>Disney Editions</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>1992</publication_year>
+  <publication_month>10</publication_month>
+  <average_rating>4.29</average_rating>
+  <ratings_count>622</ratings_count>
+  <description>A celebration of the magic behind the world's most famous animated films, this complete update of the classic Disney's Art of Animation debuts in time for the video release of Disney's latest animated spectacular, Beauty and the Beast. Four-color throughout.</description>
+<authors>
+<author>
+<id>76137</id>
+<name>Bob Thomas</name>
+<role></role>
+<image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_200x266-d279b33f8eec0f27b7272477f09806be.png]]>
+</image_url>
+<small_image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_50x66-82093808bca726cb3249a493fbd3bd0f.png]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/76137.Bob_Thomas]]></link>
+<average_rating>4.19</average_rating>
+<ratings_count>4908</ratings_count>
+<text_reviews_count>408</text_reviews_count>
+</author>
+</authors>
+  <published>1992</published>
+<work>  <id>442050</id>
+  <uri>kca://work/amzn1.gr.work.v1.OaaP90qiEvkdfratBFIOxA</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2149071716' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Wed Aug 22 17:00:00 -0700 2018</date_added>
+  <date_updated>Wed Aug 22 17:00:00 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2503817653]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2503817653]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502400103</id>
+    <book>
+  <id type="integer">771332</id>
+  <isbn>0195067142</isbn>
+  <isbn13>9780195067149</isbn13>
+  <text_reviews_count type="integer">958</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.CbDR1VarfJuyK6qhUVuaoQ</uri>
+  <title>With the Old Breed: At Peleliu and Okinawa</title>
+  <title_without_series>With the Old Breed: At Peleliu and Okinawa</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1297640051m/771332.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1297640051s/771332.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/771332.With_the_Old_Breed</link>
+  <num_pages>326</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Oxford University Press, USA</publisher>
+  <publication_day>25</publication_day>
+  <publication_year>1990</publication_year>
+  <publication_month>10</publication_month>
+  <average_rating>4.41</average_rating>
+  <ratings_count>23762</ratings_count>
+  <description>In his own book, Wartime, Paul Fussell called With the Old Breed "one of the finest memoirs to emerge from any war." John Keegan referred to it in The Second World War as "one of the most arresting documents in war literature." And Studs Terkel was so fascinated with the story he interviewed its author for his book, "The Good War." What has made E.B. Sledge's memoir of his experience fighting in the South Pacific during World War II so devastatingly powerful is its sheer honest simplicity and compassion.&lt;br /&gt;&lt;p&gt;Now including a new introduction by Paul Fussell, With the Old Breed presents a stirring, personal account of the vitality and bravery of the Marines in the battles at Peleliu and Okinawa. Born in Mobile, Alabama in 1923 and raised on riding, hunting, fishing, and a respect for history and legendary heroes such as George Washington and Daniel Boone, Eugene Bondurant Sledge (later called "Sledgehammer" by his Marine Corps buddies) joined the Marines the year after the bombing of Pearl Harbor and from 1943 to 1946 endured the events recorded in this book. In those years, he passed, often painfully, from innocence to experience.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Sledge enlisted out of patriotism, idealism, and youthful courage, but once he landed on the beach at Peleliu, it was purely a struggle for survival. Based on the notes he kept on slips of paper tucked secretly away in his New Testament, he simply and directly recalls those long months, mincing no words and sparing no pain. The reality of battle meant unbearable heat, deafening gunfire, unimaginable brutality and cruelty, the stench of death, and, above all, constant fear. Sledge still has nightmares about "the bloody, muddy month of May on Okinawa." But, as he also tellingly reveals, the bonds of friendship formed then will never be severed.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Sledge's honesty and compassion for the other marines, even complete strangers, sets him apart as a memoirist of war. Read as sobering history or as high adventure, With the Old Breed is a moving chronicle of action and courage.&lt;/p&gt;</description>
+<authors>
+<author>
+<id>31280</id>
+<name>Eugene B. Sledge</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1327596480p5/31280.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1327596480p2/31280.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/31280.Eugene_B_Sledge]]></link>
+<average_rating>4.40</average_rating>
+<ratings_count>24474</ratings_count>
+<text_reviews_count>1411</text_reviews_count>
+</author>
+</authors>
+  <published>1990</published>
+<work>  <id>757389</id>
+  <uri>kca://work/amzn1.gr.work.v1.W6Sl01dUzxG8kpO5-Enhkg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147693421' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:29:15 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:29:16 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502400103]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502400103]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502399740</id>
+    <book>
+  <id type="integer">54847</id>
+  <isbn>0520207270</isbn>
+  <isbn13>9780520207271</isbn13>
+  <text_reviews_count type="integer">406</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.10olHkIwFvrpTnprqShwkQ</uri>
+  <title>Oil!</title>
+  <title_without_series>Oil!</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/54847.Oil_</link>
+  <num_pages>528</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>University of California Press</publisher>
+  <publication_day>30</publication_day>
+  <publication_year>1997</publication_year>
+  <publication_month>4</publication_month>
+  <average_rating>3.68</average_rating>
+  <ratings_count>4643</ratings_count>
+  <description>In &lt;i&gt;Oil!&lt;/i&gt; Upton Sinclair fashioned a novel out of the oil scandals of the Harding administration, providing in the process a detailed picture of the development of the oil industry in Southern California. Bribery of public officials, class warfare, and international rivalry over oil production are the context for Sinclair's story of a genial independent oil developer and his son, whose sympathy with the oilfield workers and socialist organizers fuels a running debate with his father. Senators, small investors, oil magnates, a Hollywood film star, and a crusading evangelist people the pages of this lively novel.</description>
+<authors>
+<author>
+<id>23510</id>
+<name>Upton Sinclair</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1438843258p5/23510.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1438843258p2/23510.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/23510.Upton_Sinclair]]></link>
+<average_rating>3.73</average_rating>
+<ratings_count>126706</ratings_count>
+<text_reviews_count>6236</text_reviews_count>
+</author>
+</authors>
+  <published>1997</published>
+<work>  <id>3001768</id>
+  <uri>kca://work/amzn1.gr.work.v1.X7km07xYuCy15dYBKL9FaQ</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147693086' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:28:54 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:28:55 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502399740]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502399740]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502399379</id>
+    <book>
+  <id type="integer">1305</id>
+  <isbn>055338368X</isbn>
+  <isbn13>9780553383683</isbn13>
+  <text_reviews_count type="integer">1438</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.QW0dXvVewKS1LxfFmYyE4A</uri>
+  <title>Gates of Fire: An Epic Novel of the Battle of Thermopylae</title>
+  <title_without_series>Gates of Fire: An Epic Novel of the Battle of Thermopylae</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/1305.Gates_of_Fire</link>
+  <num_pages>384</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Bantam</publisher>
+  <publication_day>27</publication_day>
+  <publication_year>2005</publication_year>
+  <publication_month>9</publication_month>
+  <average_rating>4.41</average_rating>
+  <ratings_count>23379</ratings_count>
+  <description>In 480 B.C., two million Persian invaders come to the mountain pass of Thermopylae in eastern Greece, where they are met by 300 of Sparta's finest warriors. The Greek loyalists battle for six days in a prelude to their ultimate victory.</description>
+<authors>
+<author>
+<id>867</id>
+<name>Steven Pressfield</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1298914893p5/867.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1298914893p2/867.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/867.Steven_Pressfield]]></link>
+<average_rating>4.09</average_rating>
+<ratings_count>120435</ratings_count>
+<text_reviews_count>9582</text_reviews_count>
+</author>
+</authors>
+  <published>2005</published>
+<work>  <id>1154187</id>
+  <uri>kca://work/amzn1.gr.work.v1.88Bw1DpVV28hQtws9Qi72A</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147692737' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:28:37 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:28:38 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502399379]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502399379]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502398446</id>
+    <book>
+  <id type="integer">48328</id>
+  <isbn>0413757102</isbn>
+  <isbn13>9780413757104</isbn13>
+  <text_reviews_count type="integer">4909</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.mWA576lGdZ0rfNj7DFy7cw</uri>
+  <title>Revolutionary Road</title>
+  <title_without_series>Revolutionary Road</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1353721885m/48328.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1353721885s/48328.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/48328.Revolutionary_Road</link>
+  <num_pages>355</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Methuen</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>2001</publication_year>
+  <publication_month>2</publication_month>
+  <average_rating>3.90</average_rating>
+  <ratings_count>69649</ratings_count>
+  <description>In the hopeful 1950s, Frank and April Wheeler appear to be a model couple: bright, beautiful, talented, with two young children and a starter home in the suburbs. Perhaps they married too young and started a family too early. Maybe Frank's job is dull. And April never saw herself as a housewife. Yet they have always lived on the assumption that greatness is only just around the corner. But now that certainty is about to crumble. With heartbreaking compassion and remorseless clarity, Richard Yates shows how Frank and April mortgage their spiritual birthright, betraying not only each other, but their best selves.</description>
+<authors>
+<author>
+<id>27069</id>
+<name>Richard Yates</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1528115419p5/27069.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1528115419p2/27069.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/27069.Richard_Yates]]></link>
+<average_rating>3.91</average_rating>
+<ratings_count>98622</ratings_count>
+<text_reviews_count>8668</text_reviews_count>
+</author>
+</authors>
+  <published>2001</published>
+<work>  <id>1235136</id>
+  <uri>kca://work/amzn1.gr.work.v1.0hRuuVKJZx3lUQw-EaUtGw</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147691835' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:27:53 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:27:53 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502398446]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502398446]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502397938</id>
+    <book>
+  <id type="integer">22034</id>
+  <isbn>0451205766</isbn>
+  <isbn13>9780451205766</isbn13>
+  <text_reviews_count type="integer">5274</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.hXPxuQ8a1vaE8_oQb1meKg</uri>
+  <title>The Godfather</title>
+  <title_without_series>The Godfather</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1394988109m/22034.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1394988109s/22034.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/22034.The_Godfather</link>
+  <num_pages>448</num_pages>
+  <format>Paperback</format>
+  <edition_information>US</edition_information>
+  <publisher>NAL</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>2002</publication_year>
+  <publication_month>3</publication_month>
+  <average_rating>4.37</average_rating>
+  <ratings_count>286889</ratings_count>
+  <description>The Godfather—the epic tale of crime and betrayal that became a global phenomenon.&lt;br /&gt;&lt;br /&gt;Almost fifty years ago, a classic was born. A searing portrayal of the Mafia underworld, The Godfather introduced readers to the first family of American crime fiction, the Corleones, and their powerful legacy of tradition, blood, and honor. The seduction of power, the pitfalls of greed, and the allegiance to family—these are the themes that have resonated with millions of readers around the world and made The Godfather the definitive novel of the violent subculture that, steeped in intrigue and controversy, remains indelibly etched in our collective consciousness.&lt;br /&gt;&lt;br /&gt;~penguin.com</description>
+<authors>
+<author>
+<id>12605</id>
+<name>Mario Puzo</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1379918709p5/12605.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1379918709p2/12605.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/12605.Mario_Puzo]]></link>
+<average_rating>4.25</average_rating>
+<ratings_count>359773</ratings_count>
+<text_reviews_count>9516</text_reviews_count>
+</author>
+</authors>
+  <published>2002</published>
+<work>  <id>266624</id>
+  <uri>kca://work/amzn1.gr.work.v1.ghdgm-cm8uJ4VaDtBHakRQ</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147691365' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:27:28 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:27:28 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502397938]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502397938]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502397192</id>
+    <book>
+  <id type="integer">25897861</id>
+  <isbn>0544705262</isbn>
+  <isbn13>9780544705265</isbn13>
+  <text_reviews_count type="integer">18</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1._mi8SkgQEQvZxoo5k9dFQg</uri>
+  <title>Resilience: Hard-Won Wisdom for Living a Better Life</title>
+  <title_without_series>Resilience: Hard-Won Wisdom for Living a Better Life</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1449145524m/25897861.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1449145524s/25897861.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/25897861-resilience</link>
+  <num_pages>320</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Mariner Books</publisher>
+  <publication_day>3</publication_day>
+  <publication_year>2016</publication_year>
+  <publication_month>5</publication_month>
+  <average_rating>4.32</average_rating>
+  <ratings_count>2292</ratings_count>
+  <description>&lt;i&gt;
+  &lt;b&gt;New York Times&lt;/b&gt;
+&lt;/i&gt;&lt;b&gt; bestseller&lt;/b&gt;&lt;br /&gt;  &lt;br /&gt;&lt;b&gt;Author of &lt;/b&gt;&lt;i&gt;
+  &lt;b&gt;The Heart and the Fist&lt;/b&gt;
+&lt;/i&gt;&lt;br /&gt;  &lt;br /&gt;&lt;b&gt;“Eric Greitens provides a brilliant and brave course of action to help navigate life’s roughest waters.” —Admiral Mike Mullen, seventeenth chairman of the Joint Chiefs of Staff&lt;/b&gt;&lt;br /&gt;  &lt;br /&gt; In 2012, Eric Greitens unexpectedly heard from a former SEAL comrade, a brother-in-arms he hadn’t seen in a decade. Zach Walker had been one of the toughest of the tough. But ever since he returned home from war to his young family in a small logging town, he’d been struggling. Without a sense of purpose, plagued by PTSD, and masking his pain with heavy drinking, he needed help. Zach and Eric started writing and talking nearly every day, as Eric set down his thoughts on what it takes to build resilience in our lives.&lt;br /&gt;  &lt;br /&gt; Eric’s letters—drawing on both his own experience and wisdom from ancient and modern thinkers—are now gathered and edited into this timeless guidebook. Greitens shows how we can build purpose, confront pain, practice compassion, develop a vocation, find a mentor, create happiness, and much more. &lt;i&gt;Resilience &lt;/i&gt;is an inspiring meditation for the warrior in each of us.&lt;br /&gt;  &lt;br /&gt; “This book is a gift not only to Greitens’s comrades-in-arms, but to readers everywhere.” — &lt;i&gt;Publishers Weekly,&lt;/i&gt; starred review</description>
+<authors>
+<author>
+<id>2384480</id>
+<name>Eric Greitens</name>
+<role></role>
+<image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/u_200x266-e183445fd1a1b5cc7075bb1cf7043306.png]]>
+</image_url>
+<small_image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/u_50x66-632230dc9882b4352d753eedf9396530.png]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/2384480.Eric_Greitens]]></link>
+<average_rating>4.17</average_rating>
+<ratings_count>11150</ratings_count>
+<text_reviews_count>1265</text_reviews_count>
+</author>
+</authors>
+  <published>2016</published>
+<work>  <id>42099811</id>
+  <uri>kca://work/amzn1.gr.work.v1.6xB6OIYLDwpiKVVpdIicjA</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147690663' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:26:49 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:27:03 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502397192]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502397192]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502396302</id>
+    <book>
+  <id type="integer">13701734</id>
+  <isbn>0316227781</isbn>
+  <isbn13>9780316227780</isbn13>
+  <text_reviews_count type="integer">6</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.RLfbRC_Jt1IldeauRoKTaA</uri>
+  <title>The Last Lion: Winston Spencer Churchill (The Last Lion, #1-3)</title>
+  <title_without_series>The Last Lion: Winston Spencer Churchill</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1497873817m/13701734.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1497873817s/13701734.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/13701734-the-last-lion</link>
+  <num_pages>3008</num_pages>
+  <format>Hardcover</format>
+  <edition_information>3Vol Box Set</edition_information>
+  <publisher>Little, Brown and Company</publisher>
+  <publication_day>20</publication_day>
+  <publication_year>2012</publication_year>
+  <publication_month>11</publication_month>
+  <average_rating>4.64</average_rating>
+  <ratings_count>209</ratings_count>
+  <description>Universally acclaimed for their compelling narrative, their fresh insights, and their objective renderings of Winston Churchill's life, &lt;i&gt;The Last Lion&lt;/i&gt; trilogy presents a revelatory and unparalleled portrait of this brilliant, flawed, and dynamic adventurer, aristocrat, soldier, and statesman. &lt;br /&gt;&lt;br /&gt;Born at the end of the 19th century when Imperial Britain still stood at the splendid pinnacle of her power, Churchill would witness the shift a few years later as the Empire hovered on the brink of a catastrophic new era. One of the greatest wartime leaders of our time, he would go on to stand alone, politically isolated in Parliament, as he took the lead in warning of the growing Nazi threat, and would lead Britain to victory against Nazi Germany and the Axis powers in World War II. &lt;br /&gt;&lt;br /&gt;Now, celebrated historian William Manchester's landmark biographies are collected together for the first time, along with the eagerly anticipated final installment Churchill's last years in power. More than thirty years in the making, &lt;i&gt;The Last Lion&lt;/i&gt; is the definitive work on this remarkable man whose courageous vision guided the destiny of a nation during darkly troubled times-and who looms as one of the greatest figures of our century.</description>
+<authors>
+<author>
+<id>11789</id>
+<name>William Manchester</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1236378075p5/11789.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1236378075p2/11789.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/11789.William_Manchester]]></link>
+<average_rating>4.23</average_rating>
+<ratings_count>55251</ratings_count>
+<text_reviews_count>3068</text_reviews_count>
+</author>
+</authors>
+  <published>2012</published>
+<work>  <id>19322725</id>
+  <uri>kca://work/amzn1.gr.work.v1.jvX6axXBWX_Mp8CP_5N3Wg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147689862' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:26:07 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:26:07 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502396302]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502396302]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502395270</id>
+    <book>
+  <id type="integer">11466</id>
+  <isbn>0802136680</isbn>
+  <isbn13>9780802136688</isbn13>
+  <text_reviews_count type="integer">1198</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.Bjj88qYTXaT4AxkJF7UNAQ</uri>
+  <title>This Boy's Life</title>
+  <title_without_series>This Boy's Life</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/11466.This_Boy_s_Life</link>
+  <num_pages>304</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Grove Press</publisher>
+  <publication_day>20</publication_day>
+  <publication_year>2000</publication_year>
+  <publication_month>1</publication_month>
+  <average_rating>3.98</average_rating>
+  <ratings_count>22732</ratings_count>
+  <description>This unforgettable memoir, by one of our most gifted writers, introduces us to the young Toby Wolff, by turns tough and vulnerable, crafty and bumbling, and ultimately winning. Separated by divorce from his father and brother, Toby and his mother are constantly on the move, yet they develop an extraordinarily close, almost telepathic relationship. As Toby fights for identity and self-respect against the unrelenting hostility of a new stepfather, his experiences are at once poignant and comical, and Wolff does a masterful job of re-creating the frustrations and cruelties of adolescence. His various schemes - running away to Alaska, forging checks, and stealing cars - lead eventually to an act of outrageous self-invention that releases him into a new world of possibility.&lt;br /&gt;</description>
+<authors>
+<author>
+<id>7371</id>
+<name>Tobias Wolff</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1212762477p5/7371.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1212762477p2/7371.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/7371.Tobias_Wolff]]></link>
+<average_rating>3.94</average_rating>
+<ratings_count>58240</ratings_count>
+<text_reviews_count>4593</text_reviews_count>
+</author>
+</authors>
+  <published>2000</published>
+<work>  <id>1559134</id>
+  <uri>kca://work/amzn1.gr.work.v1.pCdcspdJnJPxwR4EKWDDVQ</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147688912' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:25:21 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:25:22 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502395270]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502395270]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502394689</id>
+    <book>
+  <id type="integer">19068</id>
+  <isbn>0140449493</isbn>
+  <isbn13>9780140449495</isbn13>
+  <text_reviews_count type="integer">377</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.DMDZ6nlHhM4mu950kuuLzg</uri>
+  <title>The Nicomachean Ethics</title>
+  <title_without_series>The Nicomachean Ethics</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1520339295m/19068.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1520339295s/19068.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/19068.The_Nicomachean_Ethics</link>
+  <num_pages>329</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Penguin Classics</publisher>
+  <publication_day>29</publication_day>
+  <publication_year>2004</publication_year>
+  <publication_month>1</publication_month>
+  <average_rating>3.92</average_rating>
+  <ratings_count>27783</ratings_count>
+  <description>&lt;i&gt;‘One swallow does not make a summer; neither does one day. Similarly neither can one day, or a brief space of time, make a man blessed and happy’&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;In the &lt;i&gt;Nicomachean Ethics&lt;/i&gt;, Aristotle sets out to examine the nature of happiness. He argues that happiness consists in ‘activity of the soul in accordance with virtue’, for example with moral virtues, such as courage, generosity and justice, and intellectual virtues, such as knowledge, wisdom and insight. &lt;i&gt;The Ethics&lt;/i&gt; also discusses the nature of practical reasoning, the value and the objects of pleasure, the different forms of friendship, and the relationship between individual virtue, society and the State. Aristotle’s work has had a profound and lasting influence on all subsequent Western thought about ethical matters.&lt;br /&gt;&lt;br /&gt;J. A. K. Thomson’s translation has been revised by Hugh Tredennick, and is accompanied by a new introduction by Jonathan Barnes. This edition also includes an updated list for further reading and a new chronology of Aristotle’s life and works.&lt;br /&gt;&lt;br /&gt;Previously published as &lt;i&gt;Ethics&lt;/i&gt;</description>
+<authors>
+<author>
+<id>2192</id>
+<name>Aristotle</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1390143800p5/2192.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1390143800p2/2192.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/2192.Aristotle]]></link>
+<average_rating>3.94</average_rating>
+<ratings_count>106509</ratings_count>
+<text_reviews_count>2834</text_reviews_count>
+</author>
+</authors>
+  <published>2004</published>
+<work>  <id>2919427</id>
+  <uri>kca://work/amzn1.gr.work.v1.yYfuXlqc015J9xI9oVGEMw</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147688357' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:24:52 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:24:53 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502394689]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502394689]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502394219</id>
+    <book>
+  <id type="integer">16981</id>
+  <isbn>0679732764</isbn>
+  <isbn13>9780679732761</isbn13>
+  <text_reviews_count type="integer">4057</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.C-i_xP0_d2JzUKLpmSlU7w</uri>
+  <title>Invisible Man</title>
+  <title_without_series>Invisible Man</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1352854247m/16981.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1352854247s/16981.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/16981.Invisible_Man</link>
+  <num_pages>581</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Vintage</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>1995</publication_year>
+  <publication_month>2</publication_month>
+  <average_rating>3.85</average_rating>
+  <ratings_count>137901</ratings_count>
+  <description>First published in 1952 and immediately hailed as a masterpiece, &lt;i&gt;Invisible Man&lt;/i&gt; is one of those rare novels that have changed the shape of American literature. For not only does Ralph Ellison's nightmare journey across the racial divide tell unparalleled truths about the nature of bigotry and its effects on the minds of both victims and perpetrators, it gives us an entirely new model of what a novel can be.&lt;br /&gt;&lt;br /&gt;As he journeys from the Deep South to the streets and basements of Harlem, from a horrifying "battle royal" where black men are reduced to fighting animals, to a Communist rally where they are elevated to the status of trophies, Ralph Ellison's nameless protagonist ushers readers into a parallel universe that throws our own into harsh and even hilarious relief. Suspenseful and sardonic, narrated in a voice that takes in the symphonic range of the American language, black and white, &lt;i&gt;Invisible Man&lt;/i&gt; is one of the most audacious and dazzling novels of our century.</description>
+<authors>
+<author>
+<id>7508</id>
+<name>Ralph Ellison</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1200336431p5/7508.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1200336431p2/7508.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/7508.Ralph_Ellison]]></link>
+<average_rating>3.85</average_rating>
+<ratings_count>143012</ratings_count>
+<text_reviews_count>5212</text_reviews_count>
+</author>
+</authors>
+  <published>1995</published>
+<work>  <id>170957</id>
+  <uri>kca://work/amzn1.gr.work.v1.g_rlKUfL897lEIYGhs2xtQ</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147687939' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:24:31 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:24:32 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502394219]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502394219]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502392883</id>
+    <book>
+  <id type="integer">332138</id>
+  <isbn>0268006113</isbn>
+  <isbn13>9780268006112</isbn13>
+  <text_reviews_count type="integer">155</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.5VJVvEOvXfzGhSacAzzhfw</uri>
+  <title>After Virtue: A Study in Moral Theory</title>
+  <title_without_series>After Virtue: A Study in Moral Theory</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/332138.After_Virtue</link>
+  <num_pages>304</num_pages>
+  <format>Paperback</format>
+  <edition_information>Second Edition</edition_information>
+  <publisher>University of Notre Dame Press</publisher>
+  <publication_day>30</publication_day>
+  <publication_year>1984</publication_year>
+  <publication_month>8</publication_month>
+  <average_rating>4.15</average_rating>
+  <ratings_count>3654</ratings_count>
+  <description>Discusses the nature of moral disagreement, Nietzsche, Aristotle, heroic societies, and the virtue of of justice.</description>
+<authors>
+<author>
+<id>88498</id>
+<name>Alasdair MacIntyre</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1519840457p5/88498.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1519840457p2/88498.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/88498.Alasdair_MacIntyre]]></link>
+<average_rating>4.11</average_rating>
+<ratings_count>5150</ratings_count>
+<text_reviews_count>329</text_reviews_count>
+</author>
+</authors>
+  <published>1984</published>
+<work>  <id>322688</id>
+  <uri>kca://work/amzn1.gr.work.v1.7BN0tYiK9LRuYep4Z_kcwQ</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147686762' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:23:26 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:23:26 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502392883]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502392883]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502391956</id>
+    <book>
+  <id type="integer">3876</id>
+  <isbn nil="true"/>
+  <isbn13 nil="true"/>
+  <text_reviews_count type="integer">8781</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.KHVp0yoMA4DE69IiV1jZbA</uri>
+  <title>The Sun Also Rises</title>
+  <title_without_series>The Sun Also Rises</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1509802323m/3876.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1509802323s/3876.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/3876.The_Sun_Also_Rises</link>
+  <num_pages>189</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Pan Books</publisher>
+  <publication_day/>
+  <publication_year>1957</publication_year>
+  <publication_month/>
+  <average_rating>3.82</average_rating>
+  <ratings_count>324549</ratings_count>
+  <description>The quintessential novel of the Lost Generation, &lt;i&gt;The Sun Also Rises&lt;/i&gt; is one of Ernest Hemingway's masterpieces and a classic example of his spare but powerful writing style. A poignant look at the disillusionment and angst of the post-World War I generation, the novel introduces two of Hemingway's most unforgettable characters: Jake Barnes and Lady Brett Ashley. The story follows the flamboyant Brett and the hapless Jake as they journey from the wild nightlife of 1920s Paris to the brutal bullfighting rings of Spain with a motley group of expatriates. It is an age of moral bankruptcy, spiritual dissolution, unrealized love, and vanishing illusions. First published in 1926, &lt;i&gt;The Sun Also Rises&lt;/i&gt; helped to establish Hemingway as one of the greatest writers of the twentieth century.</description>
+<authors>
+<author>
+<id>1455</id>
+<name>Ernest Hemingway</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1406040005p5/1455.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1406040005p2/1455.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/1455.Ernest_Hemingway]]></link>
+<average_rating>3.82</average_rating>
+<ratings_count>1741921</ratings_count>
+<text_reviews_count>61513</text_reviews_count>
+</author>
+</authors>
+  <published>1957</published>
+<work>  <id>589497</id>
+  <uri>kca://work/amzn1.gr.work.v1.lLRZ_SWNxRUF9BPjLuR7Hg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147685941' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:22:41 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:22:42 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502391956]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502391956]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502391624</id>
+    <book>
+  <id type="integer">514929</id>
+  <isbn>0520225252</isbn>
+  <isbn13>9780520225251</isbn13>
+  <text_reviews_count type="integer">5</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.RGPIt3Vipx8QgpXWNar93g</uri>
+  <title>Roman Honor: The Fire in the Bones</title>
+  <title_without_series>Roman Honor: The Fire in the Bones</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/514929.Roman_Honor</link>
+  <num_pages>339</num_pages>
+  <format>Hardcover</format>
+  <edition_information/>
+  <publisher>University of California Press</publisher>
+  <publication_day>15</publication_day>
+  <publication_year>2001</publication_year>
+  <publication_month>6</publication_month>
+  <average_rating>4.07</average_rating>
+  <ratings_count>44</ratings_count>
+  <description>This book is an attempt to coax Roman history closer to the bone, to the breath and matter of the living being. Drawing from a remarkable array of ancient and modern sources, Carlin Barton offers the most complex understanding to date of the emotional and spiritual life of the ancient Romans. Her provocative and original inquiry focuses on the sentiments of honor that shaped the Romans' sense of themselves and their society. Speaking directly to the concerns and curiosities of the contemporary reader, Barton brings Roman society to life, elucidating the complex relation between the inner life of its citizens and its social fabric.&lt;br /&gt;&lt;br /&gt;Though thoroughly grounded in the ancient writings—especially the work of Seneca, Cicero, and Livy—this book also draws from contemporary theories of the self and social theory to deepen our understanding of ancient Rome. Barton explores the relation between inner desires and social behavior through an evocative analysis of the operation, in Roman society, of contests and ordeals, acts of supplication and confession, and the sense of shame. As she fleshes out Roman physical and psychological life, she particularly sheds new light on the consequential transition from republic to empire as a watershed of Roman social relations.&lt;br /&gt;&lt;br /&gt;Barton's ability to build productively on both old and new scholarship on Roman history, society, and culture and her imaginative use of a wide range of work in such fields as anthropology, sociology, psychology, modern history, and popular culture will make this book appealing for readers interested in many subjects. This beautifully written work not only generates insight into Roman history, but also uses that insight to bring us to a new understanding of ourselves, our modern codes of honor, and why it is that we think and act the way we do.</description>
+<authors>
+<author>
+<id>286083</id>
+<name>Carlin A. Barton</name>
+<role></role>
+<image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/u_200x266-e183445fd1a1b5cc7075bb1cf7043306.png]]>
+</image_url>
+<small_image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/u_50x66-632230dc9882b4352d753eedf9396530.png]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/286083.Carlin_A_Barton]]></link>
+<average_rating>4.11</average_rating>
+<ratings_count>66</ratings_count>
+<text_reviews_count>8</text_reviews_count>
+</author>
+</authors>
+  <published>2001</published>
+<work>  <id>502892</id>
+  <uri>kca://work/amzn1.gr.work.v1.NBFtyeS70SSUWrLMdRUvVg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147685620' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:22:25 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:22:26 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502391624]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502391624]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502390114</id>
+    <book>
+  <id type="integer">11806517</id>
+  <isbn>144550782X</isbn>
+  <isbn13>9781445507828</isbn13>
+  <text_reviews_count type="integer">7</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.pT1uv-Ve_juqIoxPhz8_CA</uri>
+  <title>Self Control - Its Kingship and Majesty</title>
+  <title_without_series>Self Control - Its Kingship and Majesty</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1404962871m/11806517.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1404962871s/11806517.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/11806517-self-control---its-kingship-and-majesty</link>
+  <num_pages></num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Hesperides Press</publisher>
+  <publication_day>26</publication_day>
+  <publication_year>2010</publication_year>
+  <publication_month>7</publication_month>
+  <average_rating>4.31</average_rating>
+  <ratings_count>85</ratings_count>
+  <description>This early work, originally published in 1907 was written by the eminent American essayist and editor. This title is one of a number of religious books he wrote, which can be thought of as precursors to today s self-help book. Contents Include: The Kingship of Self-control; The Crimes of the Tongue; The Red Tape of Duty; The Supreme Charity of the World; Worry, the Great American Disease; The Greatness of Simplicity; Living Life Over Again; Syndicating our Sorrows; The Revelations of Reserve Power; The Majesty of Calmness; Hurry, the Scourge of America; The Power of Personal Influence; The Dignity of Self-Reliance; Failure as a Success; Doing Our Best at All Times; The Royal Road to Happiness. Many of the earliest books, particularly those dating back to the 1900s and before, are now extremely scarce and increasingly expensive. We are republishing these classic works in affordable, high quality, modern editions, using the original text and artwork."</description>
+<authors>
+<author>
+<id>376177</id>
+<name>William George Jordan</name>
+<role></role>
+<image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_200x266-d279b33f8eec0f27b7272477f09806be.png]]>
+</image_url>
+<small_image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_50x66-82093808bca726cb3249a493fbd3bd0f.png]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/376177.William_George_Jordan]]></link>
+<average_rating>4.23</average_rating>
+<ratings_count>434</ratings_count>
+<text_reviews_count>63</text_reviews_count>
+</author>
+</authors>
+  <published>2010</published>
+<work>  <id>12604084</id>
+  <uri>kca://work/amzn1.gr.work.v1.xoVAKvmwMcGmDy15U11ZaA</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147684169' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:21:04 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:21:05 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502390114]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502390114]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502388287</id>
+    <book>
+  <id type="integer">801343</id>
+  <isbn>0060087528</isbn>
+  <isbn13>9780060087524</isbn13>
+  <text_reviews_count type="integer">3</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.QUxVYZqrrOEqkKLI3ISeEg</uri>
+  <title>The Code of Man: Love Courage Pride Family Country</title>
+  <title_without_series>The Code of Man: Love Courage Pride Family Country</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/801343.The_Code_of_Man</link>
+  <num_pages>304</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Harper Paperbacks</publisher>
+  <publication_day>26</publication_day>
+  <publication_year>2004</publication_year>
+  <publication_month>10</publication_month>
+  <average_rating>3.53</average_rating>
+  <ratings_count>51</ratings_count>
+  <description>"In many ways," Waller R. Newell writes, "young men today are in deep spiritual trouble. But they are also yearning for a way back to the noblest ideals of American manhood." &lt;em&gt;The Code of Man&lt;/em&gt; is a deep and thought-provoking effort to help guide contemporary men back to those ideals, embodied in what Newell calls the five paths to manliness: love, courage, pride, family, and country. He argues that at the dawn of the twenty-first century, our society has grown so concerned about the roles of sex and violence that we have forgotten to seek inspiration from the traditional virtues of the past: romance and eros, courage and patriotism, and the blend of love and bravery that ittakes to raise a family. Contrasting such time-honored lessons from the voices of William Shakespeare, Abraham Lincoln, Jane Austen, and Teddy Roosevelt with the chaotic signals emanating from Western culture today, Newell offers a clarion call to recapture our traditions, preserve our character as a society ... and avoid catastrophe.</description>
+<authors>
+<author>
+<id>321509</id>
+<name>Waller R. Newell</name>
+<role></role>
+<image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/u_200x266-e183445fd1a1b5cc7075bb1cf7043306.png]]>
+</image_url>
+<small_image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/u_50x66-632230dc9882b4352d753eedf9396530.png]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/321509.Waller_R_Newell]]></link>
+<average_rating>3.75</average_rating>
+<ratings_count>133</ratings_count>
+<text_reviews_count>14</text_reviews_count>
+</author>
+</authors>
+  <published>2004</published>
+<work>  <id>787306</id>
+  <uri>kca://work/amzn1.gr.work.v1.WrgGKqqIXHVG9FkW0IxONg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147682396' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:19:30 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:19:31 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502388287]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502388287]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502383956</id>
+    <book>
+  <id type="integer">320</id>
+  <isbn>0060531045</isbn>
+  <isbn13>9780060531041</isbn13>
+  <text_reviews_count type="integer">14830</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.r6swEyDhH8LVQCr1Vbwwzg</uri>
+  <title>One Hundred Years of Solitude</title>
+  <title_without_series>One Hundred Years of Solitude</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1327881361m/320.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1327881361s/320.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude</link>
+  <num_pages>417</num_pages>
+  <format>Hardcover</format>
+  <edition_information/>
+  <publisher>Harper</publisher>
+  <publication_day>24</publication_day>
+  <publication_year>2003</publication_year>
+  <publication_month>6</publication_month>
+  <average_rating>4.05</average_rating>
+  <ratings_count>625049</ratings_count>
+  <description>The brilliant, bestselling, landmark novel that tells the story of the Buendia family, and chronicles the irreconcilable conflict between the desire for solitude and the need for love—in rich, imaginative prose that has come to define an entire genre known as "magical realism."</description>
+<authors>
+<author>
+<id>13450</id>
+<name>Gabriel García Márquez</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1502310670p5/13450.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1502310670p2/13450.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/13450.Gabriel_Garc_a_M_rquez]]></link>
+<average_rating>3.95</average_rating>
+<ratings_count>1339157</ratings_count>
+<text_reviews_count>60578</text_reviews_count>
+</author>
+</authors>
+  <published>2003</published>
+<work>  <id>3295655</id>
+  <uri>kca://work/amzn1.gr.work.v1.JTclcQ2Qa5vVQ5EH1pQMyg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147678428' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:15:52 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:15:53 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502383956]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502383956]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502383713</id>
+    <book>
+  <id type="integer">231804</id>
+  <isbn nil="true"/>
+  <isbn13 nil="true"/>
+  <text_reviews_count type="integer">23457</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.V-Jvghwrl4B5kgqunme3ig</uri>
+  <title>The Outsiders</title>
+  <title_without_series>The Outsiders</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1442129426m/231804.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1442129426s/231804.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/231804.The_Outsiders</link>
+  <num_pages>192</num_pages>
+  <format>Mass Market Paperback</format>
+  <edition_information/>
+  <publisher>Puffin Books</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>1988</publication_year>
+  <publication_month>9</publication_month>
+  <average_rating>4.07</average_rating>
+  <ratings_count>754397</ratings_count>
+  <description>&lt;i&gt;Librarian note: This record is for one of the three editions published with different covers and with ISBN 0-140-38572-X / 978-0-14-038572-4. The records are for the &lt;a href="https://www.goodreads.com/book/show/231804.1988_cover" title="1988 cover" rel="nofollow"&gt;1988 cover&lt;/a&gt; (this record), the &lt;a href="https://www.goodreads.com/book/show/17985531.1995_cover" title="1995 cover" rel="nofollow"&gt;1995 cover&lt;/a&gt;, and the &lt;a href="https://www.goodreads.com/book/show/7840334.2008_cover" title="2008 cover" rel="nofollow"&gt;2008 cover&lt;/a&gt; which is also the current in-print cover.&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;&lt;i&gt;The Outsiders&lt;/i&gt; is about two weeks in the life of a 14-year-old boy. The novel tells the story of Ponyboy Curtis and his struggles with right and wrong in a society in which he believes that he is an outsider. According to Ponyboy, there are two kinds of people in the world: greasers and socs. A soc (short for "social") has money, can get away with just about anything, and has an attitude longer than a limousine. A greaser, on the other hand, always lives on the outside and needs to watch his back. Ponyboy is a greaser, and he's always been proud of it, even willing to rumble against a gang of socs for the sake of his fellow greasers--until one terrible night when his friend Johnny kills a soc. The murder gets under Ponyboy's skin, causing his bifurcated world to crumble and teaching him that pain feels the same whether a soc or a greaser.</description>
+<authors>
+<author>
+<id>762707</id>
+<name>S.E. Hinton</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1206505616p5/762707.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1206505616p2/762707.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/762707.S_E_Hinton]]></link>
+<average_rating>4.06</average_rating>
+<ratings_count>818417</ratings_count>
+<text_reviews_count>30317</text_reviews_count>
+</author>
+</authors>
+  <published>1988</published>
+<work>  <id>1426690</id>
+  <uri>kca://work/amzn1.gr.work.v1.pHeishWdNR9az5zttnfr1w</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147678226' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:15:41 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:15:41 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502383713]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502383713]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502382690</id>
+    <book>
+  <id type="integer">828165</id>
+  <isbn>0553286528</isbn>
+  <isbn13>9780553286526</isbn13>
+  <text_reviews_count type="integer">289</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.qHfTbeQ7Jzkcqj0DlUpZpA</uri>
+  <title>Education of a Wandering Man</title>
+  <title_without_series>Education of a Wandering Man</title_without_series>
+  <image_url>https://images.gr-assets.com/books/1320462831m/828165.jpg</image_url>
+  <small_image_url>https://images.gr-assets.com/books/1320462831s/828165.jpg</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/828165.Education_of_a_Wandering_Man</link>
+  <num_pages>272</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Bantam</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>1990</publication_year>
+  <publication_month>11</publication_month>
+  <average_rating>4.13</average_rating>
+  <ratings_count>2547</ratings_count>
+  <description>From his decision to leave school at fifteen to roam the world, to his recollections of life as a hobo on the Southern Pacific Railroad, as a cattle skinner in Texas, as a merchant seaman in Singapore and the West Indies, and as an itinerant bare-knuckled prizefighter across small-town America, here is Louis L'Amour's memoir of his lifelong love affair with learning--from books, from yondering, and from some remarkable men and women--that shaped him as a storyteller and as a man. Like classic L'Amour fiction, &lt;i&gt;Education of a Wandering Man&lt;/i&gt; mixes authentic frontier drama--such as the author's desperate efforts to survive a sudden two-day trek across the blazing Mojave desert--with true-life characters like Shanghai waterfront toughs, desert prospectors, and cowboys whom Louis L'Amour met while traveling the globe. At last, in his own words, this is a story of a one-of-a-kind life lived to the fullest . . . a life that inspired the books that will forever enable us to relive our glorious frontier heritage.</description>
+<authors>
+<author>
+<id>858</id>
+<name>Louis L&apos;Amour</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1343675199p5/858.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1343675199p2/858.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/858.Louis_L_Amour]]></link>
+<average_rating>4.01</average_rating>
+<ratings_count>282014</ratings_count>
+<text_reviews_count>12107</text_reviews_count>
+</author>
+</authors>
+  <published>1990</published>
+<work>  <id>509736</id>
+  <uri>kca://work/amzn1.gr.work.v1.skfzVgkFsmD7COAJrPLUwA</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147677294' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:14:51 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:14:51 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502382690]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502382690]]></link>
+    <owned>0</owned>
+</review>
+
+    <review>
+  <id>2502382106</id>
+    <book>
+  <id type="integer">38296</id>
+  <isbn>0553213296</isbn>
+  <isbn13>9780553213294</isbn13>
+  <text_reviews_count type="integer">1666</text_reviews_count>
+  <uri>kca://book/amzn1.gr.book.v1.HWvJ_ZK9Q0gE-Q3wIwOXbQ</uri>
+  <title>The Last of the Mohicans (The Leatherstocking Tales #2)</title>
+  <title_without_series>The Last of the Mohicans</title_without_series>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <large_image_url/>
+  <link>https://www.goodreads.com/book/show/38296.The_Last_of_the_Mohicans</link>
+  <num_pages>410</num_pages>
+  <format>Paperback</format>
+  <edition_information/>
+  <publisher>Bantam Classics</publisher>
+  <publication_day>1</publication_day>
+  <publication_year>1982</publication_year>
+  <publication_month>6</publication_month>
+  <average_rating>3.70</average_rating>
+  <ratings_count>78513</ratings_count>
+  <description>The wild rush of action in this classic frontier adventure story has made&lt;b&gt; The Last of the Mohicans&lt;/b&gt; the most popular of James Fenimore Cooper’s Leatherstocking Tales. Deep in the forests of upper New York State, the brave woodsman Hawkeye (Natty Bumppo) and his loyal Mohican friends Chingachgook and Uncas become embroiled in the bloody battles of the French and Indian War. The abduction of the beautiful Munro sisters by hostile savages, the treachery of the renegade brave Magua, the ambush of innocent settlers, and the thrilling events that lead to the final tragic confrontation between rival war parties create an unforgettable, spine-tingling picture of life on the frontier. And as the idyllic wilderness gives way to the forces of civilization, the novel presents a moving portrayal of a vanishing race and the end of its way of life in the great American forests.</description>
+<authors>
+<author>
+<id>9121</id>
+<name>James Fenimore Cooper</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1210528548p5/9121.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1210528548p2/9121.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/9121.James_Fenimore_Cooper]]></link>
+<average_rating>3.69</average_rating>
+<ratings_count>103471</ratings_count>
+<text_reviews_count>3310</text_reviews_count>
+</author>
+</authors>
+  <published>1982</published>
+<work>  <id>2064030</id>
+  <uri>kca://work/amzn1.gr.work.v1.oFmYnRLVRzSScrkBdXLuNg</uri>
+</work></book>
+
+
+  <rating>0</rating>
+  <votes>0</votes>
+  <spoiler_flag>false</spoiler_flag>
+  <spoilers_state>none</spoilers_state>
+  
+
+<shelves>
+
+    <shelf exclusive='true' id='194065245' name='to-read' review_shelf_id='2147676715' sortable='true'></shelf>
+
+</shelves>
+
+  <recommended_for></recommended_for>
+  <recommended_by></recommended_by>
+  <started_at></started_at>
+  <read_at></read_at>
+  <date_added>Tue Aug 21 13:14:20 -0700 2018</date_added>
+  <date_updated>Tue Aug 21 13:14:21 -0700 2018</date_updated>
+  <read_count>0</read_count>
+  <body>
+  </body>
+
+  
+
+  <comments_count>0</comments_count>
+    <url><![CDATA[https://www.goodreads.com/review/show/2502382106]]></url>
+  <link><![CDATA[https://www.goodreads.com/review/show/2502382106]]></link>
+    <owned>0</owned>
+</review>
+
+</reviews>
+
+</GoodreadsResponse>

@@ -1,3 +1,4 @@
 *.pyc
 .coverage
-environment
+environment/
+goodreads_api_key
