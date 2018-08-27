@@ -4,6 +4,8 @@ urls = (
     '/', 'Index'
 )
 
+app = web.application(urls, globals())
+
 render = web.template.render('templates/', base='layout')
 
 class Index(object):
@@ -11,6 +13,5 @@ class Index(object):
         return render.index()
 
 
-if __name__ == '__main__':
-    app = web.application(urls, globals())
-    app.run()
+if __name__ == '__main__': # pragma: no cover
+    app.run()              # pragma: no cover
