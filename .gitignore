@@ -2,3 +2,4 @@
 .coverage
 environment/
 goodreads_api_key
+.pytest_cache/

@@ -3,9 +3,12 @@ init:
 
 test:
 	-pylint sorter
-	nosetests --with-coverage
+	-coverage run -m pytest
+	coverage report -m
+	
 
 clean:
 	-rm *.pyc
 	-rm sorter/*.pyc
 	-rm tests/*.pyc
+	-rm .coverage

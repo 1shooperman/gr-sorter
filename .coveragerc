@@ -1,2 +1,9 @@
 [report]
 show_missing = True
+omit = 
+    */environment/*
+    */test/*
+    *__init__.py*
+
+[run]
+source = sorter
