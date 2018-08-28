@@ -8,7 +8,5 @@ test:
 	
 
 clean:
-	-rm *.pyc
-	-rm sorter/*.pyc
-	-rm tests/*.pyc
+	-find . -name "*.pyc" -type f -delete
 	-rm .coverage
