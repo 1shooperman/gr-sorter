@@ -3,3 +3,4 @@
 environment/
 goodreads_api_key
 .pytest_cache/
+data/*.db
