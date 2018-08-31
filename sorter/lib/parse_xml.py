@@ -30,7 +30,3 @@ class Xml(object):
             totalRatings += ratings
 
         return (books,totalRatings)
-
-    @staticmethod
-    def rank(jsonData):
-       pass 
