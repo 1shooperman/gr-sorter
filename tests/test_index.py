@@ -1,4 +1,4 @@
-from sorter.index import APP
+from sorter.__main__ import APP
 
 class TestIndex(object):
     def test_status(self):
