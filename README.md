@@ -1,11 +1,11 @@
 # Book Sorter
-I am an avid reader.  Crowd sourced tools like [Good Reads](https://www.goodreads.com/) help maintain my reading list.  It's a fantastic piece 
+I am an avid reader.  Crowd sourced tools like [goodreads](https://www.goodreads.com/) help maintain my reading list.  It's a fantastic piece 
 of software that allows me to quickly add books, read synopses, and read reviews.  The only thing it was missing was the ability
 to add custom weights to the sorting.  This started off as an excel sheet and some weighting algorithms developed by my fantastic wife (who 
 also happens to be a data analyst).
 
 ## Tech
-* MySQL (to import the CSV exports from Good Reads)
+* SQLite (to import the CSV exports from goodreads)
 * Python because I chose to learn Python in 2018
 
 ## Weighting Algorithm
@@ -13,9 +13,9 @@ also happens to be a data analyst).
 * SCORE = (Avg Rating * WEIGHT) * 100
 
 ### Key
-* *Number of Ratings* is the number of ratings for a book on Good Reads
+* *Number of Ratings* is the number of ratings for a book on goodreads
 * *Total Ratings* is the total number of ratings across all books on my reading list(s)
-* *Avg Rating* is the community sourced average rating for a book on Good Reads
+* *Avg Rating* is the community sourced average rating for a book on goodreads
 * *2010* is an arbitrary fixed year I picked
 
 ### Reasoning
@@ -27,4 +27,4 @@ also happens to be a data analyst).
 1. Pip requirements file - https://pip.pypa.io/en/stable/user_guide/#requirements-files
 1. Pylint - https://www.pylint.org/#install
 1. Makefile - https://www.gnu.org/software/make/manual/html_node/Simple-Makefile.html
-1. Good Reads - https://www.goodreads.com/
+1. goodreads - https://www.goodreads.com/
