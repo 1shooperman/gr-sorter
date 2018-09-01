@@ -10,9 +10,10 @@ def parse(xmlString):
     totalRatings = 0
 
     books = map(get_book_data, root.findall('reviews/review'))
-    totalRatings = reduce(lambda acc, it: acc + it['ratings_count'], books, 0)
+    #totalRatings = reduce(lambda acc, it: acc + it['ratings_count'], books, 0)
 
-    return (books,totalRatings)
+    #return (books,totalRatings)
+    return books
 
 def get_book_data(generator):
     book = {

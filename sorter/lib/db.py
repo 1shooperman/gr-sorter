@@ -25,7 +25,16 @@ class DB(object):
         except Error as e:
             print e
 
-    def run(self, qry):
+    def insert(self, qry):
         c = self.conn.cursor()
         c.execute(qry)
         self.conn.commit()
+
+    def update(self, qry):
+        self.insert(qry)
+
+    def query(self, qry):
+        return self.conn.execute(qry).fetchall()
+
+    def execute(self, qry):
+        self.insert(qry)

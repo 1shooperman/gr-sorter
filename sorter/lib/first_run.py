@@ -10,7 +10,7 @@ def init(db_file):
               publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
               author)'''
     
-    db.run(qry)
+    db.execute(qry)
     
     db.close_connection()
 

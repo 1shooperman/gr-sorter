@@ -10,7 +10,12 @@ from lib.request_data import Data
 from lib.parse_xml import parse
 from lib.rank import rank
 from lib.first_run import init
-from lib.store import store_ranked_data
+from lib.store_data import store_data
+
+# TESTING ONLY
+from lib.db import DB
+# END _ TESTING ONLY
+
 
 URLS = (
     '/', 'Index',
@@ -30,7 +35,19 @@ class Index(object):       # pylint: disable=too-few-public-methods
     @staticmethod
     def GET():             # pylint: disable=invalid-name
         """ GET handler for index route """
-        pagedata = "sorted data goes here"
+        # TESTING ONLY
+        db = DB(db_file)
+
+        db.get_connection()
+
+        qry = "select * from rankings"
+        data = db.query(qry)
+
+        db.close_connection()
+        print data
+        # END _ TESTING ONLY
+        
+        pagedata = data
 
         return RENDER.index(pagedata = pagedata)
 
@@ -41,15 +58,13 @@ class Import(object):
         data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
 
         #dataParser = Data('http://localhost:8081/sample.xml')
-        dataParser = Data(data_file)
+        data_parser = Data(data_file)
 
-        xmlData = dataParser.read()
+        xml_data = data_parser.read()
 
-        filteredData = parse(xmlData)
+        filtered_data = parse(xml_data)
 
-        rankedData = rank(filteredData)
-
-        store_ranked_data(rankedData)
+        store_data(filtered_data, db_file)
         
         msg = "Status - OK"
         return RENDERPLAIN.status(msg = msg)
