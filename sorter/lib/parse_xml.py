@@ -1,32 +1,27 @@
 import xml.etree.ElementTree as ElementTree       
 
-class Xml(object):
-    """ Xml class """
-    def __init__(self):
-        pass
+def parse(xmlString):
+    root = ElementTree.fromstring(xmlString)
 
-    @staticmethod
-    def parse(xmlString):
-        root = ElementTree.fromstring(xmlString)
+    stats = root[1].attrib
+    totalRatings = 0
 
-        stats = root[1].attrib
+    books = map(get_book_data, root.findall('reviews/review'))
+    totalRatings = reduce(lambda acc, it: acc + it['ratings_count'], books, 0)
 
-        totalRatings = 0
-        books = {}
-        for review in root.findall('reviews/review'):
-            goodreads_id = review.find('id').text
-            ratings = int(review.find('book/ratings_count').text)
-            book = {
-                'isbn': review.find('book/isbn').text,
-                'isbn13': review.find('book/isbn13').text,
-                'title': review.find('book/title_without_series').text,
-                'image_url': review.find('book/image_url').text,
-                'publication_year': review.find('book/publication_year').text,
-                'ratings_count': ratings,
-                'average_rating': review.find('book/average_rating').text,
-                'author': review.find('book/authors/author/name').text
-            }
-            books[goodreads_id] = book
-            totalRatings += ratings
+    return (books,totalRatings)
 
-        return (books,totalRatings)
+def get_book_data(generator):
+    book = {
+        'goodreads_id': generator.find('id').text,    
+        'isbn': generator.find('book/isbn').text,
+        'isbn13': generator.find('book/isbn13').text,
+        'title': generator.find('book/title_without_series').text,
+        'image_url': generator.find('book/image_url').text,
+        'publication_year': generator.find('book/publication_year').text,
+        'ratings_count': int(generator.find('book/ratings_count').text),
+        'average_rating': generator.find('book/average_rating').text,
+        'author': generator.find('book/authors/author/name').text
+    }
+
+    return book
