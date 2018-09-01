@@ -2,8 +2,14 @@
 base web.py file for displaying the ranked data
 """
 import web
+import os
+
+from urlparse import parse_qs
+
 from lib.request_data import Data
 from lib.parse_xml import parse
+from lib.rank import rank
+from lib.first_run import init
 
 URLS = (
     '/', 'Index',
@@ -13,34 +19,37 @@ URLS = (
 APP = web.application(URLS, globals())
 
 RENDER = web.template.render('templates/', base='layout')
+RENDERPLAIN = web.template.render('templates/')
+
+db_file = os.path.abspath('data/sorter.db')
+if (os.path.isfile(db_file) == False):
+    init(db_file)
 
 class Index(object):       # pylint: disable=too-few-public-methods
     @staticmethod
     def GET():             # pylint: disable=invalid-name
         """ GET handler for index route """
-        dataParser = Data('http://localhost:8081/sample.xml')
-        xmlData = dataParser.read()
-
-        parsedData = parse(xmlData)
-
-        pagedata = parsedData
+        pagedata = "sorted data goes here"
 
         return RENDER.index(pagedata = pagedata)
 
 class Import(object):
     @staticmethod
-    def GET():
-        dataParser = Data('http://localhost:8081/sample.xml')
+    def POST():
+        post_data = parse_qs(web.data())
+        data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
+
+        #dataParser = Data('http://localhost:8081/sample.xml')
+        dataParser = Data(data_file)
+
         xmlData = dataParser.read()
 
-        xmlParser = Xml()
-        parsedData = Xml.parse(xmlData)
+        filteredData = parse(xmlData)
 
-        pagedata = parsedData 
-        # rank / store the data
+        rankedData = rank(filteredData)
         
         msg = "Status - OK"
-        return RENDER.status(msg = msg)
+        return RENDERPLAIN.status(msg = msg)
 
 
 if __name__ == '__main__': # pragma: no cover

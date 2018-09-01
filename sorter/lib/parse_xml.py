@@ -1,6 +1,9 @@
 import xml.etree.ElementTree as ElementTree       
 
 def parse(xmlString):
+    if (xmlString == None):
+        raise TypeError('expected string, got %s' % type(xmlString))
+
     root = ElementTree.fromstring(xmlString)
 
     stats = root[1].attrib
