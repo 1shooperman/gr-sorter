@@ -10,6 +10,7 @@ from lib.request_data import Data
 from lib.parse_xml import parse
 from lib.rank import rank
 from lib.first_run import init
+from lib.store import store_ranked_data
 
 URLS = (
     '/', 'Index',
@@ -47,6 +48,8 @@ class Import(object):
         filteredData = parse(xmlData)
 
         rankedData = rank(filteredData)
+
+        store_ranked_data(rankedData)
         
         msg = "Status - OK"
         return RENDERPLAIN.status(msg = msg)
