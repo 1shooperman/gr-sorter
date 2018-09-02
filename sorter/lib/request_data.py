@@ -1,18 +1,13 @@
+''' request_data.py '''
 import urllib2
 
-class Data(object):
-    """ Data class for retrieving data from GoodReads """
+from sorter.lib.sorter_logger import sorter_logger
+LOGGER = sorter_logger(__name__)
 
-    def __init__(self, apiUrl):
-        self.apiUrl = apiUrl
-
-    def read(self):
-        try:
-            request = urllib2.urlopen(self.apiUrl)
-            body = request.read()
-            request.close()
-            print "Requesting: %s" % self.apiUrl
-            return body
-        except IOError:
-            print "Error reading URL"
-            return None
+def read_url(api_url):
+    ''' read data from a url '''
+    request = urllib2.urlopen(api_url)
+    body = request.read()
+    request.close()
+    LOGGER.info("Requesting: %s", api_url)
+    return body
