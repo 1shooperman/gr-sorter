@@ -1,5 +1,5 @@
 ''' store_data.py '''
-from lib.db import DB
+from sorter.lib.db import DB
 
 def store_data(books, db_file):
     ''' store the book data in the provided database '''

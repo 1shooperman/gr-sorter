@@ -35,4 +35,6 @@ class DB(object):
 
     def execute(self, qry):
         ''' execute arbitrary command against the database '''
-        self.insertupdate(qry, None)
+        cur = self.conn.cursor()
+        cur.execute(qry)
+        self.conn.commit()

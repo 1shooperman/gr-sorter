@@ -1,5 +1,5 @@
 ''' app initializion methods '''
-from lib.db import DB
+from sorter.lib.db import DB
 
 def init(db_file):
     ''' initializa the app '''

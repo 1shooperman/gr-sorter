@@ -4,13 +4,13 @@ base web.py file for displaying the ranked data
 from urlparse import parse_qs
 import os
 import web
-from lib.request_data import Data
-from lib.parse_xml import parse
-from lib.first_run import init
-from lib.store_data import store_data
+from sorter.lib.request_data import Data
+from sorter.lib.parse_xml import parse
+from sorter.lib.first_run import init
+from sorter.lib.store_data import store_data
 
 # TESTING ONLY
-from lib.db import DB
+from sorter.lib.db import DB
 # END _ TESTING ONLY
 
 URLS = (
