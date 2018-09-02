@@ -1,11 +1,7 @@
 # pylint: skip-file
-from paste.fixture import TestApp as app_fixture # pytest will try to collect "Test*" 
-import pytest
-import mock
+from paste.fixture import TestApp as app_fixture # pytest will try to collect "Test*"
 import sqlite3
-from sorter.__main__ import APP as app 
-
-import os
+from sorter.__main__ import APP as app
 
 def fake_parse_qs(my_file):
     return {
@@ -55,7 +51,9 @@ class TestRoutes(object):
 
     def test_index(self, monkeypatch):
         monkeypatch.setattr("sorter.__main__.DB_FILE", "")
-        monkeypatch.setattr("sorter.__main__.get_books", bootstrap_data)
+        books = bootstrap_data("")
+        monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
 
         middleware = []
         test_app = app_fixture(app.wsgifunc(*middleware))
@@ -76,7 +74,7 @@ class TestRoutes(object):
         assert resp.status is 200
         assert "200 OK" in resp
 
-    def test_asset_js(self, monkeypatch):
+    def test_asset(self, monkeypatch):
         middleware = []
         test_app = app_fixture(app.wsgifunc(*middleware))
         monkeypatch.setattr("sorter.__main__.asset", fake_asset_handler)
@@ -84,21 +82,3 @@ class TestRoutes(object):
 
         assert resp.status is 200
         assert "assets/js/foo.js" in resp
-
-    def test_assset_css(self, monkeypatch):
-        middleware = []
-        test_app = app_fixture(app.wsgifunc(*middleware))
-        monkeypatch.setattr("sorter.__main__.asset", fake_asset_handler)
-        resp = test_app.get("/assets/css/foo.css")
-
-        assert resp.status is 200
-        assert "assets/css/foo.css" in resp
-    
-    def test_asset_default(self, monkeypatch):
-        middleware = []
-        test_app = app_fixture(app.wsgifunc(*middleware))
-        monkeypatch.setattr("sorter.__main__.asset", fake_asset_handler)
-        resp = test_app.get("/assets/foo/bar.baz")
-
-        assert resp.status is 200
-        assert "assets/foo/bar.baz" in resp
