@@ -15,3 +15,14 @@ def store_data(books, db_file):
         database.insertupdate(query, book)
 
     database.close_connection()
+
+def get_books(db_file):
+    database = DB(db_file)
+
+    database.create_connection()
+
+    books = database.query('select * from rankings')
+
+    database.close_connection()
+
+    return books
