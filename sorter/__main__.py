@@ -77,7 +77,14 @@ class Assets(object): # pylint: disable=too-few-public-methods,missing-docstring
     def GET(asset_path): # pylint: disable=invalid-name,missing-docstring
         asset_file = os.path.abspath('templates/' + asset_path)
         if os.path.isfile(asset_file) is True:
-            web.header('Content-Type', 'text/css; charset=utf-8', unique=True)
+            if '.js' in asset_path:
+                header_type = 'application/javascript; charset=utf-8'
+            elif '.css' in asset_path:
+                header_type = 'text/css; charset=utf-8'
+            else:
+                header_type = 'text/plain; charset=utf-8'
+
+            web.header('Content-Type', header_type, unique=True)
             with open(asset_file, 'r') as myfile:
                 data = myfile.read()
         else:
