@@ -1,5 +1,5 @@
 ''' parse_xml.py '''
-import xml.etree.ElementTree as ElementTree       
+import xml.etree.ElementTree as ElementTree
 
 def parse(xml_string):
     ''' parse a provided goodreads api xml response as a string '''
