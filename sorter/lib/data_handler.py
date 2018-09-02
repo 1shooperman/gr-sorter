@@ -2,7 +2,9 @@
 from sorter.lib.db import DB
 
 def store_data(books, db_file):
-    ''' store the book data in the provided database '''
+    '''
+    Store the book data in the provided database
+    '''
     database = DB(db_file)
 
     database.create_connection()
@@ -17,6 +19,9 @@ def store_data(books, db_file):
     database.close_connection()
 
 def get_books(db_file):
+    '''
+    Get the previously stored books data
+    '''
     database = DB(db_file)
 
     database.create_connection()

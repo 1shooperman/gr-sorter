@@ -37,7 +37,7 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
         data = get_books(DB_FILE)
 
         ranked_data = rank(data)
-        
+
         books = ranked_data
 
         return RENDER.index(books=books)
@@ -54,7 +54,7 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 
         store_data(filtered_data, DB_FILE)
 
-        msg = "Status - OK"
+        msg = "200 OK"
         LOGGER.info(msg)
         return RENDERPLAIN.status(msg=msg)
 
