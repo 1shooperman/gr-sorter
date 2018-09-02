@@ -68,7 +68,7 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 class Assets(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def GET(asset_path):    # pylint: disable=invalid-name,missing-docstring
-        asset_data = asset(asset_path)
+        asset_data = asset('templates/' + asset_path)
         data = asset_data[0]
         header_type = asset_data[1]
 
