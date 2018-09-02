@@ -30,7 +30,7 @@ def rank(books):
     score_key = len(books[0]) - 1
     for i in range(N):
         for j in range(N-i-1):
-            if books[j][score_key] > books[j+1][score_key]:
+            if books[j+1][score_key] > books[j][score_key]:
                 books[j], books[j+1] = books[j+1], books[j]
 
     # careful: we overwrote books here!
