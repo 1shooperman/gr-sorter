@@ -8,10 +8,16 @@ import web
 
 from sorter.lib.request_data import read_url
 from sorter.lib.parse_xml import parse
-from sorter.lib.first_run import init
 from sorter.lib.data_handler import store_data, get_books
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
+from sorter.lib.asset_handler import asset
+
+def is_test(): # pylint: disable=missing-docstring
+    if 'WEBPY_ENV' in os.environ:
+        return os.environ['WEBPY_ENV'] == 'test' # pragma: no cover
+
+    return False
 
 LOGGER = sorter_logger(__name__)
 
@@ -27,9 +33,10 @@ RENDER = web.template.render('templates/', base='layout')
 RENDERPLAIN = web.template.render('templates/')
 
 DB_FILE = os.path.abspath('data/sorter.db')
-if os.path.isfile(DB_FILE) is False:
-    LOGGER.info('First run, initializing application')
-    init(DB_FILE)
+if os.path.isfile(DB_FILE) is False:                    # pragma: no cover
+    from sorter.lib.first_run import init               # pragma: no cover
+    LOGGER.info('First run, initializing application')  # pragma: no cover
+    init(DB_FILE)                                       # pragma: no cover
 
 class Index(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
@@ -61,23 +68,13 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 class Assets(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def GET(asset_path):    # pylint: disable=invalid-name,missing-docstring
-        asset_file = os.path.abspath('templates/' + asset_path)
-        if os.path.isfile(asset_file) is True:
-            if '.js' in asset_path:
-                header_type = 'application/javascript; charset=utf-8'
-            elif '.css' in asset_path:
-                header_type = 'text/css; charset=utf-8'
-            else:
-                header_type = 'text/plain; charset=utf-8'
+        asset_data = asset(asset_path)
+        data = asset_data[0]
+        header_type = asset_data[1]
 
-            web.header('Content-Type', header_type, unique=True)
-            with open(asset_file, 'r') as myfile:
-                data = myfile.read()
-        else:
-            data = None
-
+        web.header('Content-Type', header_type, unique=True)
         return RENDERPLAIN.status(msg=data)
 
 
-if __name__ == '__main__': # pragma: no cover
-    APP.run()              # pragma: no cover
+if (not is_test()) and __name__ == '__main__': # pragma: no cover
+    APP.run()                                  # pragma: no cover

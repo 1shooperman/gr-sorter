@@ -14,6 +14,7 @@ goodreads_api_key
 
 # embedded data store
 data/*.db
+tests/*.db
 
 # editor files
 .vscode
