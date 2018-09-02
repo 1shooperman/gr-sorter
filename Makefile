@@ -12,3 +12,8 @@ start:
 clean:
 	-find . -name "*.pyc" -type f -delete
 	-rm .coverage
+
+# requires: virtualenv
+# https://docs.python-guide.org/dev/virtualenvs/
+dev:
+	source environment/bin/activate

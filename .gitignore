@@ -1,7 +1,20 @@
+# compiled python files
 *.pyc
+
+# coverage file
 .coverage
+
+# virtualenv directory
 environment/
+
+# your api key
 goodreads_api_key
+
 .pytest_cache/
+
+# embedded data store
 data/*.db
+
+# editor files
 .vscode
+.idea
