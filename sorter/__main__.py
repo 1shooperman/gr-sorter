@@ -12,12 +12,13 @@ from sorter.lib.data_handler import store_data, get_books
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
+from sorter.lib.bootstrap import bootstrap
 
 def is_test(): # pylint: disable=missing-docstring
     if 'WEBPY_ENV' in os.environ:
-        return os.environ['WEBPY_ENV'] == 'test' # pragma: no cover
+        return os.environ['WEBPY_ENV'] == 'test'
 
-    return False
+    return False # pragma: no cover
 
 LOGGER = sorter_logger(__name__)
 
@@ -32,11 +33,10 @@ APP = web.application(URLS, globals())
 RENDER = web.template.render('templates/', base='layout')
 RENDERPLAIN = web.template.render('templates/')
 
-DB_FILE = os.path.abspath('data/sorter.db')
-if os.path.isfile(DB_FILE) is False:                    # pragma: no cover
-    from sorter.lib.first_run import init               # pragma: no cover
-    LOGGER.info('First run, initializing application')  # pragma: no cover
-    init(DB_FILE)                                       # pragma: no cover
+DB_FILE = ""
+if not is_test():
+    DB_NAME = 'data/sorter.db'              # pragma: no cover
+    DB_FILE = bootstrap(DB_NAME, LOGGER)    # pragma: no cover
 
 class Index(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod

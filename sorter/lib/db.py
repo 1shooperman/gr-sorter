@@ -22,6 +22,7 @@ class DB(object):
     def close_connection(self):
         ''' close the database connection '''
         self.conn.close()
+        self.conn = None
 
     def insertupdate(self, qry, values):
         ''' insert/update data in the database '''
