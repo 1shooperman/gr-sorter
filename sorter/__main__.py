@@ -11,6 +11,7 @@ from sorter.lib.parse_xml import parse
 from sorter.lib.first_run import init
 from sorter.lib.store_data import store_data
 from sorter.lib.sorter_logger import sorter_logger
+from sorter.lib.rank import rank
 
 # TESTING ONLY
 from sorter.lib.db import DB
@@ -20,7 +21,8 @@ LOGGER = sorter_logger(__name__)
 
 URLS = (
     '/', 'Index',
-    '/import', 'Import'
+    '/import', 'Import',
+    '/(assets/.+)', 'Assets'
 )
 
 APP = web.application(URLS, globals())
@@ -45,17 +47,17 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
         data = db.query(qry)
 
         db.close_connection()
-        print data
         # END _ TESTING ONLY
 
-        pagedata = data
+        ranked_data = rank(data)
+        
+        books = ranked_data
 
-        return RENDER.index(pagedata=pagedata)
+        return RENDER.index(books=books)
 
 class Import(object): # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def POST(): # pylint: disable=invalid-name,missing-docstring
-        LOGGER.info('ran import handler')
         post_data = parse_qs(web.data())
         data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
 
@@ -69,6 +71,19 @@ class Import(object): # pylint: disable=too-few-public-methods,missing-docstring
         msg = "Status - OK"
         LOGGER.info(msg)
         return RENDERPLAIN.status(msg=msg)
+
+class Assets(object): # pylint: disable=too-few-public-methods,missing-docstring
+    @staticmethod
+    def GET(asset_path): # pylint: disable=invalid-name,missing-docstring
+        asset_file = os.path.abspath('templates/' + asset_path)
+        if os.path.isfile(asset_file) is True:
+            web.header('Content-Type', 'text/css; charset=utf-8', unique=True)
+            with open(asset_file, 'r') as myfile:
+                data = myfile.read()
+        else:
+            data = None
+
+        return RENDERPLAIN.status(msg=data)
 
 
 if __name__ == '__main__': # pragma: no cover

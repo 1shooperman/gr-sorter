@@ -1,6 +1,28 @@
-$def with (pagedata)
+$def with (books)
 
-$if pagedata:
-    $pagedata
+$if books:
+    <table>
+        <thead>
+            <tr>
+                <th>Book ID</th>
+                <th>ISBN</th>
+                <th>ISBN13</th>
+                <th>title</th>
+                <th>Cover</th>
+                <th>Pub year</th>
+                <th>Avg Rating</th>
+                <th>Total Ratings</th>
+                <th>Author</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        $for book in books:    
+            <tr>
+                $for el in book:
+                    <td>$el</td>
+            </tr>
+        </tbody>
+    </table>
 $else:
     Greetings Programs
