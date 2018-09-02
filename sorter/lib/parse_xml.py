@@ -1,31 +1,28 @@
+''' parse_xml.py '''
 import xml.etree.ElementTree as ElementTree       
 
-def parse(xmlString):
-    if (xmlString == None):
-        raise TypeError('expected string, got %s' % type(xmlString))
+def parse(xml_string):
+    ''' parse a provided goodreads api xml response as a string '''
+    if xml_string is None:
+        raise TypeError('expected string, got %s' % type(xml_string))
 
-    root = ElementTree.fromstring(xmlString)
-
-    stats = root[1].attrib
-    totalRatings = 0
-
+    root = ElementTree.fromstring(xml_string)
     books = map(get_book_data, root.findall('reviews/review'))
-    #totalRatings = reduce(lambda acc, it: acc + it['ratings_count'], books, 0)
 
-    #return (books,totalRatings)
     return books
 
 def get_book_data(generator):
-    book = {
-        'goodreads_id': generator.find('id').text,    
-        'isbn': generator.find('book/isbn').text,
-        'isbn13': generator.find('book/isbn13').text,
-        'title': generator.find('book/title_without_series').text,
-        'image_url': generator.find('book/image_url').text,
-        'publication_year': generator.find('book/publication_year').text,
-        'ratings_count': int(generator.find('book/ratings_count').text),
-        'average_rating': generator.find('book/average_rating').text,
-        'author': generator.find('book/authors/author/name').text
-    }
+    ''' private method used for pulling book data from the provided xml generator '''
+    book = (
+        int(generator.find('id').text),
+        generator.find('book/isbn').text,
+        generator.find('book/isbn13').text,
+        generator.find('book/title_without_series').text,
+        generator.find('book/image_url').text,
+        generator.find('book/publication_year').text,
+        int(generator.find('book/ratings_count').text),
+        generator.find('book/average_rating').text,
+        generator.find('book/authors/author/name').text
+    )
 
     return book

@@ -1,40 +1,38 @@
+'''
+db.py
+'''
 import sqlite3
-from sqlite3 import Error
- 
+
 class DB(object):
+    '''
+    Class wrapping SQLite3, providing helper methods as needed.
+    Initialized with a string containing path to new or existing db file
+    '''
     def __init__(self, db_file):
         self.db_file = db_file
         self.conn = None
 
     def create_connection(self):
-        if (self.conn == None):
-            """ create a database connection to a SQLite database """
+        ''' get or create a sql connection '''
+        if self.conn is None:
             self.conn = sqlite3.connect(self.db_file)
 
         return self.conn
 
-    def get_connection(self):
-        if (self.conn == None):
-            self.conn = self.create_connection()
-     
-        return self.conn
-
     def close_connection(self):
-        try:
-            self.conn.close()
-        except Error as e:
-            print e
+        ''' close the database connection '''
+        self.conn.close()
 
-    def insert(self, qry):
-        c = self.conn.cursor()
-        c.execute(qry)
+    def insertupdate(self, qry, values):
+        ''' insert/update data in the database '''
+        cur = self.conn.cursor()
+        cur.execute(qry, values)
         self.conn.commit()
 
-    def update(self, qry):
-        self.insert(qry)
-
     def query(self, qry):
+        ''' run a query against the database '''
         return self.conn.execute(qry).fetchall()
 
     def execute(self, qry):
-        self.insert(qry)
+        ''' execute arbitrary command against the database '''
+        self.insertupdate(qry, None)

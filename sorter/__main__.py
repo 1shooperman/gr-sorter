@@ -1,21 +1,17 @@
 """
 base web.py file for displaying the ranked data
 """
-import web
-import os
-
 from urlparse import parse_qs
-
+import os
+import web
 from lib.request_data import Data
 from lib.parse_xml import parse
-from lib.rank import rank
 from lib.first_run import init
 from lib.store_data import store_data
 
 # TESTING ONLY
 from lib.db import DB
 # END _ TESTING ONLY
-
 
 URLS = (
     '/', 'Index',
@@ -27,18 +23,17 @@ APP = web.application(URLS, globals())
 RENDER = web.template.render('templates/', base='layout')
 RENDERPLAIN = web.template.render('templates/')
 
-db_file = os.path.abspath('data/sorter.db')
-if (os.path.isfile(db_file) == False):
-    init(db_file)
+DB_FILE = os.path.abspath('data/sorter.db')
+if os.path.isfile(DB_FILE) is False:
+    init(DB_FILE)
 
-class Index(object):       # pylint: disable=too-few-public-methods
+class Index(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
-    def GET():             # pylint: disable=invalid-name
-        """ GET handler for index route """
+    def GET():             # pylint: disable=invalid-name,missing-docstring
         # TESTING ONLY
-        db = DB(db_file)
+        db = DB(DB_FILE)
 
-        db.get_connection()
+        db.create_connection()
 
         qry = "select * from rankings"
         data = db.query(qry)
@@ -46,14 +41,14 @@ class Index(object):       # pylint: disable=too-few-public-methods
         db.close_connection()
         print data
         # END _ TESTING ONLY
-        
+
         pagedata = data
 
-        return RENDER.index(pagedata = pagedata)
+        return RENDER.index(pagedata=pagedata)
 
-class Import(object):
+class Import(object): # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
-    def POST():
+    def POST(): # pylint: disable=invalid-name,missing-docstring
         post_data = parse_qs(web.data())
         data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
 
@@ -64,10 +59,10 @@ class Import(object):
 
         filtered_data = parse(xml_data)
 
-        store_data(filtered_data, db_file)
-        
+        store_data(filtered_data, DB_FILE)
+
         msg = "Status - OK"
-        return RENDERPLAIN.status(msg = msg)
+        return RENDERPLAIN.status(msg=msg)
 
 
 if __name__ == '__main__': # pragma: no cover
