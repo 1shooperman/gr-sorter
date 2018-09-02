@@ -43,9 +43,9 @@ def score_book(book, total_ratings):
         book[6] = Total Ratings
         book[7] = avg rating
     '''
-    base_year = 2010
+    base_year = 2000
     rating_weight = book[6] / total_ratings
-    year_weight = (base_year - book[5]) * 0.00001 # issue here since python does not support % as a data type
+    year_weight = (base_year - book[5]) * 0.001
     preference_adjustment = 0 #not yet implemented
     weight = rating_weight + year_weight + preference_adjustment
     score = (book[7] * weight) * 100
