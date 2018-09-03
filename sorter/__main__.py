@@ -42,9 +42,11 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
     def GET():             # pylint: disable=invalid-name,missing-docstring
         db_file = os.path.abspath(DB_NAME)
 
-        data = get_books(db_file)
-
-        books = rank(data)
+        if os.path.isfile(db_file):
+            data = get_books(db_file)
+            books = rank(data)
+        else:
+            books = None
 
         return RENDER.index(books=books)
 

@@ -54,6 +54,7 @@ class TestRoutes(object):
         books = bootstrap_data("")
         monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
         monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.os.path.isfile", lambda foo: True)
 
         middleware = []
         test_app = app_fixture(app.wsgifunc(*middleware))
@@ -61,6 +62,19 @@ class TestRoutes(object):
 
         assert resp.status is 200
         assert "Book ID" in resp
+
+    def test_index_nodata(self, monkeypatch):
+        monkeypatch.setattr("sorter.__main__.DB_NAME", "")
+        books = bootstrap_data("")
+        monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
+
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+        resp = test_app.get("/")
+
+        assert resp.status is 200
+        assert "<body>" in resp
 
     def test_import(self, monkeypatch):
         middleware = []
