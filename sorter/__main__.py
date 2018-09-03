@@ -8,7 +8,7 @@ import web
 
 from sorter.lib.request_data import read_url
 from sorter.lib.parse_xml import parse
-from sorter.lib.data_handler import store_data, get_books
+from sorter.lib.data_handler import store_data, get_books, dump_data
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
@@ -33,19 +33,18 @@ APP = web.application(URLS, globals())
 RENDER = web.template.render('templates/', base='layout')
 RENDERPLAIN = web.template.render('templates/')
 
-DB_FILE = ""
+DB_NAME = ""
 if not is_test():
     DB_NAME = 'data/sorter.db'              # pragma: no cover
-    DB_FILE = bootstrap(DB_NAME, LOGGER)    # pragma: no cover
 
 class Index(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def GET():             # pylint: disable=invalid-name,missing-docstring
-        data = get_books(DB_FILE)
+        db_file = os.path.abspath(DB_NAME)
 
-        ranked_data = rank(data)
+        data = get_books(db_file)
 
-        books = ranked_data
+        books = rank(data)
 
         return RENDER.index(books=books)
 
@@ -53,13 +52,20 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
     @staticmethod
     def POST():         # pylint: disable=invalid-name,missing-docstring
         post_data = parse_qs(web.data())
+
         data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
 
         xml_data = read_url(data_file)
 
         filtered_data = parse(xml_data)
 
-        store_data(filtered_data, DB_FILE)
+        db_file = os.path.abspath(DB_NAME)
+
+        dump_data(db_file)
+
+        bootstrap(DB_NAME, LOGGER)
+
+        store_data(filtered_data, db_file)
 
         msg = "200 OK"
         LOGGER.info(msg)

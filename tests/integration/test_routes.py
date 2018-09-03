@@ -50,7 +50,7 @@ def bootstrap_data(foo):
 class TestRoutes(object):
 
     def test_index(self, monkeypatch):
-        monkeypatch.setattr("sorter.__main__.DB_FILE", "")
+        monkeypatch.setattr("sorter.__main__.DB_NAME", "")
         books = bootstrap_data("")
         monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
         monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
@@ -67,7 +67,9 @@ class TestRoutes(object):
         test_app = app_fixture(app.wsgifunc(*middleware))
         monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs)
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
+        monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
         monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)
+        monkeypatch.setattr("sorter.__main__.bootstrap", lambda foo, bar: None)
 
         resp = test_app.post("/import", [('data_file', 'fake.faker')])
 

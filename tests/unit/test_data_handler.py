@@ -1,6 +1,13 @@
 # pylint: skip-file
-from sorter.lib.data_handler import store_data, get_books
+from sorter.lib.data_handler import store_data, get_books, dump_data
 import sqlite3
+
+class fake_os(object):
+    def __init__(self):
+        self.called_remove = None
+    
+    def remove(self, file):
+        self.called_remove = file
 
 class fake_db(object):
     def __init__(self, foo):
@@ -71,3 +78,12 @@ class TestDataHandler(object):
         database = None
 
         assert fake_data_returned == [fake_book]
+
+    def test_dump_data(self, monkeypatch):
+        faker = fake_os()
+        monkeypatch.setattr("sorter.lib.data_handler.os.remove", lambda file: faker.remove(file))
+        monkeypatch.setattr("sorter.lib.data_handler.os.path.isfile", lambda file: True)
+
+        dump_data("fake.file")
+        
+        assert faker.called_remove == "fake.file"
