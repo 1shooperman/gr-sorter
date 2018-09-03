@@ -1,5 +1,5 @@
 # pylint: skip-file
-from sorter.lib.parse_xml import parse, get_book_data
+from sorter.lib.parse_xml import parse, get_book_data, get_total_pages
 import pytest
 import os
 
@@ -38,3 +38,26 @@ class TestParseXml(object):
         foo = get_book_data(fake_generator())
 
         assert foo == (10,10,10,10,10,10,10,10,10)
+
+    def test_get_total_pages(self):
+        xml_string = '<foo><reviews start="1" end="20" total="400"></reviews></foo>'
+        pages, current_page = get_total_pages(xml_string)
+
+        assert pages == 20
+        assert current_page == 1
+
+    def test_get_total_pages_page5(self):
+        xml_string = '<foo><reviews start="81" end="100" total="400"></reviews></foo>'
+        pages, current_page = get_total_pages(xml_string)
+
+        assert pages == 20
+        assert current_page == 5
+
+    def test_get_total_pages_raises_exception_type(self):
+        with pytest.raises(TypeError):
+            get_total_pages(None)
+
+    def test_get_total_pages_raises_exception_zerodiv(self):
+        with pytest.raises(ZeroDivisionError):
+            xml_string = '<foo><reviews start="0" end="0" total="0"></reviews></foo>'
+            get_total_pages(xml_string)
