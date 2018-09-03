@@ -44,7 +44,7 @@ def get_total_pages(xml_string):
     end = float(attribs['end'])
 
     if end > 0:
-        per_page = int(end - start + 1)
+        per_page = float(end - start + 1)
     else:
         per_page = 0
 
