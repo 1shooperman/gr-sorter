@@ -8,6 +8,12 @@ def fake_parse_qs(my_file):
         'data_file': ['http://some.fake.gtld/sample.xml']
     }
 
+def fake_parse_qs_newdata(my_file):
+    return {
+        'data_file': ['http://some.fake.gtld/sample.xml'],
+        'new': [1]
+    }
+
 def fake_read_url(url_string):
     with open('tests/fixtures/sample.xml', 'r') as myfile:
         data = myfile.read()
@@ -80,6 +86,20 @@ class TestRoutes(object):
         middleware = []
         test_app = app_fixture(app.wsgifunc(*middleware))
         monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs)
+        monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
+        monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
+        monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)
+        monkeypatch.setattr("sorter.__main__.bootstrap", lambda foo, bar: None)
+
+        resp = test_app.post("/import", [('data_file', 'fake.faker')])
+
+        assert resp.status is 200
+        assert "200 OK" in resp
+
+    def test_import_new(self, monkeypatch):
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+        monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs_newdata)
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
         monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
         monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)

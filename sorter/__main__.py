@@ -57,13 +57,21 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 
         data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
 
+        new_data = False
+
+        try:
+            new_data = int(post_data['new'][0]) == 1
+        except KeyError:
+            pass # swallow the error
+
         xml_data = read_url(data_file)
 
         filtered_data = parse(xml_data)
 
         db_file = os.path.abspath(DB_NAME)
 
-        dump_data(db_file)
+        if new_data is True:
+            dump_data(db_file)
 
         bootstrap(DB_NAME, LOGGER)
 
