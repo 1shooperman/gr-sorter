@@ -10,7 +10,7 @@ def init(db_file):
     qry = '''CREATE TABLE rankings
              (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
               publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-              author)'''
+              author, link)'''
 
     database.execute(qry)
 

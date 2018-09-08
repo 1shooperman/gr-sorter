@@ -27,7 +27,8 @@ def get_book_data(generator):
         pub_year,
         int(generator.find('book/ratings_count').text),
         generator.find('book/average_rating').text,
-        generator.find('book/authors/author/name').text
+        generator.find('book/authors/author/name').text,
+        generator.find('book/link').text
     )
 
     
