@@ -7,7 +7,6 @@ def store_data(books, db_file):
     Store the book data in the provided database
     '''
     database = DB(db_file)
-
     database.create_connection()
 
     for book in books:
