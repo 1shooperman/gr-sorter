@@ -31,8 +31,6 @@ def get_book_data(generator):
         generator.find('book/link').text
     )
 
-    
-
     return book
 
 def get_total_pages(xml_string):
