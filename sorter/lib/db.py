@@ -37,7 +37,7 @@ class DB(object):
             cur.execute(qry, values)
         except IntegrityError as error:
             LOGGER.info(error)
-        
+
         self.conn.commit()
 
     def query(self, qry):

@@ -29,7 +29,7 @@ def bootstrap_data(foo):
     qry = '''CREATE TABLE rankings
             (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
             publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author)'''
+            author, link)'''
 
     database.execute(qry)
 
@@ -40,7 +40,7 @@ def bootstrap_data(foo):
     for book in fake_data:
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author) VALUES(?,?,?,?,?,?,?,?,?)'''
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
         cur = database.cursor()
         cur.execute(query, book)
