@@ -27,7 +27,8 @@ class TestParseXml(object):
             '1992',
             622, 
             '4.29', 
-            'Bob Thomas')
+            'Bob Thomas',
+            'https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1')
         ]
 
     def test_parse_exception(self):
@@ -37,7 +38,7 @@ class TestParseXml(object):
     def test_get_book_data(self):
         foo = get_book_data(fake_generator())
 
-        assert foo == (10,10,10,10,10,10,10,10,10)
+        assert foo == (10,10,10,10,10,10,10,10,10,10)
 
     def test_get_total_pages(self):
         xml_string = '<foo><reviews start="1" end="20" total="400"></reviews></foo>'

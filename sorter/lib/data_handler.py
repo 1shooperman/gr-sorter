@@ -12,7 +12,7 @@ def store_data(books, db_file):
     for book in books:
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author, link) VALUES(?,?,?,?,?,?,?,?,?, ?)'''
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
         database.insertupdate(query, book)
 
