@@ -2,6 +2,11 @@
 db.py
 '''
 import sqlite3
+from sqlite3 import IntegrityError
+
+from sorter.lib.sorter_logger import sorter_logger
+
+LOGGER = sorter_logger(__name__)
 
 class DB(object):
     '''
@@ -27,7 +32,12 @@ class DB(object):
     def insertupdate(self, qry, values):
         ''' insert/update data in the database '''
         cur = self.conn.cursor()
-        cur.execute(qry, values)
+
+        try:
+            cur.execute(qry, values)
+        except IntegrityError as error:
+            LOGGER.info(error)
+
         self.conn.commit()
 
     def query(self, qry):

@@ -7,13 +7,12 @@ def store_data(books, db_file):
     Store the book data in the provided database
     '''
     database = DB(db_file)
-
     database.create_connection()
 
     for book in books:
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author) VALUES(?,?,?,?,?,?,?,?,?)'''
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
         database.insertupdate(query, book)
 

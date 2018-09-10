@@ -5,10 +5,20 @@ import os
 
 class fake_generator(object):
     def find(self, foo):
-        return foo_object()
+        return foo_object(10)
 
 class foo_object(object):
-    text = 10
+    def __init__(self, retval):
+        self.text = retval
+    
+class fake_generator2(object):
+    def find(self, foo):
+        if foo == 'book/published':
+            return foo_object(None)
+        elif foo == 'book/publication_year':
+            return foo_object(13)
+        else:
+            return foo_object(10)
 
 class TestParseXml(object):
     def test_parse(self):
@@ -27,7 +37,8 @@ class TestParseXml(object):
             '1992',
             622, 
             '4.29', 
-            'Bob Thomas')
+            'Bob Thomas',
+            'https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1')
         ]
 
     def test_parse_exception(self):
@@ -37,7 +48,12 @@ class TestParseXml(object):
     def test_get_book_data(self):
         foo = get_book_data(fake_generator())
 
-        assert foo == (10,10,10,10,10,10,10,10,10)
+        assert foo == (10,10,10,10,10,10,10,10,10,10)
+
+    def test_get_book_data_none_pubyear(self):
+        foo = get_book_data(fake_generator2())
+
+        assert foo == (10,10,10,10,10,13,10,10,10,10)
 
     def test_get_total_pages(self):
         xml_string = '<foo><reviews start="1" end="20" total="400"></reviews></foo>'

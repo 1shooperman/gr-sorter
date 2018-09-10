@@ -1,18 +1,18 @@
 """
 base web.py file for displaying the ranked data
 """
-from urlparse import parse_qs
+from urlparse import parse_qs, urlsplit
 
 import os
 import web
 
 from sorter.lib.request_data import read_url
-from sorter.lib.parse_xml import parse
-from sorter.lib.data_handler import store_data, get_books, dump_data
+from sorter.lib.parse_xml import get_total_pages
+from sorter.lib.data_handler import get_books
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
-from sorter.lib.bootstrap import bootstrap
+from sorter.lib.page_utils import page_loop
 
 def is_test(): # pylint: disable=missing-docstring
     if 'WEBPY_ENV' in os.environ:
@@ -53,29 +53,31 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
 class Import(object):   # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def POST():         # pylint: disable=invalid-name,missing-docstring
-        post_data = parse_qs(web.data())
-
-        data_file = post_data['data_file'][0] # not sure why this returns a dict of lists...
+        _, _, path, query, _ = urlsplit(web.data())
+        args = parse_qs(query)
+        _, data_file = path.split('=')
 
         new_data = False
 
         try:
-            new_data = int(post_data['new'][0]) == 1
+            new_data = int(args['new'][0]) == 1
         except KeyError:
             pass # swallow the error
 
         xml_data = read_url(data_file)
 
-        filtered_data = parse(xml_data)
+        total_pages, document_page = get_total_pages(xml_data)
+        if total_pages > 0:
+            for page_num in range(total_pages):
+                # if this is page 1, we can assume we already have the data
+                if page_num == 0 and document_page == 1:
+                    page_loop(xml_data, DB_NAME, new_data)
+                else:
+                    page_string = "?page=%s" % (page_num + 1)
+                    if document_page != (page_num + 1):
+                        xml_data = read_url(data_file + page_string)
 
-        db_file = os.path.abspath(DB_NAME)
-
-        if new_data is True:
-            dump_data(db_file)
-
-        bootstrap(DB_NAME, LOGGER)
-
-        store_data(filtered_data, db_file)
+                    page_loop(xml_data, DB_NAME, False)
 
         msg = "200 OK"
         LOGGER.info(msg)

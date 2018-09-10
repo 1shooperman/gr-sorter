@@ -32,7 +32,7 @@ class TestDataHandler(object):
         qry = '''CREATE TABLE rankings
             (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
             publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author)'''
+            author, link)'''
 
         database.execute(qry)
 
@@ -40,7 +40,7 @@ class TestDataHandler(object):
         monkeypatch.setattr("sorter.lib.data_handler.DB.create_connection", lambda foo: database)
         monkeypatch.setattr("sorter.lib.data_handler.DB.insertupdate", lambda self, foo, bar: database.execute(foo,bar))
 
-        fake_data = [(1,2,3,4,5,6,7,8,9)]
+        fake_data = [(1,2,3,4,5,6,7,8,9,10)]
         store_data(fake_data, "foo")
 
         fake_data_returned = database.execute("select * from rankings").fetchall()
@@ -56,7 +56,7 @@ class TestDataHandler(object):
         qry = '''CREATE TABLE rankings
             (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
             publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author)'''
+            author, link)'''
 
         database.execute(qry)
 
@@ -64,11 +64,11 @@ class TestDataHandler(object):
         monkeypatch.setattr("sorter.lib.data_handler.DB.create_connection", lambda foo: database)
         monkeypatch.setattr("sorter.lib.data_handler.DB.query", lambda self, foo: database.execute(foo).fetchall())
 
-        fake_book = (1,2,3,4,5,6,7,8,9)
+        fake_book = (1,2,3,4,5,6,7,8,9,10)
         
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author) VALUES(?,?,?,?,?,?,?,?,?)'''
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
         database.execute(query, fake_book)
 

@@ -29,7 +29,7 @@ def bootstrap_data(foo):
     qry = '''CREATE TABLE rankings
             (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
             publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author)'''
+            author, link)'''
 
     database.execute(qry)
 
@@ -40,7 +40,7 @@ def bootstrap_data(foo):
     for book in fake_data:
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author) VALUES(?,?,?,?,?,?,?,?,?)'''
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
         cur = database.cursor()
         cur.execute(query, book)
@@ -87,9 +87,10 @@ class TestRoutes(object):
         test_app = app_fixture(app.wsgifunc(*middleware))
         monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs)
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
-        monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
-        monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)
-        monkeypatch.setattr("sorter.__main__.bootstrap", lambda foo, bar: None)
+        monkeypatch.setattr("sorter.__main__.page_loop", lambda *args: True)
+        # monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
+        # monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)
+        # monkeypatch.setattr("sorter.__main__.bootstrap", lambda foo, bar: None)
 
         resp = test_app.post("/import", [('data_file', 'fake.faker')])
 
@@ -101,9 +102,10 @@ class TestRoutes(object):
         test_app = app_fixture(app.wsgifunc(*middleware))
         monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs_newdata)
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
-        monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
-        monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)
-        monkeypatch.setattr("sorter.__main__.bootstrap", lambda foo, bar: None)
+        monkeypatch.setattr("sorter.__main__.page_loop", lambda *args: True)
+        # monkeypatch.setattr("sorter.__main__.dump_data", lambda foo: None)
+        # monkeypatch.setattr("sorter.__main__.store_data", lambda foo, bar: None)
+        # monkeypatch.setattr("sorter.__main__.bootstrap", lambda foo, bar: None)
 
         resp = test_app.post("/import", [('data_file', 'fake.faker')])
 
