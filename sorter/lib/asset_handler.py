@@ -17,6 +17,8 @@ def asset(asset_path):
 
         with open(asset_file, 'r') as myfile:
             data = myfile.read()
+
+        myfile.close()
     else:
         data = None
         header_type = 'text/plain; charset=utf-8'

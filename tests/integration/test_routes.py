@@ -18,6 +18,8 @@ def fake_read_url(url_string):
     with open('tests/fixtures/sample.xml', 'r') as myfile:
         data = myfile.read()
 
+    myfile.close()
+    
     return data
 
 def fake_asset_handler(asset_path):

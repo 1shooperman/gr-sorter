@@ -1,5 +1,6 @@
 # pylint: skip-file
-from sorter.lib.parse_xml import parse, get_book_data, get_total_pages
+from sorter.lib.parse_xml import parse, get_book_data, get_total_pages, parse_id_response, parse_isbn_response
+from tests.utils.get_element import get_file_as_string
 import pytest
 import os
 
@@ -14,7 +15,7 @@ class foo_object(object):
 class fake_generator2(object):
     def find(self, foo):
         if foo == 'book/published':
-            return foo_object(None)
+            return None
         elif foo == 'book/publication_year':
             return foo_object(13)
         else:
@@ -26,6 +27,8 @@ class TestParseXml(object):
         with open(xml_File, 'r') as myfile:
             data = myfile.read()
 
+        myfile.close()
+        
         foo = parse(data)
 
         assert foo == [
@@ -77,3 +80,15 @@ class TestParseXml(object):
         with pytest.raises(ZeroDivisionError):
             xml_string = '<foo><reviews start="0" end="0" total="0"></reviews></foo>'
             get_total_pages(xml_string)
+
+    def test_parse_isbn_response(isbn):
+        xml_string = get_file_as_string('tests/fixtures/book_by_isbn.xml')
+        foo = parse_isbn_response(xml_string)
+
+        assert foo == "bar"
+
+    def test_parse_id_response(id):
+        xml_string = get_file_as_string('tests/fixtures/book_by_id.xml')
+        foo = parse_id_response(xml_string)
+
+        assert foo == "bar"

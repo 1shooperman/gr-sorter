@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <method><![CDATA[book_show]]></method>
+  </Request>
+  <book>
+  <id>453444</id>
+  <title>Disney&apos;s Art of Animation #1</title>
+  <isbn><![CDATA[1562828991]]></isbn>
+  <isbn13><![CDATA[9781562828998]]></isbn13>
+  <asin><![CDATA[]]></asin>
+  <kindle_asin><![CDATA[]]></kindle_asin>
+  <marketplace_id><![CDATA[]]></marketplace_id>
+  <country_code><![CDATA[US]]></country_code>
+  <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+  <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+  <publication_year>1992</publication_year>
+  <publication_month>10</publication_month>
+  <publication_day>1</publication_day>
+  <publisher>Disney Editions</publisher>
+  <language_code>en-US</language_code>
+  <is_ebook>false</is_ebook>
+  <description><![CDATA[A celebration of the magic behind the world's most famous animated films, this complete update of the classic Disney's Art of Animation debuts in time for the video release of Disney's latest animated spectacular, Beauty and the Beast. Four-color throughout.]]></description>
+  <work>
+  <id type="integer">442050</id>
+  <books_count type="integer">4</books_count>
+  <best_book_id type="integer">453444</best_book_id>
+  <reviews_count type="integer">1222</reviews_count>
+  <ratings_sum type="integer">2669</ratings_sum>
+  <ratings_count type="integer">622</ratings_count>
+  <text_reviews_count type="integer">18</text_reviews_count>
+  <original_publication_year type="integer">1991</original_publication_year>
+  <original_publication_month type="integer" nil="true"/>
+  <original_publication_day type="integer" nil="true"/>
+  <original_title>Disney's Art of Animation #1: From Mickey Mouse, To Beauty and the Beast</original_title>
+  <original_language_id type="integer" nil="true"/>
+  <media_type>book</media_type>
+  <rating_dist>5:355|4:146|3:87|2:15|1:19|total:622</rating_dist>
+  <desc_user_id type="integer">-51</desc_user_id>
+  <default_chaptering_book_id type="integer" nil="true"/>
+  <default_description_language_code nil="true"/>
+</work>
+  <average_rating>4.29</average_rating>
+  <num_pages><![CDATA[208]]></num_pages>
+  <format><![CDATA[Hardcover]]></format>
+  <edition_information><![CDATA[]]></edition_information>
+  <ratings_count><![CDATA[583]]></ratings_count>
+  <text_reviews_count><![CDATA[12]]></text_reviews_count>
+  <url><![CDATA[https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1]]></url>
+  <link><![CDATA[https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1]]></link>
+  <authors>
+<author>
+<id>76137</id>
+<name>Bob Thomas</name>
+<role></role>
+<image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_200x266-d279b33f8eec0f27b7272477f09806be.png]]>
+</image_url>
+<small_image_url nophoto='true'>
+<![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_50x66-82093808bca726cb3249a493fbd3bd0f.png]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/76137.Bob_Thomas]]></link>
+<average_rating>4.19</average_rating>
+<ratings_count>4927</ratings_count>
+<text_reviews_count>409</text_reviews_count>
+</author>
+<author>
+<id>3510823</id>
+<name>Walt Disney Company</name>
+<role></role>
+<image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1289112683p5/3510823.jpg]]>
+</image_url>
+<small_image_url nophoto='false'>
+<![CDATA[https://images.gr-assets.com/authors/1289112683p2/3510823.jpg]]>
+</small_image_url>
+<link><![CDATA[https://www.goodreads.com/author/show/3510823.Walt_Disney_Company]]></link>
+<average_rating>4.24</average_rating>
+<ratings_count>492236</ratings_count>
+<text_reviews_count>14058</text_reviews_count>
+</author>
+</authors>
+
+    <reviews_widget>
+      <![CDATA[
+        <style>
+  #goodreads-widget {
+    font-family: georgia, serif;
+    padding: 18px 0;
+    width:565px;
+  }
+  #goodreads-widget h1 {
+    font-weight:normal;
+    font-size: 16px;
+    border-bottom: 1px solid #BBB596;
+    margin-bottom: 0;
+  }
+  #goodreads-widget a {
+    text-decoration: none;
+    color:#660;
+  }
+  iframe{
+    background-color: #fff;
+  }
+  #goodreads-widget a:hover { text-decoration: underline; }
+  #goodreads-widget a:active {
+    color:#660;
+  }
+  #gr_footer {
+    width: 100%;
+    border-top: 1px solid #BBB596;
+    text-align: right;
+  }
+  #goodreads-widget .gr_branding{
+    color: #382110;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+<div id="goodreads-widget">
+  <div id="gr_header"><h1><a rel="nofollow" href="https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1">Disney&#39;s Art of Animation #1 Reviews</a></h1></div>
+  <iframe id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&amp;format=html&amp;isbn=1562828991&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000" width="565" height="400" frameborder="0"></iframe>
+  <div id="gr_footer">
+    <a class="gr_branding" target="_blank" rel="nofollow" href="https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1?utm_medium=api&amp;utm_source=reviews_widget">Reviews from Goodreads.com</a>
+  </div>
+</div>
+
+      ]]>
+    </reviews_widget>
+  <popular_shelves>
+      <shelf name="to-read" count="529"/>
+      <shelf name="disney" count="23"/>
+      <shelf name="art" count="23"/>
+      <shelf name="animation" count="20"/>
+      <shelf name="non-fiction" count="17"/>
+      <shelf name="currently-reading" count="14"/>
+      <shelf name="art-books" count="12"/>
+      <shelf name="nonfiction" count="7"/>
+      <shelf name="books-i-own" count="7"/>
+      <shelf name="reference" count="6"/>
+      <shelf name="history" count="5"/>
+      <shelf name="film" count="3"/>
+      <shelf name="owned" count="3"/>
+      <shelf name="drawing" count="2"/>
+      <shelf name="movie" count="2"/>
+      <shelf name="disney-pixar" count="2"/>
+      <shelf name="disney-books" count="2"/>
+      <shelf name="disney-art" count="2"/>
+      <shelf name="art-design" count="2"/>
+      <shelf name="film-tv" count="2"/>
+      <shelf name="read-as-a-teen" count="1"/>
+      <shelf name="disney-library" count="1"/>
+      <shelf name="homebookshelf" count="1"/>
+      <shelf name="type_disney" count="1"/>
+      <shelf name="readbooks-male-author-or-illust" count="1"/>
+      <shelf name="own-it" count="1"/>
+      <shelf name="nonfiction-film-tv" count="1"/>
+      <shelf name="kiddos" count="1"/>
+      <shelf name="disney_pixar" count="1"/>
+      <shelf name="disney-princesses-art" count="1"/>
+      <shelf name="disney-beauty-and-the-beast-art" count="1"/>
+      <shelf name="disney-beast-art" count="1"/>
+      <shelf name="disney-art-of-animation" count="1"/>
+      <shelf name="cinéma" count="1"/>
+      <shelf name="books-for-artists" count="1"/>
+      <shelf name="art-history" count="1"/>
+      <shelf name="animation-art-books" count="1"/>
+      <shelf name="animation-and-disney" count="1"/>
+      <shelf name="__chambre-chris" count="1"/>
+      <shelf name="tcc" count="1"/>
+      <shelf name="nonfiction-2018" count="1"/>
+      <shelf name="kindle-requests-disney" count="1"/>
+      <shelf name="movie-magic" count="1"/>
+      <shelf name="__period_1980s-1990s" count="1"/>
+      <shelf name="default" count="1"/>
+      <shelf name="bande-dessine" count="1"/>
+      <shelf name="disney-artbooks" count="1"/>
+      <shelf name="books-wantex" count="1"/>
+      <shelf name="tr-art" count="1"/>
+      <shelf name="film-theatre" count="1"/>
+      <shelf name="1-own" count="1"/>
+      <shelf name="to-buy" count="1"/>
+      <shelf name="donated" count="1"/>
+      <shelf name="the-art-of-animation" count="1"/>
+      <shelf name="don-t-have" count="1"/>
+      <shelf name="interested" count="1"/>
+      <shelf name="design" count="1"/>
+      <shelf name="disney-reads" count="1"/>
+      <shelf name="n_l_graphic_design" count="1"/>
+      <shelf name="to-read-art" count="1"/>
+      <shelf name="did-not-keep" count="1"/>
+      <shelf name="art-film-photo-books" count="1"/>
+      <shelf name="stuff" count="1"/>
+      <shelf name="walt-disney" count="1"/>
+      <shelf name="teens" count="1"/>
+      <shelf name="special-comps" count="1"/>
+      <shelf name="phd" count="1"/>
+      <shelf name="disney-bookshelf" count="1"/>
+      <shelf name="artsy-me" count="1"/>
+      <shelf name="physical-copies" count="1"/>
+      <shelf name="artwork-books" count="1"/>
+      <shelf name="me" count="1"/>
+      <shelf name="art-of-films" count="1"/>
+      <shelf name="library" count="1"/>
+      <shelf name="drawing-art-and-animation" count="1"/>
+      <shelf name="children-s-books" count="1"/>
+      <shelf name="my-librar" count="1"/>
+      <shelf name="cinema-theater" count="1"/>
+      <shelf name="english" count="1"/>
+      <shelf name="20th-century" count="1"/>
+      <shelf name="classics" count="1"/>
+      <shelf name="buy" count="1"/>
+      <shelf name="owned-and-read" count="1"/>
+      <shelf name="i-do-not-own-them" count="1"/>
+      <shelf name="arts-and-crafts" count="1"/>
+      <shelf name="fave-books-as-kids" count="1"/>
+      <shelf name="read-in-2014" count="1"/>
+      <shelf name="disney-history" count="1"/>
+      <shelf name="i-own-it" count="1"/>
+      <shelf name="some-favorites" count="1"/>
+      <shelf name="home" count="1"/>
+      <shelf name="don-t-own" count="1"/>
+      <shelf name="download" count="1"/>
+      <shelf name="fairy-tales" count="1"/>
+      <shelf name="strange-but-true" count="1"/>
+      <shelf name="art-lessons" count="1"/>
+      <shelf name="unread" count="1"/>
+      <shelf name="art-1" count="1"/>
+      <shelf name="fantasy-ya" count="1"/>
+      <shelf name="walt-disney-animation" count="1"/>
+  </popular_shelves>
+  <book_links>
+    <book_link>
+  <id>8</id>
+  <name>Libraries</name>
+  <link>https://www.goodreads.com/book_link/follow/8</link>
+</book_link>
+
+  </book_links>
+  <buy_links>
+    <buy_link>
+<id>1</id>
+<name>Amazon</name>
+<link>https://www.goodreads.com/book_link/follow/1</link>
+</buy_link>
+<buy_link>
+<id>10</id>
+<name>Audible</name>
+<link>https://www.goodreads.com/book_link/follow/10</link>
+</buy_link>
+<buy_link>
+<id>3</id>
+<name>Barnes &amp; Noble</name>
+<link>https://www.goodreads.com/book_link/follow/3</link>
+</buy_link>
+<buy_link>
+<id>1027</id>
+<name>Kobo</name>
+<link>https://www.goodreads.com/book_link/follow/1027</link>
+</buy_link>
+<buy_link>
+<id>2102</id>
+<name>Apple iBooks</name>
+<link>https://www.goodreads.com/book_link/follow/2102</link>
+</buy_link>
+<buy_link>
+<id>8036</id>
+<name>Google Play</name>
+<link>https://www.goodreads.com/book_link/follow/8036</link>
+</buy_link>
+<buy_link>
+<id>4</id>
+<name>Abebooks</name>
+<link>https://www.goodreads.com/book_link/follow/4</link>
+</buy_link>
+<buy_link>
+<id>882</id>
+<name>Book Depository</name>
+<link>https://www.goodreads.com/book_link/follow/882</link>
+</buy_link>
+<buy_link>
+<id>9</id>
+<name>Indigo</name>
+<link>https://www.goodreads.com/book_link/follow/9</link>
+</buy_link>
+<buy_link>
+<id>5</id>
+<name>Alibris</name>
+<link>https://www.goodreads.com/book_link/follow/5</link>
+</buy_link>
+<buy_link>
+<id>107</id>
+<name>Better World Books</name>
+<link>https://www.goodreads.com/book_link/follow/107</link>
+</buy_link>
+<buy_link>
+<id>7</id>
+<name>IndieBound</name>
+<link>https://www.goodreads.com/book_link/follow/7</link>
+</buy_link>
+
+  </buy_links>
+  <series_works>
+    
+  </series_works>
+  <similar_books>
+          <book>
+<id>843519</id>
+<title><![CDATA[Disney's Aladdin: The Making of an Animated Film]]></title>
+<title_without_series><![CDATA[Disney's Aladdin: The Making of an Animated Film]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/843519.Disney_s_Aladdin]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1410051887s/843519.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1410051887m/843519.jpg]]></image_url>
+<num_pages>120</num_pages>
+<work>
+<id>829048</id>
+</work>
+<isbn>1562828924</isbn>
+<isbn13>9781562828929</isbn13>
+<average_rating>4.38</average_rating>
+<ratings_count>235</ratings_count>
+<publication_year>1992</publication_year>
+<publication_month></publication_month>
+<publication_day></publication_day>
+<authors>
+<author>
+<id>42363</id>
+<name>John Culhane</name>
+<link><![CDATA[https://www.goodreads.com/author/show/42363.John_Culhane]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>1774851</id>
+<title><![CDATA[Encyclopedia of Walt Disney's Animated Characters from Mickey Mouse to Aladdin]]></title>
+<title_without_series><![CDATA[Encyclopedia of Walt Disney's Animated Characters from Mickey Mouse to Aladdin]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/1774851.Encyclopedia_of_Walt_Disney_s_Animated_Characters_from_Mickey_Mouse_to_Aladdin]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>384</num_pages>
+<work>
+<id>1773172</id>
+</work>
+<isbn>1562829041</isbn>
+<isbn13>9781562829049</isbn13>
+<average_rating>4.40</average_rating>
+<ratings_count>87</ratings_count>
+<publication_year>1993</publication_year>
+<publication_month>2</publication_month>
+<publication_day>12</publication_day>
+<authors>
+<author>
+<id>26169</id>
+<name>John Grant</name>
+<link><![CDATA[https://www.goodreads.com/author/show/26169.John_Grant]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>470911</id>
+<title>The Disney Villain</title>
+<title_without_series>The Disney Villain</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/470911.The_Disney_Villain]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1339619207s/470911.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1339619207m/470911.jpg]]></image_url>
+<num_pages>224</num_pages>
+<work>
+<id>459213</id>
+</work>
+<isbn>1562827928</isbn>
+<isbn13>9781562827922</isbn13>
+<average_rating>4.37</average_rating>
+<ratings_count>207</ratings_count>
+<publication_year>1993</publication_year>
+<publication_month>10</publication_month>
+<publication_day>7</publication_day>
+<authors>
+<author>
+<id>4752240</id>
+<name>Frank Thomas</name>
+<link><![CDATA[https://www.goodreads.com/author/show/4752240.Frank_Thomas]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>5523240</id>
+<title><![CDATA[Story (Walt Disney Animation Studios: The Archive Series)]]></title>
+<title_without_series>Story</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/5523240-story]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1360567048s/5523240.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1360567048m/5523240.jpg]]></image_url>
+<num_pages>224</num_pages>
+<work>
+<id>7591079</id>
+</work>
+<isbn>1423107233</isbn>
+<isbn13>9781423107231</isbn13>
+<average_rating>4.33</average_rating>
+<ratings_count>252</ratings_count>
+<publication_year>2008</publication_year>
+<publication_month>12</publication_month>
+<publication_day>9</publication_day>
+<authors>
+<author>
+<id>3510823</id>
+<name>Walt Disney Company</name>
+<link><![CDATA[https://www.goodreads.com/author/show/3510823.Walt_Disney_Company]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>465243</id>
+<title><![CDATA[The Art of Hercules: The Chaos of Creation]]></title>
+<title_without_series><![CDATA[The Art of Hercules: The Chaos of Creation]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/465243.The_Art_of_Hercules]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1311024250s/465243.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1311024250m/465243.jpg]]></image_url>
+<num_pages>192</num_pages>
+<work>
+<id>48130523</id>
+</work>
+<isbn>0786862637</isbn>
+<isbn13>9780786862634</isbn13>
+<average_rating>4.35</average_rating>
+<ratings_count>281</ratings_count>
+<publication_year>1997</publication_year>
+<publication_month>6</publication_month>
+<publication_day>27</publication_day>
+<authors>
+<author>
+<id>9431</id>
+<name>Stephen Rebello</name>
+<link><![CDATA[https://www.goodreads.com/author/show/9431.Stephen_Rebello]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>6710185</id>
+<title><![CDATA[Tale as Old as Time: The Art and Making of Beauty and the Beast]]></title>
+<title_without_series><![CDATA[Tale as Old as Time: The Art and Making of Beauty and the Beast]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/6710185-tale-as-old-as-time]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1360571169s/6710185.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1360571169m/6710185.jpg]]></image_url>
+<num_pages>176</num_pages>
+<work>
+<id>6906032</id>
+</work>
+<isbn>1423124812</isbn>
+<isbn13>9781423124818</isbn13>
+<average_rating>4.47</average_rating>
+<ratings_count>1083</ratings_count>
+<publication_year>2010</publication_year>
+<publication_month>8</publication_month>
+<publication_day>31</publication_day>
+<authors>
+<author>
+<id>265643</id>
+<name>Charles Solomon</name>
+<link><![CDATA[https://www.goodreads.com/author/show/265643.Charles_Solomon]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>1087088</id>
+<title>The Art of Monsters, Inc.</title>
+<title_without_series>The Art of Monsters, Inc.</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/1087088.The_Art_of_Monsters_Inc_]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>144</num_pages>
+<work>
+<id>1073863</id>
+</work>
+<isbn>0811833887</isbn>
+<isbn13>9780811833882</isbn13>
+<average_rating>4.36</average_rating>
+<ratings_count>454</ratings_count>
+<publication_year>2001</publication_year>
+<publication_month>10</publication_month>
+<publication_day>1</publication_day>
+<authors>
+<author>
+<id>44382</id>
+<name>John Lasseter</name>
+<link><![CDATA[https://www.goodreads.com/author/show/44382.John_Lasseter]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>147116</id>
+<title><![CDATA[Walt Disney's Nine Old Men and the Art of Animation]]></title>
+<title_without_series><![CDATA[Walt Disney's Nine Old Men and the Art of Animation]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/147116.Walt_Disney_s_Nine_Old_Men_and_the_Art_of_Animation]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>310</num_pages>
+<work>
+<id>141986</id>
+</work>
+<isbn>0786864966</isbn>
+<isbn13>9780786864966</isbn13>
+<average_rating>4.53</average_rating>
+<ratings_count>106</ratings_count>
+<publication_year>2001</publication_year>
+<publication_month>10</publication_month>
+<publication_day>22</publication_day>
+<authors>
+<author>
+<id>23790</id>
+<name>John Canemaker</name>
+<link><![CDATA[https://www.goodreads.com/author/show/23790.John_Canemaker]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>676640</id>
+<title><![CDATA[The Art of Walt Disney: From Mickey Mouse to the Magic Kingdoms]]></title>
+<title_without_series><![CDATA[The Art of Walt Disney: From Mickey Mouse to the Magic Kingdoms]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/676640.The_Art_of_Walt_Disney]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>504</num_pages>
+<work>
+<id>934788</id>
+</work>
+<isbn>0810949644</isbn>
+<isbn13>9780810949645</isbn13>
+<average_rating>4.23</average_rating>
+<ratings_count>1950</ratings_count>
+<publication_year>2004</publication_year>
+<publication_month>11</publication_month>
+<publication_day>1</publication_day>
+<authors>
+<author>
+<id>179334</id>
+<name>Christopher Finch</name>
+<link><![CDATA[https://www.goodreads.com/author/show/179334.Christopher_Finch]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>311267</id>
+<title>The Art of The Incredibles</title>
+<title_without_series>The Art of The Incredibles</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/311267.The_Art_of_The_Incredibles]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>160</num_pages>
+<work>
+<id>302196</id>
+</work>
+<isbn>0811844331</isbn>
+<isbn13>9780811844338</isbn13>
+<average_rating>4.27</average_rating>
+<ratings_count>1408</ratings_count>
+<publication_year>2004</publication_year>
+<publication_month>9</publication_month>
+<publication_day>30</publication_day>
+<authors>
+<author>
+<id>61939</id>
+<name>Mark Cotta Vaz</name>
+<link><![CDATA[https://www.goodreads.com/author/show/61939.Mark_Cotta_Vaz]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>431808</id>
+<title><![CDATA[Disney  A to Z (Third Edition): The Official Encyclopedia]]></title>
+<title_without_series><![CDATA[Disney  A to Z (Third Edition): The Official Encyclopedia]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/431808.Disney_A_to_Z_Third_Edition_]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>768</num_pages>
+<work>
+<id>420775</id>
+</work>
+<isbn>0786849193</isbn>
+<isbn13>9780786849192</isbn13>
+<average_rating>4.40</average_rating>
+<ratings_count>189</ratings_count>
+<publication_year>2006</publication_year>
+<publication_month>10</publication_month>
+<publication_day>1</publication_day>
+<authors>
+<author>
+<id>7464619</id>
+<name>Dave   Smith</name>
+<link><![CDATA[https://www.goodreads.com/author/show/7464619.Dave_Smith]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>380248</id>
+<title><![CDATA[Walt Disney Imagineering: A Behind the Dreams Look At Making the Magic Real]]></title>
+<title_without_series><![CDATA[Walt Disney Imagineering: A Behind the Dreams Look At Making the Magic Real]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/380248.Walt_Disney_Imagineering]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>200</num_pages>
+<work>
+<id>370050</id>
+</work>
+<isbn>0786883723</isbn>
+<isbn13>9780786883721</isbn13>
+<average_rating>4.21</average_rating>
+<ratings_count>1470</ratings_count>
+<publication_year>1998</publication_year>
+<publication_month>10</publication_month>
+<publication_day>7</publication_day>
+<authors>
+<author>
+<id>3988680</id>
+<name>The Imagineers</name>
+<link><![CDATA[https://www.goodreads.com/author/show/3988680.The_Imagineers]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>410363</id>
+<title><![CDATA[The Haunted Mansion: From the Magic Kingdom to the Movies]]></title>
+<title_without_series><![CDATA[The Haunted Mansion: From the Magic Kingdom to the Movies]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/410363.The_Haunted_Mansion]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1360573380s/410363.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1360573380m/410363.jpg]]></image_url>
+<num_pages>132</num_pages>
+<work>
+<id>399644</id>
+</work>
+<isbn>0786854197</isbn>
+<isbn13>9780786854196</isbn13>
+<average_rating>4.19</average_rating>
+<ratings_count>717</ratings_count>
+<publication_year>2003</publication_year>
+<publication_month>9</publication_month>
+<publication_day>15</publication_day>
+<authors>
+<author>
+<id>61401</id>
+<name>Jason Surrell</name>
+<link><![CDATA[https://www.goodreads.com/author/show/61401.Jason_Surrell]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>6136598</id>
+<title>Designing Disney</title>
+<title_without_series>Designing Disney</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/6136598-designing-disney]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1360567665s/6136598.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1360567665m/6136598.jpg]]></image_url>
+<num_pages>160</num_pages>
+<work>
+<id>6315244</id>
+</work>
+<isbn>1423119150</isbn>
+<isbn13>9781423119159</isbn13>
+<average_rating>4.15</average_rating>
+<ratings_count>935</ratings_count>
+<publication_year>2009</publication_year>
+<publication_month>1</publication_month>
+<publication_day>6</publication_day>
+<authors>
+<author>
+<id>206667</id>
+<name>John Hench</name>
+<link><![CDATA[https://www.goodreads.com/author/show/206667.John_Hench]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>6754946</id>
+<title><![CDATA[The Art of the Disney Princess]]></title>
+<title_without_series><![CDATA[The Art of the Disney Princess]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/6754946-the-art-of-the-disney-princess]]></link>
+<small_image_url><![CDATA[https://images.gr-assets.com/books/1360568647s/6754946.jpg]]></small_image_url>
+<image_url><![CDATA[https://images.gr-assets.com/books/1360568647m/6754946.jpg]]></image_url>
+<num_pages>176</num_pages>
+<work>
+<id>6951437</id>
+</work>
+<isbn>1423123719</isbn>
+<isbn13>9781423123712</isbn13>
+<average_rating>4.13</average_rating>
+<ratings_count>906</ratings_count>
+<publication_year>2009</publication_year>
+<publication_month>10</publication_month>
+<publication_day>6</publication_day>
+<authors>
+<author>
+<id>211671</id>
+<name>Glen Keane</name>
+<link><![CDATA[https://www.goodreads.com/author/show/211671.Glen_Keane]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>6135048</id>
+<title>The Art of Up</title>
+<title_without_series>The Art of Up</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/6135048-the-art-of-up]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>160</num_pages>
+<work>
+<id>6313616</id>
+</work>
+<isbn>0811866025</isbn>
+<isbn13>9780811866026</isbn13>
+<average_rating>4.41</average_rating>
+<ratings_count>1353</ratings_count>
+<publication_year>2009</publication_year>
+<publication_month>5</publication_month>
+<publication_day>27</publication_day>
+<authors>
+<author>
+<id>1326262</id>
+<name>Tim Hauser</name>
+<link><![CDATA[https://www.goodreads.com/author/show/1326262.Tim_Hauser]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>849476</id>
+<title>The Art of Cars</title>
+<title_without_series>The Art of Cars</title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/849476.The_Art_of_Cars]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>160</num_pages>
+<work>
+<id>834988</id>
+</work>
+<isbn>0811849007</isbn>
+<isbn13>9780811849005</isbn13>
+<average_rating>4.37</average_rating>
+<ratings_count>246</ratings_count>
+<publication_year>2006</publication_year>
+<publication_month>5</publication_month>
+<publication_day>4</publication_day>
+<authors>
+<author>
+<id>48984</id>
+<name>Michael Wallis</name>
+<link><![CDATA[https://www.goodreads.com/author/show/48984.Michael_Wallis]]></link>
+</author>
+</authors>
+</book>
+
+          <book>
+<id>452721</id>
+<title><![CDATA[The Art Of The Little Mermaid: A Disney Miniature (Disney Miniature)]]></title>
+<title_without_series><![CDATA[The Art Of The Little Mermaid: A Disney Miniature]]></title_without_series>
+<link><![CDATA[https://www.goodreads.com/book/show/452721.The_Art_Of_The_Little_Mermaid]]></link>
+<small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+<image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+<num_pages>192</num_pages>
+<work>
+<id>441332</id>
+</work>
+<isbn>0786863358</isbn>
+<isbn13>9780786863358</isbn13>
+<average_rating>4.24</average_rating>
+<ratings_count>55</ratings_count>
+<publication_year>1997</publication_year>
+<publication_month>11</publication_month>
+<publication_day>1</publication_day>
+<authors>
+<author>
+<id>181623</id>
+<name>Jeff Kurtti</name>
+<link><![CDATA[https://www.goodreads.com/author/show/181623.Jeff_Kurtti]]></link>
+</author>
+</authors>
+</book>
+
+  </similar_books>
+</book>
+
+</GoodreadsResponse>
