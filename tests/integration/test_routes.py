@@ -90,7 +90,7 @@ class TestRoutes(object):
         monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs)
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
         monkeypatch.setattr("sorter.__main__.page_loop", lambda *args: True)
-        monkeypatch.setattr("sorter.__main__.verify_data", lambda *args: None)
+        monkeypatch.setattr("sorter.__main__.clean_data", lambda *args: None)
 
         resp = test_app.post("/import", [('data_file', 'fake.faker')])
 
@@ -103,7 +103,7 @@ class TestRoutes(object):
         monkeypatch.setattr("sorter.__main__.parse_qs", fake_parse_qs_newdata)
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
         monkeypatch.setattr("sorter.__main__.page_loop", lambda *args: True)
-        monkeypatch.setattr("sorter.__main__.verify_data", lambda *args: None)
+        monkeypatch.setattr("sorter.__main__.clean_data", lambda *args: None)
 
         resp = test_app.post("/import", [('data_file', 'fake.faker')])
 

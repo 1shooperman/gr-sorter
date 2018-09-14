@@ -1,5 +1,5 @@
 # pylint: skip-file
-from sorter.lib.data_handler import store_data, get_books, dump_data
+from sorter.lib.data_handler import *
 import sqlite3
 
 class fake_os(object):
@@ -11,7 +11,7 @@ class fake_os(object):
 
 class fake_db(object):
     def __init__(self, foo):
-        pass
+        self.conn = foo
 
     def create_connection(self):
         pass
@@ -24,6 +24,51 @@ class fake_db(object):
 
     def query(self):
         pass
+
+class wrapped_db(object):
+    def __init__(self, database):
+        self.database = database
+
+    def create_connection(self):
+        pass
+
+    def insertupdate(self, query, vals):
+        self.database.insertupdate(query, vals)
+    
+    def close_connection(self):
+        pass
+
+    def query(self):
+        pass 
+
+class fake_data_handler(object):
+    def __init__(self):
+        self.called_get_books_with_missing_data = False
+        self.called_update_book = False
+        self.called_get_by_isbn = False
+        self.called_parse_isbn13_response = False
+        self.called_get_by_id = False
+        self.called_parse_id_response = False
+
+    def get_books_with_missing_data(self, *args):
+        self.called_get_books_with_missing_data = True
+        return [[1],[2],[3],[4],[5]]
+
+    def update_book(self, *args):
+        self.called_update_book = True
+        return None
+
+    def get_by_isbn(self, *args):
+        self.called_get_by_isbn = True
+
+    def parse_isbn13_response(self, *args):
+        self.called_parse_isbn13_response = True
+
+    def get_by_id(self, *args):
+        self.called_get_by_id = True
+
+    def parse_id_response(self, *args):
+        self.called_parse_id_response = True
 
 class TestDataHandler(object):
     def test_store_data(self, monkeypatch):
@@ -87,3 +132,159 @@ class TestDataHandler(object):
         dump_data("fake.file")
         
         assert faker.called_remove == "fake.file"
+
+    def test_get_books_with_missing_data(self, monkeypatch):
+        database = sqlite3.connect(':memory:')
+
+        qry = '''CREATE TABLE rankings
+            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
+            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
+            author, link)'''
+
+        database.execute(qry)
+
+        monkeypatch.setattr("sorter.lib.data_handler.DB", fake_db)
+        monkeypatch.setattr("sorter.lib.data_handler.DB.create_connection", lambda foo: database)
+        monkeypatch.setattr("sorter.lib.data_handler.DB.query", lambda self, foo: database.execute(foo).fetchall())
+
+        fake_books = [(1,2,3,4,5,6,7,8,9,10), 
+                      (11,12,13,14,15,None,17,18,19,20),
+                      (21,22,23,24,25,26,27,28,29,30),
+                      (31,32,33,34,35,None,37,38,39,40)]
+        
+        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+                image_url, publication_year, ratings_count, average_rating, 
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+
+        for fake_book in fake_books:
+            database.execute(query, fake_book)
+
+        fake_data_returned = get_books_with_missing_data("foo")
+
+        database.close()
+        database = None
+
+        assert fake_data_returned == [fake_books[1], fake_books[3]]
+
+    def test_clean_data(self, monkeypatch):
+        fdh = fake_data_handler()
+
+        monkeypatch.setattr('sorter.lib.data_handler.os.path.abspath', lambda *args: "Foo")
+        monkeypatch.setattr('sorter.lib.data_handler.os.path.isfile', lambda *args: True)
+        monkeypatch.setattr('sorter.lib.data_handler.update_book', fdh.update_book)
+        monkeypatch.setattr('sorter.lib.data_handler.get_books_with_missing_data', fdh.get_books_with_missing_data)
+
+        clean_data('Bar')
+
+        assert fdh.called_get_books_with_missing_data is True
+        assert fdh.called_update_book is True
+
+    def test_update_book_given_isbn(self, monkeypatch):
+        fdh = fake_data_handler()
+
+        monkeypatch.setattr('sorter.lib.data_handler.get_by_isbn', fdh.get_by_isbn)
+        monkeypatch.setattr('sorter.lib.data_handler.parse_isbn13_response', lambda *args: (11,12,13,14,15,4242,17,18,19,20))
+        monkeypatch.setattr('sorter.lib.data_handler.get_by_id', fdh.get_by_id)
+        monkeypatch.setattr('sorter.lib.data_handler.parse_id_response', fdh.parse_id_response)
+
+        from sorter.lib.db import DB
+        database = DB(':memory:')
+        database.create_connection()
+
+        monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
+
+        qry = '''CREATE TABLE rankings
+            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
+            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
+            author, link)'''
+
+        database.execute(qry)
+
+        fake_books = [( 1, 2, 3, 4, 5, 6, 7, 8, 9,10), 
+                      (11,12,13,14,15,16,17,18,19,20),
+                      (21,22,23,24,25,26,27,28,29,30),
+                      (31,32,33,34,35,36,37,38,39,40)]
+        
+        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+                image_url, publication_year, ratings_count, average_rating, 
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+
+        for fake_book in fake_books:
+            database.insertupdate(query, fake_book)
+
+        update_book((11,12,13,14,15,16,17,18,19,20), 'foo')
+
+        test_books = database.query('select * from rankings where id = 11')
+
+        database.close_connection()
+        database = None
+
+        assert test_books[0][0] == 11
+        assert test_books[0][1] == 12
+        assert test_books[0][2] == 13
+        assert test_books[0][3] == 14
+        assert test_books[0][4] == 15
+        assert test_books[0][5] == 4242
+        assert test_books[0][6] == 17
+        assert test_books[0][7] == 18
+        assert test_books[0][8] == 19
+        assert test_books[0][9] == 20
+
+        assert fdh.called_get_by_isbn is True
+        assert fdh.called_get_by_id is False
+        assert fdh.called_parse_id_response is False
+
+    def test_update_book_given_id(self, monkeypatch):
+        fdh = fake_data_handler()
+
+        monkeypatch.setattr('sorter.lib.data_handler.get_by_isbn', fdh.get_by_isbn)
+        monkeypatch.setattr('sorter.lib.data_handler.parse_isbn13_response', fdh.parse_isbn13_response)
+        monkeypatch.setattr('sorter.lib.data_handler.get_by_id', fdh.get_by_id)
+        monkeypatch.setattr('sorter.lib.data_handler.parse_id_response', lambda *args: (1,999,9999,4,5,1942,7,8,9,10))
+
+        from sorter.lib.db import DB
+        database = DB(':memory:')
+        database.create_connection()
+
+        monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
+
+        qry = '''CREATE TABLE rankings
+            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
+            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
+            author, link)'''
+
+        database.execute(qry)
+
+        fake_books = [( 1, 2, 3, 4, 5, 6, 7, 8, 9,10), 
+                      (11,12,13,14,15,16,17,18,19,20),
+                      (21,22,23,24,25,26,27,28,29,30),
+                      (31,32,33,34,35,36,37,38,39,40)]
+        
+        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+                image_url, publication_year, ratings_count, average_rating, 
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+
+        for fake_book in fake_books:
+            database.insertupdate(query, fake_book)
+
+        update_book((1,None,None,4,5,6,7,8,9,10), 'foo')
+
+        test_books = database.query('select * from rankings where id = 1')
+
+        database.close_connection()
+        database = None
+
+        assert test_books[0][0] == 1
+        assert test_books[0][1] == 999
+        assert test_books[0][2] == 9999
+        assert test_books[0][3] == 4
+        assert test_books[0][4] == 5
+        assert test_books[0][5] == 1942
+        assert test_books[0][6] == 7
+        assert test_books[0][7] == 8
+        assert test_books[0][8] == 9
+        assert test_books[0][9] == 10
+
+        assert fdh.called_get_by_isbn is False
+        assert fdh.called_parse_isbn13_response is False
+        assert fdh.called_get_by_id is True

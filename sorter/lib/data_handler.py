@@ -55,7 +55,7 @@ def dump_data(db_file):
     if os.path.isfile(db_file):
         os.remove(db_file)
 
-def verify_data(db_name):
+def clean_data(db_name):
     '''
     Plug in missing data:
         book[0] = ID
@@ -73,7 +73,6 @@ def verify_data(db_name):
 
     if os.path.isfile(db_file):
         books = get_books_with_missing_data(db_file)
-        print books
         map(update_book, books, ([db_file] * len(books)))
 
 def update_book(book, db_file):
@@ -94,7 +93,6 @@ def update_book(book, db_file):
         vals = [new_book[5], new_book[1], new_book[2], book[0]]
 
     if qry is not None:
-        print qry, vals
         database = DB(db_file)
 
         database.create_connection()
