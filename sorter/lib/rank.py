@@ -36,7 +36,7 @@ def rank(books):
             if books[j+1][score_key] > books[j][score_key]:
                 books[j], books[j+1] = books[j+1], books[j]
 
-    # careful: we overwrote books here!
+    # careful: we mutated books here!
     return books
 
 def score_book(book, total_ratings):
@@ -73,7 +73,7 @@ def score_book(book, total_ratings):
         book_year = base_year
     year_weight = (base_year - book_year) * 0.001
 
-    preference_adjustment = 0 #not yet implemented
+    preference_adjustment = 0 # TODO not yet implemented
     weight = rating_weight + year_weight + preference_adjustment
 
     book_avg_rating = book[7]

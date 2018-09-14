@@ -9,6 +9,6 @@ def get_by_id(book_id):
 
 def get_by_isbn(isbn):
     ''' https://www.goodreads.com/search?q=8811667739&format=xml&key=[key] '''
-    xml_string = read_url('http://localhost:8081/simple/book_by_isbn/xml?isbn=%s' % isbn)
+    xml_string = read_url('http://localhost:8081/simple/book_by_isbn.xml?isbn=%s' % isbn)
 
     return xml_string
