@@ -3,7 +3,7 @@ init:
 
 test:
 	-pylint sorter
-	-coverage run -m pytest
+	-coverage run -m pytest -vv
 	coverage report -m
 	
 start:

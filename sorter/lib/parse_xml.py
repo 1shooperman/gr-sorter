@@ -12,13 +12,13 @@ def parse(xml_string):
 
     return books
 
-def parse_isbn_response(xml_string):
+def parse_isbn13_response(xml_string):
     ''' get book data from the isbn search response '''
     if xml_string is None:
         raise TypeError('expected string, got %s' % type(xml_string))
 
     root = ElementTree.fromstring(xml_string)
-    book = get_book_data(root.find('search/results/work'))
+    book = get_book_data_from_isbn_response(root.find('search/results/work'))
 
     return book
 
@@ -28,7 +28,7 @@ def parse_id_response(xml_string):
         raise TypeError('expected string, got %s' % type(xml_string))
 
     root = ElementTree.fromstring(xml_string)
-    book = get_book_data(root.find('book'))
+    book = get_book_data_from_id_response(root.find('book'))
 
     return book
 
@@ -50,6 +50,55 @@ def get_book_data(generator):
     )
 
     return book
+
+def get_book_data_from_isbn_response(element): # pylint: disable=invalid-name
+    ''' Given a goodreads search response, parse book data '''
+    book_id = int(element.find('id').text)
+    title = element.find('best_book/title').text
+    image_url = element.find('best_book/image_url').text
+    year = element.find('original_publication_year').text
+    ratings_count = element.find('ratings_count').text
+    average_rating = element.find('average_rating').text
+    author = element.find('best_book/author/name').text
+
+    return (
+        book_id,
+        None,
+        None,
+        title,
+        image_url,
+        year,
+        ratings_count,
+        average_rating,
+        author,
+        None
+    )
+
+def get_book_data_from_id_response(element):
+    ''' Given a goodreads search response, parse book data '''
+    book_id = int(element.find('id').text)
+    title = element.find('title').text
+    isbn = element.find('isbn').text
+    isbn13 = element.find('isbn13').text
+    image_url = element.find('image_url').text
+    year = element.find('publication_year').text
+    ratings_count = element.find('work/ratings_count').text
+    average_rating = element.find('average_rating').text
+    author = element.find('authors/author/name').text
+    link = element.find('link').text
+
+    return (
+        book_id,
+        isbn,
+        isbn13,
+        title,
+        image_url,
+        year,
+        ratings_count,
+        average_rating,
+        author,
+        link
+    )
 
 def get_total_pages(xml_string):
     '''

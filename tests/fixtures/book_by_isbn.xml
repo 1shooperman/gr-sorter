@@ -23,13 +23,13 @@
   <average_rating>4.13</average_rating>
   <best_book type="Book">
     <id type="integer">9701992</id>
-    <title>Scritti corsari</title>
+    <title>My Book Title</title>
     <author>
       <id type="integer">37893</id>
-      <name>Pier Paolo Pasolini</name>
+      <name>Fake Author</name>
     </author>
-    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
-    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+    <image_url>http://some.fake.gltd/fake.png</image_url>
+    <small_image_url>http://some.fake.gltd/fake_small.png</small_image_url>
   </best_book>
 </work>
 
