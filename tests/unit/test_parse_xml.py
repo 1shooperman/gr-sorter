@@ -1,5 +1,6 @@
 # pylint: skip-file
-from sorter.lib.parse_xml import parse, get_book_data, get_total_pages
+from sorter.lib.parse_xml import parse, get_book_data, get_total_pages, parse_id_response, parse_isbn13_response
+from tests.utils.get_element import get_file_as_string
 import pytest
 import os
 
@@ -14,7 +15,7 @@ class foo_object(object):
 class fake_generator2(object):
     def find(self, foo):
         if foo == 'book/published':
-            return foo_object(None)
+            return None
         elif foo == 'book/publication_year':
             return foo_object(13)
         else:
@@ -26,6 +27,8 @@ class TestParseXml(object):
         with open(xml_File, 'r') as myfile:
             data = myfile.read()
 
+        myfile.close()
+        
         foo = parse(data)
 
         assert foo == [
@@ -77,3 +80,27 @@ class TestParseXml(object):
         with pytest.raises(ZeroDivisionError):
             xml_string = '<foo><reviews start="0" end="0" total="0"></reviews></foo>'
             get_total_pages(xml_string)
+
+    def test_parse_isbn13_response(self):
+        xml_string = get_file_as_string('tests/fixtures/book_by_isbn.xml')
+        foo = parse_isbn13_response(xml_string)
+
+        assert foo == (1417331, None, None, 'My Book Title', 
+                        'http://some.fake.gltd/fake.png', '1975', '457', 
+                        '4.13', 'Fake Author', None)
+
+    def test_parse_isbn13_response_excepts(self):
+        with pytest.raises(TypeError):
+            parse_isbn13_response(None)
+
+    def test_parse_id_response(id):
+        xml_string = get_file_as_string('tests/fixtures/book_by_id.xml')
+        foo = parse_id_response(xml_string)
+
+        assert foo == (453444, '1562828991', '9781562828998', "Disney's Art of Animation #1", 
+                        'https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png', '1992',
+                        '622', '4.29', 'Bob Thomas', 'https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1')
+
+    def test_parse_id_response_excepts(self):
+        with pytest.raises(TypeError):
+            parse_id_response(None)

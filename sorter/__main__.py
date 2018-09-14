@@ -8,7 +8,7 @@ import web
 
 from sorter.lib.request_data import read_url
 from sorter.lib.parse_xml import get_total_pages
-from sorter.lib.data_handler import get_books
+from sorter.lib.data_handler import get_books, clean_data
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
@@ -78,6 +78,8 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
                         xml_data = read_url(data_file + page_string)
 
                     page_loop(xml_data, DB_NAME, False)
+
+        clean_data(DB_NAME)
 
         msg = "200 OK"
         LOGGER.info(msg)
