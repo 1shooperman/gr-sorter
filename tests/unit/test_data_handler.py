@@ -2,6 +2,10 @@
 from sorter.lib.data_handler import *
 import sqlite3
 
+from sorter.lib.defaults import Defaults
+
+defaults = Defaults('FOO_KEY', 1, ['BAR-SHELF'])
+
 class fake_os(object):
     def __init__(self):
         self.called_remove = None
@@ -174,7 +178,7 @@ class TestDataHandler(object):
         monkeypatch.setattr('sorter.lib.data_handler.update_book', fdh.update_book)
         monkeypatch.setattr('sorter.lib.data_handler.get_books_with_missing_data', fdh.get_books_with_missing_data)
 
-        clean_data('Bar')
+        clean_data('Bar', defaults)
 
         assert fdh.called_get_books_with_missing_data is True
         assert fdh.called_update_book is True
@@ -212,7 +216,7 @@ class TestDataHandler(object):
         for fake_book in fake_books:
             database.insertupdate(query, fake_book)
 
-        update_book((11,12,13,14,15,16,17,18,19,20), 'foo')
+        update_book((11,12,13,14,15,16,17,18,19,20), 'foo', defaults)
 
         test_books = database.query('select * from rankings where id = 11')
 
@@ -267,7 +271,7 @@ class TestDataHandler(object):
         for fake_book in fake_books:
             database.insertupdate(query, fake_book)
 
-        update_book((1,None,None,4,5,6,7,8,9,10), 'foo')
+        update_book((1,None,None,4,5,6,7,8,9,10), 'foo', defaults)
 
         test_books = database.query('select * from rankings where id = 1')
 

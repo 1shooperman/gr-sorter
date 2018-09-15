@@ -55,7 +55,7 @@ def dump_data(db_file):
     if os.path.isfile(db_file):
         os.remove(db_file)
 
-def clean_data(db_name):
+def clean_data(db_name, defaults):
     '''
     Plug in missing data:
         book[0] = ID
@@ -73,21 +73,21 @@ def clean_data(db_name):
 
     if os.path.isfile(db_file):
         books = get_books_with_missing_data(db_file)
-        map(update_book, books, ([db_file] * len(books)))
+        map(update_book, books, ([db_file] * len(books)), ([defaults] * len(books)))
 
-def update_book(book, db_file):
+def update_book(book, db_file, defaults):
     '''
     Add the missing book data
     '''
     qry = None
     if book[2] is not None:
-        xml_response = get_by_isbn(book[2])
+        xml_response = get_by_isbn(book[2], defaults)
         new_book = parse_isbn13_response(xml_response)
         qry = 'UPDATE rankings set publication_year = ? where isbn13 = ?'
         vals = [new_book[5], book[2]]
 
     elif book[0] is not None:
-        xml_response = get_by_id(book[0])
+        xml_response = get_by_id(book[0], defaults)
         new_book = parse_id_response(xml_response)
         qry = 'UPDATE rankings set publication_year = ?, isbn = ?, isbn13 = ? where id = ?'
         vals = [new_book[5], new_book[1], new_book[2], book[0]]

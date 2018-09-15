@@ -65,9 +65,8 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
         except KeyError:
             LOGGER.warn(KeyError)
 
-        defaults = Defaults(api_key, per_page, ['to-read'])
+        defaults = Defaults('https://www.goodreads.com', api_key, per_page, ['to-read'])
 
-        #_, data_file = path.split('=')
         data_file = defaults.get_shelf_url(user_id)
 
         xml_data = read_url(data_file)
@@ -85,7 +84,7 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 
                     page_loop(xml_data, DB_NAME, False)
 
-        clean_data(DB_NAME)
+        clean_data(DB_NAME, defaults)
 
         msg = "200 OK"
         LOGGER.info(msg)

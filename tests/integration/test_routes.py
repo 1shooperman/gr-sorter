@@ -5,13 +5,17 @@ from sorter.__main__ import APP as app
 
 def fake_parse_qs(my_file):
     return {
-        'data_file': ['http://some.fake.gtld/sample.xml']
+        'per_page': [3],
+        'api_key': ['FOO_KEY'],
+        'user_id': ['BAR_USER']
     }
 
 def fake_parse_qs_newdata(my_file):
     return {
-        'data_file': ['http://some.fake.gtld/sample.xml'],
-        'new': [1]
+        'new': [1],
+        'per_page': [4],
+        'api_key': ['BAR_KEY'],
+        'user_id': ['FOO_USER']
     }
 
 def fake_read_url(url_string):
@@ -54,6 +58,13 @@ def bootstrap_data(foo):
     database = None
 
     return books
+
+class FakeDefaults(object):
+    def __init__(*args):
+        pass
+
+    def get_shelf_url(self, *args):
+        return "faker.gtld"
 
 class TestRoutes(object):
 
@@ -104,6 +115,7 @@ class TestRoutes(object):
         monkeypatch.setattr("sorter.__main__.read_url", fake_read_url)
         monkeypatch.setattr("sorter.__main__.page_loop", lambda *args: True)
         monkeypatch.setattr("sorter.__main__.clean_data", lambda *args: None)
+        monkeypatch.setattr("sorter.__main__.Defaults", FakeDefaults)
 
         resp = test_app.post("/import", [('data_file', 'fake.faker')])
 
@@ -118,3 +130,10 @@ class TestRoutes(object):
 
         assert resp.status is 200
         assert "assets/js/foo.js" in resp
+
+    def test_admin(self):
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+        resp = test_app.get("/admin")
+
+        assert resp.status is 200
