@@ -1,0 +1,27 @@
+{
+  "name": "readingsorter",
+  "version": "1.0.0",
+  "description": "sort an existing book list",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "lint": "eslint ./templates/assets/js/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1shooperman/gr-sorter.git"
+  },
+  "author": "Brandon Shoop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1shooperman/gr-sorter/issues"
+  },
+  "homepage": "https://github.com/1shooperman/gr-sorter#readme",
+  "devDependencies": {
+    "eslint": "^5.6.0"
+  }
+}

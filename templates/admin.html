@@ -1,0 +1,55 @@
+<script async src="/assets/js/admin.js"></script>
+
+<h1>Admin Settings:</h1>
+
+<div style="border:1px solid black;">
+  <form id="settings_form" method="POST" onsubmit="return sorter.updateSettings(this);">
+    API Key: <input type="text" name="api_key" placeholder="enter API KEY" value="" /><br />
+    User Id: <input type="text" name="user_id" placeholder="enter USER ID" value="" /><br />
+    Results per request: <input type="text" name="per_page" placeholder="enter per page value" value="40" disabled="disabled" />
+    <fieldset>
+      <legend>Included Shelves:</legend>
+      <input type="checkbox" disabled="disabled" name="to-read" checked="checked" />To-Read
+    </fieldset>
+    <button id="update">Update Settings</button>
+  </form>
+</div>
+
+<div> 
+  <form method="POST" onsubmit="return false">
+    <button id="import">Import Books</button>
+  </form>
+</div>
+
+<script type="text/javascript">
+(function(){
+  let counter = 0;
+  let interval = setInterval(() => {
+    counter = counter+1;
+    if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
+      clear();
+      try {
+        let myForm = document.getElementById("settings_form") || {};
+        sorter.init(myForm)
+      } catch(err){
+        console.log(err);
+      }
+    }
+  }, 500);
+
+  let clear = () => {
+    clearInterval(interval);
+  };
+
+  document.getElementById('import').addEventListener("click", function(ev) {
+    sorter.importBooks(document.getElementById('settings_form'))
+      .then(_ => {
+        return false;
+      }).catch(error => {
+        console.log(error)
+        return false;
+      });
+  });
+  
+})();
+</script>

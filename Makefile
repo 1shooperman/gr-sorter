@@ -1,7 +1,9 @@
 init: 
 	pip install -r requirements.txt
+	npm install
 
 test:
+	-npm run lint
 	-pylint sorter
 	-coverage run -m pytest -vv
 	coverage report -m

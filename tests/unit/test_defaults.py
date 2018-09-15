@@ -2,7 +2,7 @@
 import tempfile
 import os
 from urlparse import parse_qs, urlsplit
-from sorter.lib.defaults import get_book_url, get_key, get_search_url, is_test
+from sorter.lib.defaults import get_book_url, get_key, get_search_url, is_test, get_shelf_url
 
 
 class TestDefaults(object):
@@ -39,3 +39,14 @@ class TestDefaults(object):
         bar = is_test()
 
         assert bar is False
+
+    def test_get_shelf_url(self):
+        api_url = get_shelf_url(98765, 'foo-shelf', 9, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
+        _, _, path, query, _ = urlsplit(api_url)
+        params = parse_qs(query)
+
+        assert params['user_id'][0] == '98765'
+        assert params['key'][0] == 'None'
+        assert params['shelf'][0] == 'foo-shelf'
+        assert params['per_page'][0] == '9'
+

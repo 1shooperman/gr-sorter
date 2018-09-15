@@ -11,6 +11,8 @@ environment/
 goodreads_api_key
 
 .pytest_cache/
+node_modules/
+DELETEME
 
 # embedded data store
 data/*.db

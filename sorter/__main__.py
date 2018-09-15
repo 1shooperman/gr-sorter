@@ -13,14 +13,15 @@ from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
 from sorter.lib.page_utils import page_loop
-from sorter.lib.defaults import is_test
+from sorter.lib.defaults import Defaults
 
 LOGGER = sorter_logger(__name__)
 
 URLS = (
     '/', 'Index',
     '/import', 'Import',
-    '/(assets/.+)', 'Assets'
+    '/(assets/.+)', 'Assets',
+    '/admin', 'Admin'
 )
 
 APP = web.application(URLS, globals())
@@ -29,7 +30,7 @@ RENDER = web.template.render('templates/', base='layout')
 RENDERPLAIN = web.template.render('templates/')
 
 DB_NAME = ""
-if not is_test():
+if not Defaults.is_test():
     DB_NAME = 'data/sorter.db'              # pragma: no cover
 
 class Index(object):       # pylint: disable=too-few-public-methods,missing-docstring
@@ -48,16 +49,26 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
 class Import(object):   # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def POST():         # pylint: disable=invalid-name,missing-docstring
-        _, _, path, query, _ = urlsplit(web.data())
+        _, _, _, query, _ = urlsplit(web.data())
         args = parse_qs(query)
-        _, data_file = path.split('=')
 
         new_data = False
+        per_page = None
+        api_key = None
+        user_id = None
 
         try:
             new_data = int(args['new'][0]) == 1
+            per_page = int(args['per_page'][0])
+            api_key = args['api_key'][0]
+            user_id = args['user_id'][0]
         except KeyError:
-            pass # swallow the error
+            LOGGER.warn(KeyError)
+
+        defaults = Defaults(api_key, per_page, ['to-read'])
+
+        #_, data_file = path.split('=')
+        data_file = defaults.get_shelf_url(user_id)
 
         xml_data = read_url(data_file)
 
@@ -88,8 +99,13 @@ class Assets(object):       # pylint: disable=too-few-public-methods,missing-doc
         header_type = asset_data[1]
 
         web.header('Content-Type', header_type, unique=True)
-        return RENDERPLAIN.status(msg=data)
+        return data
+
+class Admin(object):        # pylint: disable=too-few-public-methods,missing-docstring
+    @staticmethod
+    def GET():              # pylint: disable=invalid-name,missing-docstring
+        return RENDER.admin()
 
 
-if (not is_test()) and __name__ == '__main__': # pragma: no cover
+if (not Defaults.is_test()) and __name__ == '__main__': # pragma: no cover
     APP.run()                                  # pragma: no cover
