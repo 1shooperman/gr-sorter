@@ -78,7 +78,7 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
                 if page_num == 0 and document_page == 1:
                     page_loop(xml_data, DB_NAME, new_data)
                 else:
-                    page_string = "?page=%s" % (page_num + 1)
+                    page_string = "&page=%s" % (page_num + 1) # FIXME we shouldn't assume there's a query string
                     if document_page != (page_num + 1):
                         xml_data = read_url(data_file + page_string)
 

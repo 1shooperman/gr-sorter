@@ -32,7 +32,7 @@ class TestParseXml(object):
         foo = parse(data)
 
         assert foo == [
-            (2503817653, 
+            (453444, 
             '1562828991', 
             '9781562828998', 
             "Disney's Art of Animation #1", 

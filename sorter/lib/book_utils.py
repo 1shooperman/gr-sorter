@@ -5,7 +5,7 @@ def get_by_id(book_id, defaults):
     '''
     Get book given a goodreads book id
     '''
-    url = defaults.get_book_url(book_id, 'http://localhost:8081/simple/book_by_id.xml?id=%s&key=%s')
+    url = defaults.get_book_url(book_id)
     xml_string = read_url(url)
 
     return xml_string
@@ -15,7 +15,7 @@ def get_by_isbn(isbn, defaults):
     Get book info given a search term
     note: expects isbn or isbn13, support for other terms is limited
     '''
-    url = defaults.get_search_url(isbn, 'http://localhost:8081/simple/book_by_isbn.xml?isbn=%s&key=%s')
+    url = defaults.get_search_url(isbn)
     xml_string = read_url(url)
 
     return xml_string

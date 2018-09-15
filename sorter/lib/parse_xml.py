@@ -133,7 +133,7 @@ class GrDataUtils(object):
 
     def get_id(self):
         ''' get the book id from the goodreads data set '''
-        return int(self.generator.find('id').text)
+        return int(self.generator.find('book/id').text)
 
     def get_isbn(self):
         ''' get the book isbn from the goodreads data set '''
