@@ -13,12 +13,7 @@ from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
 from sorter.lib.page_utils import page_loop
-
-def is_test(): # pylint: disable=missing-docstring
-    if 'WEBPY_ENV' in os.environ:
-        return os.environ['WEBPY_ENV'] == 'test'
-
-    return False # pragma: no cover
+from sorter.lib.defaults import is_test
 
 LOGGER = sorter_logger(__name__)
 
