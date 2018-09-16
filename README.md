@@ -5,6 +5,7 @@ to add custom weights to the sorting.  This started off as an excel sheet and so
 also happens to be a data analyst).
 
 ## References / Tech
+1. Learn Python the Hard Way - https://learnpythonthehardway.org/
 1. Directory structure - https://docs.python-guide.org/writing/structure/
 1. Pip requirements file - https://pip.pypa.io/en/stable/user_guide/#requirements-files
 1. Pylint - https://www.pylint.org/#install
