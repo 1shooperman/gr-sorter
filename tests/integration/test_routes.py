@@ -138,3 +138,15 @@ class TestRoutes(object):
         resp = test_app.get("/admin")
 
         assert resp.status is 200
+
+    def test_clean(self, monkeypatch):
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+
+        monkeypatch.setattr("sorter.__main__.Defaults", FakeDefaults)
+        monkeypatch.setattr("sorter.__main__.clean_data", lambda *args: None)
+
+        resp = test_app.get("/clean")
+
+        assert resp.status is 200
+        assert "200 OK" in resp
