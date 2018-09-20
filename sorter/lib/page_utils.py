@@ -39,6 +39,8 @@ def page_vars(post_data):
         per_page = int(args['per_page'][0])
         api_key = args['api_key'][0]
         user_id = args['user_id'][0]
+    except ValueError:
+        LOGGER.warn(ValueError)
     except KeyError:
         LOGGER.warn(KeyError)
 

@@ -63,6 +63,40 @@ class TestDefaults(object):
         assert params['shelf'][0] == 'foo-shelf'
         assert params['per_page'][0] == '9'
 
+    def test_get_shelf_url_noshelves(self):
+        defaults = Defaults('http://FAKE.GLTD', None, None, ['bar-shelf'])
+        api_url = defaults.get_shelf_url(98765, None, 9, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
+        _, _, path, query, _ = urlsplit(api_url)
+        params = parse_qs(query)
+
+        assert params['user_id'][0] == '98765'
+        assert params['key'][0] == 'None'
+        assert params['shelf'][0] == 'bar-shelf'
+        assert params['per_page'][0] == '9'
+
+    def test_get_shelf_url_noperpage(self):
+        defaults = Defaults('http://FAKE.GLTD', None, 42)
+        api_url = defaults.get_shelf_url(98765, ['foo-shelf'], None, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
+        _, _, path, query, _ = urlsplit(api_url)
+        params = parse_qs(query)
+
+        assert params['user_id'][0] == '98765'
+        assert params['key'][0] == 'None'
+        assert params['shelf'][0] == 'foo-shelf'
+        assert params['per_page'][0] == '42'
+
+    def test_get_shelf_url_nouri(self):
+        defaults = Defaults('http://FAKE.GLTD/')
+        api_url = defaults.get_shelf_url(98765, ['foo-shelf'], 9, None)
+
+        _, _, path, query, _ = urlsplit(api_url)
+        params = parse_qs(query)
+
+        assert '98765.xml' in path
+        assert params['key'][0] == 'None'
+        assert params['shelf'][0] == 'foo-shelf'
+        assert params['per_page'][0] == '9'
+
     def test_getset_key(self):
         defaults = Defaults('FAKER.GTLD', 'FOO_KEY')
 
