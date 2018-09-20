@@ -82,7 +82,7 @@ class Clean(object):        # pylint: disable=too-few-public-methods,missing-doc
     def GET():              # pylint: disable=invalid-name,missing-docstring
         per_page = None
         api_key = None
-        defaults = Defaults('https://localhost:8081', api_key, per_page, ['to-read'])
+        defaults = Defaults('http://localhost:8081', api_key, per_page, ['to-read'])
         clean_data(DB_NAME, defaults)
 
         msg = "200 OK"
