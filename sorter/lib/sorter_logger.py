@@ -3,7 +3,7 @@ import logging
 
 def sorter_logger(name):
     ''' configure the logger for the sorter module '''
-    logging.basicConfig(format='[%(asctime)-15s] %(message)s')
+    logging.basicConfig(format='[%(asctime)-15s] [%(name)s] %(message)s')
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
 

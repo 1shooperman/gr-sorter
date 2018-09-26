@@ -1,6 +1,8 @@
 ''' page_utils.py '''
 import os
 
+from urlparse import parse_qs, urlsplit
+
 from sorter.lib.data_handler import store_data, dump_data
 from sorter.lib.parse_xml import parse
 from sorter.lib.bootstrap import bootstrap
@@ -19,3 +21,48 @@ def page_loop(xml_data, db_name, new_data=False):
         bootstrap(db_name, LOGGER)
 
     store_data(filtered_data, db_file)
+
+def query_vars(get_data):
+    '''
+    Get page vars from GET query string
+    '''
+    return (get_data.api_key, None)
+
+def page_vars(post_data):
+    '''
+    Get page vars from POST data
+    '''
+    _, _, _, query, _ = urlsplit(post_data)
+    args = parse_qs(query)
+
+    new_data = False
+    per_page = None
+    api_key = None
+    user_id = None
+
+    try:
+        new_data = int(args['new'][0]) == 1
+    except ValueError as err:
+        LOGGER.warn('ValueError with message: %s', err)
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+    try:
+        per_page = int(args['per_page'][0])
+    except ValueError as err:
+        LOGGER.warn('ValueError with message: %s', err)
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+    try:
+        api_key = args['api_key'][0]
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+    try:
+        user_id = args['user_id'][0]
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+
+    return (new_data, per_page, api_key, user_id)

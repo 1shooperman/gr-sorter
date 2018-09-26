@@ -1,8 +1,6 @@
 """
 base web.py file for displaying the ranked data
 """
-from urlparse import parse_qs, urlsplit
-
 import os
 import web
 
@@ -12,7 +10,7 @@ from sorter.lib.data_handler import get_books, clean_data
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
-from sorter.lib.page_utils import page_loop
+from sorter.lib.page_utils import page_loop, page_vars, query_vars
 from sorter.lib.defaults import Defaults
 
 LOGGER = sorter_logger(__name__)
@@ -21,7 +19,8 @@ URLS = (
     '/', 'Index',
     '/import', 'Import',
     '/(assets/.+)', 'Assets',
-    '/admin', 'Admin'
+    '/admin', 'Admin',
+    '/clean', 'Clean'
 )
 
 APP = web.application(URLS, globals())
@@ -49,21 +48,7 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
 class Import(object):   # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def POST():         # pylint: disable=invalid-name,missing-docstring
-        _, _, _, query, _ = urlsplit(web.data())
-        args = parse_qs(query)
-
-        new_data = False
-        per_page = None
-        api_key = None
-        user_id = None
-
-        try:
-            new_data = int(args['new'][0]) == 1
-            per_page = int(args['per_page'][0])
-            api_key = args['api_key'][0]
-            user_id = args['user_id'][0]
-        except KeyError:
-            LOGGER.warn(KeyError)
+        new_data, per_page, api_key, user_id = page_vars(web.data())
 
         defaults = Defaults('https://www.goodreads.com', api_key, per_page, ['to-read'])
 
@@ -89,6 +74,19 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
         msg = "200 OK"
         LOGGER.info(msg)
         return RENDERPLAIN.status(msg=msg)
+
+class Clean(object):        # pylint: disable=too-few-public-methods,missing-docstring
+    @staticmethod
+    def GET():              # pylint: disable=invalid-name,missing-docstring
+        api_key, _ = query_vars(web.input())
+
+        defaults = Defaults('https://www.goodreads.com', api_key, None, ['to-read'])
+        clean_data(DB_NAME, defaults)
+
+        msg = "200 OK"
+        LOGGER.info(msg)
+        return RENDERPLAIN.status(msg=msg)
+
 
 class Assets(object):       # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod

@@ -32,7 +32,7 @@ def parse_id_response(xml_string):
 
     return book
 
-def get_book_data(generator):
+def get_book_data(generator): # TODO make this private with the __ 
     ''' private method used for pulling book data from the provided xml generator '''
     utils = GrDataUtils(generator)
 
@@ -81,7 +81,11 @@ def get_book_data_from_id_response(element):
     isbn = element.find('isbn').text
     isbn13 = element.find('isbn13').text
     image_url = element.find('image_url').text
+
     year = element.find('publication_year').text
+    if year is None:
+        year = element.find('work/original_publication_year').text
+
     ratings_count = element.find('work/ratings_count').text
     average_rating = element.find('average_rating').text
     author = element.find('authors/author/name').text
