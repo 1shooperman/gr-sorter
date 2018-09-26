@@ -1,8 +1,6 @@
 """
 base web.py file for displaying the ranked data
 """
-# from urlparse import parse_qs, urlsplit
-
 import os
 import web
 
