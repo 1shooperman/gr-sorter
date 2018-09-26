@@ -1,5 +1,5 @@
 # pylint: skip-file
-from sorter.lib.page_utils import page_loop, page_vars
+from sorter.lib.page_utils import page_loop, page_vars, query_vars
 
 class Flags(object):
     def __init__(self):
@@ -22,10 +22,10 @@ class Flags(object):
 
 class Logger(object):
     def __init__(self):
-        self.message = None
+        self.message = []
     
-    def warn(self, message, *args):
-        self.message = message
+    def warn(self, message, key, *args):
+        self.message.append(message % key)
 
 
 class TestPageUtils(object):
@@ -72,14 +72,32 @@ class TestPageUtils(object):
     def test_page_vars_catches_valueerror(self, monkeypatch):
         logger = Logger()
         monkeypatch.setattr("sorter.lib.page_utils.LOGGER", logger)
-        new_data, per_page, api_key, user_id = page_vars("www.fake.gtld/foo?new=boom")
+        new_data, per_page, api_key, user_id = page_vars("www.fake.gtld/foo?new=boom&per_page=foo&api_key=2&user_id=3")
 
-        assert logger.message is ValueError
+        assert logger.message == [
+            "ValueError with message: invalid literal for int() with base 10: 'boom'",
+            "ValueError with message: invalid literal for int() with base 10: 'foo'"
+        ]
 
     def test_page_vars_catches_keyerror(self, monkeypatch):
         logger = Logger()
         monkeypatch.setattr("sorter.lib.page_utils.LOGGER", logger)
         new_data, per_page, api_key, user_id = page_vars("www.fake.gtld/foo")
 
-        assert logger.message is KeyError
+        assert logger.message == [
+            "KeyError for key 'new'", 
+            "KeyError for key 'per_page'", 
+            "KeyError for key 'api_key'", 
+            "KeyError for key 'user_id'"
+        ]
+
+    def test_query_vars(self):
+        class Storage:          
+            def __init__(self):
+                self.api_key = 'foo'
+        
+        api_key, foo = query_vars(Storage())
+
+        assert api_key == 'foo'
+        assert foo is None
 

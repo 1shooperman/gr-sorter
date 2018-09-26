@@ -22,6 +22,12 @@ def page_loop(xml_data, db_name, new_data=False):
 
     store_data(filtered_data, db_file)
 
+def query_vars(get_data):
+    '''
+    Get page vars from GET query string
+    '''
+    return (get_data.api_key, None)
+
 def page_vars(post_data):
     '''
     Get page vars from POST data
@@ -36,12 +42,27 @@ def page_vars(post_data):
 
     try:
         new_data = int(args['new'][0]) == 1
+    except ValueError as err:
+        LOGGER.warn('ValueError with message: %s', err)
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+    try:
         per_page = int(args['per_page'][0])
+    except ValueError as err:
+        LOGGER.warn('ValueError with message: %s', err)
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+    try:
         api_key = args['api_key'][0]
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
+    try:
         user_id = args['user_id'][0]
-    except ValueError:
-        LOGGER.warn(ValueError)
-    except KeyError:
-        LOGGER.warn(KeyError)
+    except KeyError as err:
+        LOGGER.warn('KeyError for key %s', err)
+
 
     return (new_data, per_page, api_key, user_id)

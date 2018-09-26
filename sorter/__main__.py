@@ -12,7 +12,7 @@ from sorter.lib.data_handler import get_books, clean_data
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
-from sorter.lib.page_utils import page_loop, page_vars
+from sorter.lib.page_utils import page_loop, page_vars, query_vars
 from sorter.lib.defaults import Defaults
 
 LOGGER = sorter_logger(__name__)
@@ -80,9 +80,9 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 class Clean(object):        # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
     def GET():              # pylint: disable=invalid-name,missing-docstring
-        per_page = None
-        api_key = None
-        defaults = Defaults('http://localhost:8081', api_key, per_page, ['to-read'])
+        api_key, _ = query_vars(web.input())
+
+        defaults = Defaults('https://www.goodreads.com', api_key, None, ['to-read'])
         clean_data(DB_NAME, defaults)
 
         msg = "200 OK"

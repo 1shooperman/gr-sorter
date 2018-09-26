@@ -3,21 +3,6 @@ from paste.fixture import TestApp as app_fixture # pytest will try to collect "T
 import sqlite3
 from sorter.__main__ import APP as app
 
-# def fake_parse_qs(my_file):
-#     return {
-#         'per_page': [3],
-#         'api_key': ['FOO_KEY'],
-#         'user_id': ['BAR_USER']
-#     }
-
-# def fake_parse_qs_newdata(my_file):
-#     return {
-#         'new': [1],
-#         'per_page': [4],
-#         'api_key': ['BAR_KEY'],
-#         'user_id': ['FOO_USER']
-#     }
-
 def fake_read_url(url_string):
     with open('tests/fixtures/sample.xml', 'r') as myfile:
         data = myfile.read()
@@ -142,9 +127,9 @@ class TestRoutes(object):
     def test_clean(self, monkeypatch):
         middleware = []
         test_app = app_fixture(app.wsgifunc(*middleware))
-
-        monkeypatch.setattr("sorter.__main__.Defaults", FakeDefaults)
         monkeypatch.setattr("sorter.__main__.clean_data", lambda *args: None)
+        monkeypatch.setattr("sorter.__main__.Defaults", FakeDefaults)
+        monkeypatch.setattr("sorter.__main__.query_vars", lambda *args: ('foo', None))
 
         resp = test_app.get("/clean")
 
