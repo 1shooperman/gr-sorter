@@ -39,7 +39,7 @@ class TestParseXml(object):
             'https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png', 
             '1992',
             622, 
-            '4.29', 
+            4.29, 
             'Bob Thomas',
             'https://www.goodreads.com/book/show/453444.Disney_s_Art_of_Animation_1')
         ]
