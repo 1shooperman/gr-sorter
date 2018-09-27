@@ -191,7 +191,7 @@ class GrDataUtils(object):
         ''' get the book average rating from the goodreads data set '''
         avg_rating = self.generator.find('book/average_rating')
         if avg_rating is not None:
-            avg_rating = avg_rating.text # TODO: should we cast this to a float?
+            avg_rating = float(avg_rating.text)
 
         return avg_rating
 
