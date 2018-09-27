@@ -17,4 +17,4 @@ also happens to be a data analyst).
 1. ESLint - https://eslint.org/
 
 
-Powered by ![Goodreads](http://s.gr-assets.com/assets/icons/goodreads_icon_50x50-823139ec9dc84278d3863007486ae0ac.png)
+Powered by [![Goodreads](http://s.gr-assets.com/assets/icons/goodreads_icon_50x50-823139ec9dc84278d3863007486ae0ac.png)](http://www.goodreads.com)
