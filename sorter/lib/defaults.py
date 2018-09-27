@@ -79,7 +79,7 @@ class Defaults(object):
         '''
         Determine if we are running in the test environment
         '''
-        if 'WEBPY_ENV' in os.environ: # FIXME not really happy with this check
+        if 'WEBPY_ENV' in os.environ:
             return os.environ['WEBPY_ENV'] == 'test'
 
         return False
