@@ -46,6 +46,7 @@ def score_book(book, total_ratings):
         book[5] = pub year
         book[6] = Total Ratings
         book[7] = avg rating
+        book[10] = preference adjustment
     '''
     book_title = book[3]
     book_id = book[1] # ISBN
@@ -73,7 +74,7 @@ def score_book(book, total_ratings):
         book_year = base_year
     year_weight = (base_year - book_year) * 0.001
 
-    preference_adjustment = 0 # TODO not yet implemented
+    preference_adjustment = book[10]
     weight = rating_weight + year_weight + preference_adjustment
 
     book_avg_rating = book[7]
