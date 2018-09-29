@@ -32,8 +32,8 @@ def parse_id_response(xml_string):
 
     return book
 
-def get_book_data(generator): # TODO make this private with the __
-    ''' private method used for pulling book data from the provided xml generator '''
+def get_book_data(generator):
+    ''' internal method used for pulling book data from the provided xml generator '''
     utils = GrDataUtils(generator)
 
     book = (
