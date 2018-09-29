@@ -6,6 +6,11 @@ from sorter.lib.defaults import Defaults
 
 defaults = Defaults('FOO_KEY', 1, ['BAR-SHELF'])
 
+CREATE_RANKINGS = '''CREATE TABLE rankings
+            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
+            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
+            author, link, preference_adjustment FLOAT DEFAULT 0.0)'''
+
 class fake_os(object):
     def __init__(self):
         self.called_remove = None
@@ -78,10 +83,7 @@ class TestDataHandler(object):
     def test_store_data(self, monkeypatch):
         database = sqlite3.connect(':memory:')
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -97,15 +99,12 @@ class TestDataHandler(object):
         database.close()
         database = None
 
-        assert fake_data == fake_data_returned
+        assert [fake_data[0] + (0.0,)] == fake_data_returned
 
     def test_get_books(self, monkeypatch):
         database = sqlite3.connect(':memory:')
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -113,11 +112,11 @@ class TestDataHandler(object):
         monkeypatch.setattr("sorter.lib.data_handler.DB.create_connection", lambda foo: database)
         monkeypatch.setattr("sorter.lib.data_handler.DB.query", lambda self, foo: database.execute(foo).fetchall())
 
-        fake_book = (1,2,3,4,5,6,7,8,9,10)
+        fake_book = (1,2,3,4,5,6,7,8,9,10,1.2)
         
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+                author, link, preference_adjustment) VALUES(?,?,?,?,?,?,?,?,?,?,?)'''
 
         database.execute(query, fake_book)
 
@@ -140,10 +139,7 @@ class TestDataHandler(object):
     def test_get_books_with_missing_data(self, monkeypatch):
         database = sqlite3.connect(':memory:')
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -168,7 +164,7 @@ class TestDataHandler(object):
         database.close()
         database = None
 
-        assert fake_data_returned == [fake_books[1], fake_books[3]]
+        assert fake_data_returned == [fake_books[1] + (0.0,), fake_books[3] + (0.0,)]
 
     def test_clean_data(self, monkeypatch):
         fdh = fake_data_handler()
@@ -197,10 +193,7 @@ class TestDataHandler(object):
 
         monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -252,10 +245,7 @@ class TestDataHandler(object):
 
         monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 

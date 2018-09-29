@@ -11,11 +11,11 @@ def store_data(books, db_file):
     database = DB(db_file)
     database.create_connection()
 
-    for book in books:
-        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
-                image_url, publication_year, ratings_count, average_rating, 
-                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+    query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+        image_url, publication_year, ratings_count, average_rating, 
+        author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
+    for book in books:
         database.insertupdate(query, book)
 
     database.close_connection()
