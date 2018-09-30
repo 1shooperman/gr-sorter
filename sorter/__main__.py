@@ -20,6 +20,7 @@ URLS = (
     '/import', 'Import',
     '/(assets/.+)', 'Assets',
     '/admin', 'Admin',
+    '/admin/(.+)', 'Admin',
     '/clean', 'Clean'
 )
 
@@ -103,11 +104,20 @@ class Assets(object):       # pylint: disable=too-few-public-methods,missing-doc
         web.header('Content-Type', header_type, unique=True)
         return data
 
-class Admin(object):        # pylint: disable=too-few-public-methods,missing-docstring
+class Admin(object):                # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
-    def GET():              # pylint: disable=invalid-name,missing-docstring
-        return RENDER.admin()
+    def GET(advanced=False):   # pylint: disable=invalid-name,missing-docstring
+        
+        books = None
+        if advanced is not False:
+            db_file = os.path.abspath(DB_NAME)
 
+            if os.path.isfile(db_file):
+                data = get_books(db_file)
+                books = rank(data)
+
+
+        return RENDER.admin(books)
 
 if (not Defaults.is_test()) and __name__ == '__main__': # pragma: no cover
     APP.run()                                  # pragma: no cover
