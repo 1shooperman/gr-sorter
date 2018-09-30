@@ -11,11 +11,11 @@ def store_data(books, db_file):
     database = DB(db_file)
     database.create_connection()
 
-    for book in books:
-        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
-                image_url, publication_year, ratings_count, average_rating, 
-                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+    query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+        image_url, publication_year, ratings_count, average_rating, 
+        author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
 
+    for book in books:
         database.insertupdate(query, book)
 
     database.close_connection()
@@ -100,3 +100,20 @@ def update_book(book, db_file, defaults):
         database.insertupdate(qry, vals)
 
         database.close_connection()
+
+def manually_update_books(data, db_file):
+    '''
+    Update books based on parsed POST data
+    '''
+    database = DB(db_file)
+    database.create_connection()
+
+    for book in data:
+        if book['attr'] == 'id':
+            continue
+
+        qry = 'UPDATE rankings set %s = ? where id = ?' % book['attr']
+        vals = [book['value'], int(book['book_id'])]
+        database.insertupdate(qry, vals)
+
+    database.close_connection()

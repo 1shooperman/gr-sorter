@@ -6,6 +6,11 @@ from sorter.lib.defaults import Defaults
 
 defaults = Defaults('FOO_KEY', 1, ['BAR-SHELF'])
 
+CREATE_RANKINGS = '''CREATE TABLE rankings
+            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
+            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
+            author, link, preference_adjustment FLOAT DEFAULT 0.0)'''
+
 class fake_os(object):
     def __init__(self):
         self.called_remove = None
@@ -78,10 +83,7 @@ class TestDataHandler(object):
     def test_store_data(self, monkeypatch):
         database = sqlite3.connect(':memory:')
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -97,15 +99,12 @@ class TestDataHandler(object):
         database.close()
         database = None
 
-        assert fake_data == fake_data_returned
+        assert [fake_data[0] + (0.0,)] == fake_data_returned
 
     def test_get_books(self, monkeypatch):
         database = sqlite3.connect(':memory:')
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -113,11 +112,11 @@ class TestDataHandler(object):
         monkeypatch.setattr("sorter.lib.data_handler.DB.create_connection", lambda foo: database)
         monkeypatch.setattr("sorter.lib.data_handler.DB.query", lambda self, foo: database.execute(foo).fetchall())
 
-        fake_book = (1,2,3,4,5,6,7,8,9,10)
+        fake_book = (1,2,3,4,5,6,7,8,9,10,1.2)
         
         query = '''INSERT INTO rankings(id, isbn, isbn13, title,
                 image_url, publication_year, ratings_count, average_rating, 
-                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+                author, link, preference_adjustment) VALUES(?,?,?,?,?,?,?,?,?,?,?)'''
 
         database.execute(query, fake_book)
 
@@ -140,10 +139,7 @@ class TestDataHandler(object):
     def test_get_books_with_missing_data(self, monkeypatch):
         database = sqlite3.connect(':memory:')
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -168,7 +164,7 @@ class TestDataHandler(object):
         database.close()
         database = None
 
-        assert fake_data_returned == [fake_books[1], fake_books[3]]
+        assert fake_data_returned == [fake_books[1] + (0.0,), fake_books[3] + (0.0,)]
 
     def test_clean_data(self, monkeypatch):
         fdh = fake_data_handler()
@@ -197,10 +193,7 @@ class TestDataHandler(object):
 
         monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -252,10 +245,7 @@ class TestDataHandler(object):
 
         monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
 
-        qry = '''CREATE TABLE rankings
-            (id PRIMARY KEY, isbn UNIQUE, isbn13 UNIQUE, title, image_url, 
-            publication_year INTEGER, ratings_count INTEGER, average_rating FLOAT,
-            author, link)'''
+        qry = CREATE_RANKINGS
 
         database.execute(qry)
 
@@ -292,3 +282,136 @@ class TestDataHandler(object):
         assert fdh.called_get_by_isbn is False
         assert fdh.called_parse_isbn13_response is False
         assert fdh.called_get_by_id is True
+
+    def test_manually_update_book_all_fields(self, monkeypatch):
+        from sorter.lib.db import DB
+        database = DB(':memory:')
+        database.create_connection()
+
+        monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
+        
+        qry = CREATE_RANKINGS
+
+        database.execute(qry)
+
+        fake_books = [( 1, 2, 3, 4, 5, 6, 7, 8, 9,10), 
+                      (11,12,13,14,15,16,17,18,19,20),
+                      (21,22,23,24,25,26,27,28,29,30),
+                      (31,32,33,34,35,36,37,38,39,40)]
+        
+        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+                image_url, publication_year, ratings_count, average_rating, 
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+
+        for fake_book in fake_books:
+            database.insertupdate(query, fake_book)
+
+        to_update = [
+            {
+                'book_id': 1,
+                'attr': 'isbn',
+                'value': 'foo'
+            },
+            {
+                'book_id': 1,
+                'attr': 'isbn13',
+                'value': 'bar'
+            },
+            {
+                'book_id': 1,
+                'attr': 'title',
+                'value': 'baz'
+            },
+            {
+                'book_id': 1,
+                'attr': 'image_url',
+                'value': 'bang'
+            },
+                        {
+                'book_id': 1,
+                'attr': 'publication_year',
+                'value': 1980
+            },
+            {
+                'book_id': 1,
+                'attr': 'ratings_count',
+                'value': 56
+            },
+            {
+                'book_id': 1,
+                'attr': 'average_rating',
+                'value': 57
+            },
+            {
+                'book_id': 1,
+                'attr': 'author',
+                'value': 'ipsum'
+            },
+                        {
+                'book_id': 1,
+                'attr': 'link',
+                'value': 'dolet'
+            },
+            {
+                'book_id': 1,
+                'attr': 'preference_adjustment',
+                'value': 12
+            },
+            {
+                'book_id': 11,
+                'attr': 'ISBN13',
+                'value': 'brown'
+            }
+        ]    
+
+        manually_update_books(to_update, 'foo')
+
+        test_books = database.query('select * from rankings where id in (1,11,21,31)')
+
+        database.close_connection()
+        database = None
+
+        assert test_books[0] == (1, 'foo', 'bar', 'baz', 'bang', 1980, 56, 57, 'ipsum', 'dolet', 12.0)
+
+        assert test_books[1] == (11,12,'brown',14,15,16,17,18,19,20,0.0)
+
+        assert test_books[2] == (21,22,23,24,25,26,27,28,29,30,0.0)
+
+        assert test_books[3] == (31,32,33,34,35,36,37,38,39,40,0.0)
+
+    def test_manually_update_book_id_noupdate(self, monkeypatch):
+        from sorter.lib.db import DB
+        database = DB(':memory:')
+        database.create_connection()
+
+        monkeypatch.setattr("sorter.lib.data_handler.DB", lambda *args: wrapped_db(database))
+        
+        qry = CREATE_RANKINGS
+
+        database.execute(qry)
+
+        fake_books = [( 1, 2, 3, 4, 5, 6, 7, 8, 9,10)]
+        
+        query = '''INSERT INTO rankings(id, isbn, isbn13, title,
+                image_url, publication_year, ratings_count, average_rating, 
+                author, link) VALUES(?,?,?,?,?,?,?,?,?,?)'''
+
+        for fake_book in fake_books:
+            database.insertupdate(query, fake_book)
+
+        to_update = [
+            {
+                'book_id': 1,
+                'attr': 'id',
+                'value': 'foo'
+            }
+        ]    
+
+        manually_update_books(to_update, 'foo')
+
+        test_books = database.query('select * from rankings where id = 1')
+
+        database.close_connection()
+        database = None
+
+        assert test_books[0] == (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,0.0)

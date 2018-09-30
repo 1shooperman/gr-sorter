@@ -1,5 +1,6 @@
 ''' page_utils.py '''
 import os
+import re
 
 from urlparse import parse_qs, urlsplit
 
@@ -66,3 +67,33 @@ def page_vars(post_data):
 
 
     return (new_data, per_page, api_key, user_id)
+
+def from_post(post_data):
+    '''
+    Get arbitrary variables from POST
+    '''
+    args = parse_qs(post_data)
+
+    attr, book_id, value = None, None, None
+    books = []
+    for key in args:
+        if '-' in key:
+            attr, book_id = key.split('-')
+            value = args[key][0]
+
+            attr = attr.replace(' ', '_')
+
+            # sanitize the inputs!
+            attr = re.sub('[^a-zA-Z0-9_]+', '', attr)
+            book_id = re.sub('[^a-zA-Z0-9]+', '', book_id)
+            value = re.sub('[^a-zA-Z0-9_:/.-]+', '', value)
+
+            attr = attr.lower()
+
+            books.append({
+                'book_id': int(book_id),
+                'attr': attr,
+                'value': value
+            })
+
+    return books

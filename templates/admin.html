@@ -1,3 +1,4 @@
+$def with (books)
 <script async src="/assets/js/admin.js"></script>
 
 <h1>Admin Settings:</h1>
@@ -21,35 +22,85 @@
   </form>
 </div>
 
+<br />
+<form method="POST" name="update" action="/admin/advanced">
+$if books:
+    <input type="submit" name="submit" />  
+    <table>
+        <thead>
+            <tr>
+                <th>Book ID</th>
+                <th id="2">ISBN</th>
+                <th id="3">ISBN13</th>
+                <th id="4">Title</th>
+                <th id="5">Image Url</th>
+                <th id="6">Publication Year</th>
+                <th id="7">Ratings Count</th>
+                <th id="8">Average Rating</th>
+                <th id="9">Author</th>
+                <th id="10">Link</th>
+                <th id="11">Preference Adjustment</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        $ row = 1
+        $ col = 1
+        $for book in books:    
+            <tr>
+                $for el in book:
+                    $if col == 1:
+                        $ book = el
+                    <td><div data-book="$book" data-attr="$col">$el</div></td>
+                    $ col += 1
+            </tr>
+            $ row += 1
+            $ col = 1
+        </tbody>
+    </table>
+    <input type="submit" name="submit" />    
+</form>
+
 <script type="text/javascript">
-(function(){
-  let counter = 0;
-  let interval = setInterval(() => {
-    counter = counter+1;
-    if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
-      clear();
-      try {
-        let myForm = document.getElementById("settings_form") || {};
-        sorter.init(myForm)
-      } catch(err){
-        console.log(err);
+  (function(){
+    let counter = 0;
+    let interval = setInterval(() => {
+      counter = counter+1;
+      if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
+        clear();
+        try {
+          let myForm = document.getElementById("settings_form") || {};
+          sorter.init(myForm)
+        } catch(err){
+          console.log(err);
+        }
+      }
+    }, 500);
+  
+    let clear = () => {
+      clearInterval(interval);
+    };
+  
+    document.getElementById('import').addEventListener("click", function(ev) {
+      sorter.importBooks(document.getElementById('settings_form'))
+        .then(_ => {
+          return false;
+        }).catch(error => {
+          console.log(error)
+          return false;
+        });
+    });
+
+    let inputs = document.getElementsByTagName('td')
+    for (i in inputs) {
+      if (inputs.hasOwnProperty(i) && inputs[i].firstChild.dataset.attr > 1) {
+        let el = inputs[i];
+        let clickHandler =  function(ev) {
+          sorter.toggleEditable(this.firstChild);
+          el.removeEventListener('click', clickHandler, false);
+        }
+        el.addEventListener("click", clickHandler);
       }
     }
-  }, 500);
-
-  let clear = () => {
-    clearInterval(interval);
-  };
-
-  document.getElementById('import').addEventListener("click", function(ev) {
-    sorter.importBooks(document.getElementById('settings_form'))
-      .then(_ => {
-        return false;
-      }).catch(error => {
-        console.log(error)
-        return false;
-      });
-  });
-  
-})();
-</script>
+  })();
+  </script>

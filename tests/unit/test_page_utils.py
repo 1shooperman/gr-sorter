@@ -1,5 +1,5 @@
 # pylint: skip-file
-from sorter.lib.page_utils import page_loop, page_vars, query_vars
+from sorter.lib.page_utils import page_loop, page_vars, query_vars, from_post
 
 class Flags(object):
     def __init__(self):
@@ -100,4 +100,11 @@ class TestPageUtils(object):
 
         assert api_key == 'foo'
         assert foo is None
+
+    def test_from_post(self):
+        under_test = from_post('ISBN13-1=foo&submit=submit&isbn13-2=bar')
+
+        assert under_test == [
+            {'attr': 'isbn13', 'book_id': 1, 'value': 'foo'}, {'attr': 'isbn13', 'book_id': 2, 'value': 'bar'}
+        ]
 

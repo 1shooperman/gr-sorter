@@ -94,6 +94,19 @@ let sorter = (function(console){ // eslint-disable-line no-unused-vars
         return {
             importBooks: importBooks,
             updateSettings: updateSettings,
+            toggleEditable: function(el) {
+                let parentEl = el.parentNode;
+                let newEl = document.createElement("input");
+
+                let column = document.getElementById(el.dataset.attr);
+                let elName = column.textContent + "-" + el.dataset.book;
+
+                newEl.value = el.textContent;
+                newEl.name = elName;
+                parentEl.insertBefore(newEl, el);
+
+                el.style = "display:none;visibility:hidden";
+            },
             init: (myForm) => {
                 myForm.elements["api_key"].value = getKey();
                 myForm.elements["user_id"].value = getUserId();
