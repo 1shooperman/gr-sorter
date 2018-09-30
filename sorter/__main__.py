@@ -126,7 +126,7 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
         data = from_post(web.data())
 
         manually_update_books(data, db_file)
-        
+
         return Admin.GET(page)
 
 if (not Defaults.is_test()) and __name__ == '__main__': # pragma: no cover

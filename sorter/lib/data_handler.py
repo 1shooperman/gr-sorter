@@ -112,7 +112,6 @@ def manually_update_books(data, db_file):
         book = data[0]
         qry = 'UPDATE rankings set %s = ? where id = ?' % book['attr']
         vals = [book['value'], int(book['book_id'])]
-        print qry,vals
         database.insertupdate(qry, vals)
 
     database.close_connection()
