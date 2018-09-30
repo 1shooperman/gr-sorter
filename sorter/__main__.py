@@ -106,10 +106,10 @@ class Assets(object):       # pylint: disable=too-few-public-methods,missing-doc
 
 class Admin(object):                # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
-    def GET(advanced=False):   # pylint: disable=invalid-name,missing-docstring
-        
+    def GET(page=False):   # pylint: disable=invalid-name,missing-docstring
+
         books = None
-        if advanced is not False:
+        if page == 'advanced':
             db_file = os.path.abspath(DB_NAME)
 
             if os.path.isfile(db_file):
@@ -118,6 +118,10 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
 
 
         return RENDER.admin(books)
+
+    @staticmethod
+    def POST(page):             # pylint: disable=invalid-name,missing-docstring
+        return Admin.GET(page)
 
 if (not Defaults.is_test()) and __name__ == '__main__': # pragma: no cover
     APP.run()                                  # pragma: no cover

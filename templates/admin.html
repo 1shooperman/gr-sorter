@@ -56,7 +56,9 @@ $def with (books)
 </script>
 
 <br />
+<form method="POST" name="update" action="/admin/advanced">
 $if books:
+    <input type="submit" name="submit" />  
     <table>
         <thead>
             <tr>
@@ -82,3 +84,5 @@ $if books:
             </tr>
         </tbody>
     </table>
+    <input type="submit" name="submit" />    
+</form>
