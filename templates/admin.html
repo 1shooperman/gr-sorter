@@ -29,17 +29,17 @@ $if books:
     <table>
         <thead>
             <tr>
-                <th id="1">Book ID</th>
+                <th>Book ID</th>
                 <th id="2">ISBN</th>
                 <th id="3">ISBN13</th>
-                <th id="4">title</th>
-                <th id="5">Cover</th>
-                <th id="6">Pub year</th>
-                <th id="7">Total Ratings</th>
-                <th id="8">Avg Rating</th>
+                <th id="4">Title</th>
+                <th id="5">Image Url</th>
+                <th id="6">Publication Year</th>
+                <th id="7">Ratings Count</th>
+                <th id="8">Average Rating</th>
                 <th id="9">Author</th>
                 <th id="10">Link</th>
-                <th id="11">Preference Adjust</th>
+                <th id="11">Preference Adjustment</th>
                 <th>Score</th>
             </tr>
         </thead>
@@ -93,7 +93,7 @@ $if books:
 
     let inputs = document.getElementsByTagName('td')
     for (i in inputs) {
-      if (inputs.hasOwnProperty(i)) {
+      if (inputs.hasOwnProperty(i) && inputs[i].firstChild.dataset.attr > 1) {
         let el = inputs[i];
         let clickHandler =  function(ev) {
           sorter.toggleEditable(this.firstChild);

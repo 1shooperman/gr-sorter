@@ -100,3 +100,19 @@ def update_book(book, db_file, defaults):
         database.insertupdate(qry, vals)
 
         database.close_connection()
+
+def manually_update_books(data, db_file):
+    '''
+    Update books based on parsed POST data
+    '''
+    database = DB(db_file)
+    database.create_connection()
+
+    for book in data:
+        book = data[0]
+        qry = 'UPDATE rankings set %s = ? where id = ?' % book['attr']
+        vals = [book['value'], int(book['book_id'])]
+        print qry,vals
+        database.insertupdate(qry, vals)
+
+    database.close_connection()

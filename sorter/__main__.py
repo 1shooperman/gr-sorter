@@ -6,11 +6,11 @@ import web
 
 from sorter.lib.request_data import read_url
 from sorter.lib.parse_xml import get_total_pages
-from sorter.lib.data_handler import get_books, clean_data
+from sorter.lib.data_handler import get_books, clean_data, manually_update_books
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
-from sorter.lib.page_utils import page_loop, page_vars, query_vars
+from sorter.lib.page_utils import page_loop, page_vars, query_vars, from_post
 from sorter.lib.defaults import Defaults
 
 LOGGER = sorter_logger(__name__)
@@ -121,6 +121,12 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
 
     @staticmethod
     def POST(page):                 # pylint: disable=invalid-name,missing-docstring
+        db_file = os.path.abspath(DB_NAME)
+
+        data = from_post(web.data())
+
+        manually_update_books(data, db_file)
+        
         return Admin.GET(page)
 
 if (not Defaults.is_test()) and __name__ == '__main__': # pragma: no cover
