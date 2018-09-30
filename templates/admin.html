@@ -22,39 +22,6 @@ $def with (books)
   </form>
 </div>
 
-<script type="text/javascript">
-(function(){
-  let counter = 0;
-  let interval = setInterval(() => {
-    counter = counter+1;
-    if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
-      clear();
-      try {
-        let myForm = document.getElementById("settings_form") || {};
-        sorter.init(myForm)
-      } catch(err){
-        console.log(err);
-      }
-    }
-  }, 500);
-
-  let clear = () => {
-    clearInterval(interval);
-  };
-
-  document.getElementById('import').addEventListener("click", function(ev) {
-    sorter.importBooks(document.getElementById('settings_form'))
-      .then(_ => {
-        return false;
-      }).catch(error => {
-        console.log(error)
-        return false;
-      });
-  });
-  
-})();
-</script>
-
 <br />
 <form method="POST" name="update" action="/admin/advanced">
 $if books:
@@ -62,27 +29,78 @@ $if books:
     <table>
         <thead>
             <tr>
-                <th>Book ID</th>
-                <th>ISBN</th>
-                <th>ISBN13</th>
-                <th>title</th>
-                <th>Cover</th>
-                <th>Pub year</th>
-                <th>Total Ratings</th>
-                <th>Avg Rating</th>
-                <th>Author</th>
-                <th>Link</th>
-                <th>Preference Adjust</th>
+                <th id="1">Book ID</th>
+                <th id="2">ISBN</th>
+                <th id="3">ISBN13</th>
+                <th id="4">title</th>
+                <th id="5">Cover</th>
+                <th id="6">Pub year</th>
+                <th id="7">Total Ratings</th>
+                <th id="8">Avg Rating</th>
+                <th id="9">Author</th>
+                <th id="10">Link</th>
+                <th id="11">Preference Adjust</th>
                 <th>Score</th>
             </tr>
         </thead>
         <tbody>
+        $ row = 1
+        $ col = 1
         $for book in books:    
             <tr>
                 $for el in book:
-                    <td>$el</td>
+                    $if col == 1:
+                        $ book = el
+                    <td><div data-book="$book" data-attr="$col">$el</div></td>
+                    $ col += 1
             </tr>
+            $ row += 1
+            $ col = 1
         </tbody>
     </table>
     <input type="submit" name="submit" />    
 </form>
+
+<script type="text/javascript">
+  (function(){
+    let counter = 0;
+    let interval = setInterval(() => {
+      counter = counter+1;
+      if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
+        clear();
+        try {
+          let myForm = document.getElementById("settings_form") || {};
+          sorter.init(myForm)
+        } catch(err){
+          console.log(err);
+        }
+      }
+    }, 500);
+  
+    let clear = () => {
+      clearInterval(interval);
+    };
+  
+    document.getElementById('import').addEventListener("click", function(ev) {
+      sorter.importBooks(document.getElementById('settings_form'))
+        .then(_ => {
+          return false;
+        }).catch(error => {
+          console.log(error)
+          return false;
+        });
+    });
+
+    let inputs = document.getElementsByTagName('td')
+    for (i in inputs) {
+      if (inputs.hasOwnProperty(i)) {
+        let el = inputs[i];
+        let clickHandler =  function(ev) {
+          sorter.toggleEditable(this.firstChild);
+          el.removeEventListener('click', clickHandler, false);
+        }
+        el.addEventListener("click", clickHandler);
+      }
+    }
+  })();
+  </script>
