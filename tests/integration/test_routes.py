@@ -124,6 +124,36 @@ class TestRoutes(object):
 
         assert resp.status is 200
 
+    def test_admin_advanced_get(self, monkeypatch):
+        monkeypatch.setattr("sorter.__main__.DB_NAME", "")
+        books = bootstrap_data("")
+        monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.os.path.isfile", lambda foo: True)
+
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+        resp = test_app.get("/admin/advanced")
+
+        assert resp.status is 200
+        assert "<tr>" in resp
+
+    def test_admin_advanced_post(self, monkeypatch):
+        monkeypatch.setattr("sorter.__main__.DB_NAME", "")
+        books = bootstrap_data("")
+        monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
+        monkeypatch.setattr("sorter.__main__.os.path.isfile", lambda foo: True)
+        monkeypatch.setattr("sorter.__main__.from_post", lambda *args: ('foo', None))
+        monkeypatch.setattr("sorter.__main__.manually_update_books", lambda *args: ('foo', None))
+
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+        resp = test_app.post("/admin/advanced", "some_query_string")
+
+        assert resp.status is 200
+        assert "<tr>" in resp
+
     def test_clean(self, monkeypatch):
         middleware = []
         test_app = app_fixture(app.wsgifunc(*middleware))

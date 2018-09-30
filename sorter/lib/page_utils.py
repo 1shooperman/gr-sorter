@@ -88,6 +88,8 @@ def from_post(post_data):
             book_id = re.sub('[^a-zA-Z0-9]+', '', book_id)
             value = re.sub('[^a-zA-Z0-9_:/.-]+', '', value)
 
+            attr = attr.lower()
+
             books.append({
                 'book_id': int(book_id),
                 'attr': attr,
