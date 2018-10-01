@@ -1,11 +1,12 @@
 """
 base web.py file for displaying the ranked data
 """
+import json
 import os
 import web
 
 from sorter.lib.request_data import read_url
-from sorter.lib.parse_xml import get_total_pages
+from sorter.lib.parse_xml import get_total_pages, get_shelf_list
 from sorter.lib.data_handler import get_books, clean_data, manually_update_books
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
@@ -53,7 +54,7 @@ class Import(object):   # pylint: disable=too-few-public-methods,missing-docstri
 
         defaults = Defaults('https://www.goodreads.com', api_key, per_page, ['to-read'])
 
-        data_file = defaults.get_shelf_url(user_id)
+        data_file = defaults.get_list_url(user_id)
 
         xml_data = read_url(data_file)
 
@@ -121,11 +122,18 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
 
     @staticmethod
     def POST(page):                 # pylint: disable=invalid-name,missing-docstring
-        db_file = os.path.abspath(DB_NAME)
 
-        data = from_post(web.data())
+        if page == 'advanced':
+            db_file = os.path.abspath(DB_NAME)
+            data = from_post(web.data())
+            manually_update_books(data, db_file)
 
-        manually_update_books(data, db_file)
+        elif page == 'getshelves':
+            _, _, api_key, _ = page_vars(web.data())
+            defaults = Defaults('https://www.goodreads.com', api_key, None, ['to-read'])
+            shelves_xml = read_url(defaults.get_shelf_url())
+            shelf_list = get_shelf_list(shelves_xml)
+            return json.dumps(shelf_list)
 
         return Admin.GET(page)
 

@@ -52,9 +52,9 @@ class TestDefaults(object):
 
         assert bar is False
 
-    def test_get_shelf_url(self):
+    def test_get_list_url(self):
         defaults = Defaults('http://FAKE.GLTD')
-        api_url = defaults.get_shelf_url(98765, ['foo-shelf'], 9, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
+        api_url = defaults.get_list_url(98765, ['foo-shelf'], 9, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
         _, _, path, query, _ = urlsplit(api_url)
         params = parse_qs(query)
 
@@ -63,9 +63,9 @@ class TestDefaults(object):
         assert params['shelf'][0] == 'foo-shelf'
         assert params['per_page'][0] == '9'
 
-    def test_get_shelf_url_noshelves(self):
+    def test_get_list_url_noshelves(self):
         defaults = Defaults('http://FAKE.GLTD', None, None, ['bar-shelf'])
-        api_url = defaults.get_shelf_url(98765, None, 9, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
+        api_url = defaults.get_list_url(98765, None, 9, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
         _, _, path, query, _ = urlsplit(api_url)
         params = parse_qs(query)
 
@@ -74,9 +74,9 @@ class TestDefaults(object):
         assert params['shelf'][0] == 'bar-shelf'
         assert params['per_page'][0] == '9'
 
-    def test_get_shelf_url_noperpage(self):
+    def test_get_list_url_noperpage(self):
         defaults = Defaults('http://FAKE.GLTD', None, 42)
-        api_url = defaults.get_shelf_url(98765, ['foo-shelf'], None, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
+        api_url = defaults.get_list_url(98765, ['foo-shelf'], None, 'http://FAKE.GLTD/FAKER?user_id=%s&key=%s&shelf=%s&per_page=%s')
         _, _, path, query, _ = urlsplit(api_url)
         params = parse_qs(query)
 
@@ -85,9 +85,9 @@ class TestDefaults(object):
         assert params['shelf'][0] == 'foo-shelf'
         assert params['per_page'][0] == '42'
 
-    def test_get_shelf_url_nouri(self):
+    def test_get_list_url_nouri(self):
         defaults = Defaults('http://FAKE.GLTD/')
-        api_url = defaults.get_shelf_url(98765, ['foo-shelf'], 9, None)
+        api_url = defaults.get_list_url(98765, ['foo-shelf'], 9, None)
 
         _, _, path, query, _ = urlsplit(api_url)
         params = parse_qs(query)

@@ -20,7 +20,8 @@ class Defaults(object):
         self.__api_urls = {
             'SEARCH_URL': self.base + '/search?q=%s&format=xml&key=%s',
             'BOOK_URL': self.base + '/book/show/%s.xml?key=%s',
-            'SHELF_URL': self.base + '/review/list/%s.xml?key=%s&v=2&shelf=%s&per_page=%s'
+            'LIST_URL': self.base + '/review/list/%s.xml?key=%s&v=2&shelf=%s&per_page=%s',
+            'SHELF_URL': self.base + '/shelf/list.xml?key=%s'
         }
         self.__per_page = per_page
 
@@ -51,7 +52,7 @@ class Defaults(object):
 
         return formed_url
 
-    def get_shelf_url(self, user_id, shelves=None, per_page=None, uri=None):
+    def get_list_url(self, user_id, shelves=None, per_page=None, uri=None):
         '''
         Return the well formed review url used for bulk import
         '''
@@ -62,11 +63,17 @@ class Defaults(object):
             per_page = self.__per_page
 
         if uri is None:
-            uri = self.__api_urls['SHELF_URL']
+            uri = self.__api_urls['LIST_URL']
 
         formed_url = uri % (user_id, self.__api_key, shelves[0], per_page)
 
         return formed_url
+
+    def get_shelf_url(self):
+        '''
+        Return the well formed shelf url
+        '''
+        return self.__api_urls['SHELF_URL'] % self.__api_key
 
     def get_key(self):
         '''

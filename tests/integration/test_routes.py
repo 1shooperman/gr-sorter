@@ -48,7 +48,7 @@ class FakeDefaults(object):
     def __init__(*args):
         pass
 
-    def get_shelf_url(self, *args):
+    def get_list_url(self, *args):
         return "faker.gtld"
 
 class TestRoutes(object):
