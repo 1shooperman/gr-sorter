@@ -1,5 +1,5 @@
 # pylint: skip-file
-from sorter.lib.parse_xml import parse, get_book_data, get_total_pages, parse_id_response, parse_isbn13_response
+from sorter.lib.parse_xml import *
 from tests.utils.get_element import get_file_as_string
 import pytest
 import os
@@ -7,6 +7,10 @@ import os
 class fake_generator(object):
     def find(self, foo):
         return foo_object(10)
+
+class fake_generator_name(object):
+    def find(self, foo):
+        return foo_object('some name')
 
 class foo_object(object):
     def __init__(self, retval):
@@ -112,3 +116,20 @@ class TestParseXml(object):
     def test_parse_id_response_excepts(self):
         with pytest.raises(TypeError):
             parse_id_response(None)
+
+    def test_get_shelf_list(self):
+        xml_string = get_file_as_string('tests/fixtures/shelf_list.xml')
+
+        shelf_list = get_shelf_list(xml_string)
+
+        assert shelf_list == ['foo-shelf', 'bar-shelf', 'baz-shelf']
+
+    def test_get_shelf_name(self):
+        gen = fake_generator_name()
+
+        assert get_shelf_name(gen) == 'some name'
+
+
+    def test_get_shelf_list_error(self):
+        with pytest.raises(TypeError):
+            get_shelf_list(None)

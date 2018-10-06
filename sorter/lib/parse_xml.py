@@ -129,6 +129,23 @@ def get_total_pages(xml_string):
 
     return (pages, current_page)
 
+def get_shelf_list(xml_string):
+    '''
+    Get list of shelves given XML response
+    '''
+    if xml_string is None:
+        raise TypeError('expected string, got %s' % type(xml_string))
+
+    root = ElementTree.fromstring(xml_string)
+    shelves = root.findall('shelves/user_shelf')
+
+    return [shelf.find('name').text for shelf in shelves if bool(shelf.find('exclusive_flag').text)]
+
+def get_shelf_name(shelf):
+    '''
+    Get name of shelf if exclusive
+    '''
+    return shelf.find('name').text
 
 class GrDataUtils(object):
     ''' utility methods for pulling data from the xml object '''

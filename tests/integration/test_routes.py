@@ -2,6 +2,7 @@
 from paste.fixture import TestApp as app_fixture # pytest will try to collect "Test*"
 import sqlite3
 from sorter.__main__ import APP as app
+from tests.utils.get_element import get_file_as_string
 
 def fake_read_url(url_string):
     with open('tests/fixtures/sample.xml', 'r') as myfile:
@@ -48,7 +49,7 @@ class FakeDefaults(object):
     def __init__(*args):
         pass
 
-    def get_shelf_url(self, *args):
+    def get_list_url(self, *args):
         return "faker.gtld"
 
 class TestRoutes(object):
@@ -153,6 +154,18 @@ class TestRoutes(object):
 
         assert resp.status is 200
         assert "<tr>" in resp
+
+    def test_admin_getshelves_post(self, monkeypatch):
+        monkeypatch.setattr("sorter.__main__.DB_NAME", "")
+        monkeypatch.setattr("sorter.__main__.page_vars", lambda *args: (1,2,3,4))
+        monkeypatch.setattr("sorter.__main__.read_url", lambda *args: get_file_as_string('tests/fixtures/shelf_list.xml'))
+
+        middleware = []
+        test_app = app_fixture(app.wsgifunc(*middleware))
+        resp = test_app.post("/admin/getshelves", "some_query_string")
+
+        assert resp.status is 200
+        assert '["foo-shelf", "bar-shelf", "baz-shelf"]' == resp.body
 
     def test_clean(self, monkeypatch):
         middleware = []

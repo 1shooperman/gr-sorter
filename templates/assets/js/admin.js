@@ -54,16 +54,10 @@ let sorter = (function(console){ // eslint-disable-line no-unused-vars
             return queryString;
         };
 
-        let importBooks = (myForm) => {
+        let promisedXhr = (uri, params) => {
             let myPromise = new Promise((resolve, reject) => {
                 let xhr = new XMLHttpRequest();
-                let params = serializeParams({
-                    api_key: myForm.elements["api_key"].value || "",
-                    user_id: myForm.elements["user_id"].value || "",
-                    new: 1,
-                    per_page: myForm.elements["per_page"].value || "40"
-                });
-                xhr.open("POST", "http://localhost:8080/import", true);
+                xhr.open("POST", uri, true);
                 xhr.send(params);
 
                 xhr.onreadystatechange = () => {
@@ -83,6 +77,30 @@ let sorter = (function(console){ // eslint-disable-line no-unused-vars
             return myPromise;
         };
 
+        let importBooks = (myForm) => {
+            
+            let params = serializeParams({
+                api_key: myForm.elements["api_key"].value || "",
+                user_id: myForm.elements["user_id"].value || "",
+                new: 1,
+                per_page: myForm.elements["per_page"].value || "40"
+            });
+
+            let uri = "http://localhost:8080/import";
+                
+            
+            return promisedXhr(uri, params);
+        };
+
+        let getShelves = (myForm) => {
+            let params = serializeParams({
+                api_key: myForm.elements["api_key"].value || "",
+            });
+            let uri = "http://localhost:8080/admin/getshelves";
+            
+            return promisedXhr(uri, params);
+        };
+
         let getKey = () => {
             return localStorage.getItem("api_key");
         };
@@ -94,6 +112,7 @@ let sorter = (function(console){ // eslint-disable-line no-unused-vars
         return {
             importBooks: importBooks,
             updateSettings: updateSettings,
+            getShelves: getShelves,
             toggleEditable: function(el) {
                 let parentEl = el.parentNode;
                 let newEl = document.createElement("input");
@@ -108,8 +127,13 @@ let sorter = (function(console){ // eslint-disable-line no-unused-vars
                 el.style = "display:none;visibility:hidden";
             },
             init: (myForm) => {
-                myForm.elements["api_key"].value = getKey();
-                myForm.elements["user_id"].value = getUserId();
+                if (myForm.elements.hasOwnProperty("api_key")) {
+                    myForm.elements["api_key"].value = getKey();
+                }
+
+                if (myForm.elements.hasOwnProperty("user_id")) {
+                    myForm.elements["user_id"].value = getUserId();
+                }
             }
         };
     } catch(e) {
