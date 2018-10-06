@@ -102,3 +102,10 @@ class TestDefaults(object):
 
         assert defaults.get_key() == 'FOO_KEY'
 
+    def test_get_shelf_url(self):
+        defaults = Defaults('http://FAKER.GLTD', 'FOO_KEY')
+
+        assert defaults.get_shelf_url() == 'http://FAKER.GLTD/shelf/list.xml?key=FOO_KEY'
+
+
+

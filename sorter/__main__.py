@@ -133,6 +133,7 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
             defaults = Defaults('https://www.goodreads.com', api_key, None, ['to-read'])
             shelves_xml = read_url(defaults.get_shelf_url())
             shelf_list = get_shelf_list(shelves_xml)
+            web.header('Content-Type', 'application/json', unique=True)
             return json.dumps(shelf_list)
 
         return Admin.GET(page)
