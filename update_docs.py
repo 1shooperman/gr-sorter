@@ -12,7 +12,9 @@ layout: default
 ---
 %s
 
-###### Last Update: %s %s
+
+
+*Last Update: %s %s*
 '''
 
 readme = get_file_as_string('./README.md')
