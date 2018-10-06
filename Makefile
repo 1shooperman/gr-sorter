@@ -14,3 +14,6 @@ start:
 clean:
 	-find . -name "*.pyc" -type f -delete
 	-rm .coverage
+
+doc:
+	python update_docs.py

@@ -26,9 +26,11 @@ pylint==1.9.3
 pyparsing==2.2.0
 pytest==3.7.3
 pytest-env==0.6.2
+pytz==2018.5
 scandir==1.9.0
 singledispatch==3.4.0.3
 six==1.11.0
+tzlocal==1.5.1
 urllib3==1.23
 web.py==0.39
 wrapt==1.10.11
