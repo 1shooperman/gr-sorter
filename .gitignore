@@ -7,9 +7,6 @@
 # virtualenv directory
 environment/
 
-# your api key
-goodreads_api_key
-
 .pytest_cache/
 node_modules/
 DELETEME
