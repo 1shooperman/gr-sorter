@@ -15,6 +15,7 @@ also happens to be a data analyst).
 1. SQLite - https://www.sqlite.org/
 1. Pytest - https://docs.pytest.org/en/latest/
 1. ESLint - https://eslint.org/
+1. Bootstrap - http://getbootstrap.com/docs/4.1/getting-started/introduction/
 
 
 ## Powered by

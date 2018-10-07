@@ -1,19 +1,18 @@
 $def with (books)
 
 $if books:
-    <table>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
         <thead>
             <tr>
+                <th>&nbsp;</th>
                 <th>Book ID</th>
                 <th>ISBN</th>
                 <th>ISBN13</th>
-                <th>title</th>
-                <th>Cover</th>
                 <th>Pub year</th>
                 <th>Total Ratings</th>
                 <th>Avg Rating</th>
                 <th>Author</th>
-                <th>Link</th>
                 <th>Preference Adjust</th>
                 <th>Score</th>
             </tr>
@@ -21,10 +20,21 @@ $if books:
         <tbody>
         $for book in books:    
             <tr>
-                $for el in book:
-                    <td>$el</td>
+                <td>
+                    <div class="book-title"><a href="$book[9]">$book[3]</a></div>
+                </td>
+                <td>$book[0]</td>
+                <td>$book[1]</td>
+                <td>$book[2]</td>
+                <td>$book[5]</td>
+                <td>$book[6]</td>
+                <td>$book[7]</td>
+                <td>$book[8]</td>
+                <td>$book[10]</td>
+                <td>$book[11]</td>
             </tr>
         </tbody>
-    </table>
+        </table>
+    </div>
 $else:
     Greetings Programs
