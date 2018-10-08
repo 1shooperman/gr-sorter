@@ -86,7 +86,7 @@ def from_post(post_data):
             # sanitize the inputs!
             attr = re.sub('[^a-zA-Z0-9_]+', '', attr)
             book_id = re.sub('[^a-zA-Z0-9]+', '', book_id)
-            value = re.sub('[^a-zA-Z0-9_:/.-]+', '', value)
+            value = re.sub('[^a-zA-Z0-9 _:/.-]+', '', value)
 
             attr = attr.lower()
 

@@ -45,7 +45,7 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
         else:
             books = None
 
-        return RENDER.index(books=books)
+        return RENDER.index(books)
 
 class Import(object):   # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
@@ -116,7 +116,6 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
             if os.path.isfile(db_file):
                 data = get_books(db_file)
                 books = rank(data)
-
 
         return RENDER.admin(books)
 

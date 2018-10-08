@@ -1,4 +1,6 @@
 let sorter = (function(console){ // eslint-disable-line no-unused-vars
+    "use strict";
+
     try {
         let LOG_ENUM = {
             "DEBUG": 2,
@@ -64,7 +66,6 @@ let sorter = (function(console){ // eslint-disable-line no-unused-vars
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200){
                             let response = xhr.responseText;
-                            console.log(response);
                             let responseJson = JSON.parse(response);
                             resolve(responseJson);
                         } else {

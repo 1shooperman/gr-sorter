@@ -1,53 +1,61 @@
 $def with (books)
 <script async src="/assets/js/admin.js"></script>
 
-<h1>Admin Settings:</h1>
-
-<div style="border:1px solid black;">
-  <form id="settings_form" method="POST" onsubmit="return sorter.updateSettings(this);">
-    API Key: <input type="text" name="api_key" placeholder="enter API KEY" value="" /><br />
-    User Id: <input type="text" name="user_id" placeholder="enter USER ID" value="" /><br />
-    Results per request: <input type="text" name="per_page" placeholder="enter per page value" value="40" disabled="disabled" />
-    <fieldset>
-      <legend id="shelf_list">Included Shelves:</legend>
-      
-    </fieldset>
-    <button id="update">Update Settings</button>
-  </form>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+            <button id="update" class="btn btn-sm btn-outline-secondary">Update Settings</button>
+            <button id="import" class="btn btn-sm btn-outline-secondary">Import Books</button>
+            <button id="get_shelves" class="btn btn-sm btn-outline-secondary">Get Shelves</button>
+            $if books:
+                <button id="update_data" class="btn btn-sm btn-outline-secondary">Update Data</button>
+        </div>
+    </div>
 </div>
 
-<div> 
-  <form method="POST" onsubmit="return false">
-    <button id="import">Import Books</button>
-  </form>
-</div>
+<h1 class="h2">Admin Settings</h1>
 
-<div> 
-    <form id="shelf_form" method="POST" onsubmit="return false">
-      <input type="hidden" name="api_key" placeholder="enter API KEY" value="" />
-      <button id="get_shelves">Get Shelves</button>
+<div class="col-md-8 order-md-1">
+    <form id="settings_form" method="POST" onsubmit="return false;">
+    <div class="row">
+        <div class="col-md-5 mb-3">
+            <label for="api_key">API Key</label>
+            <input type="text" name="api_key" class="form-control" placeholder="enter API KEY" value="" />
+        </div>
+        <div class="col-md-5 mb-3">
+            <label for="user_id">User ID</label>
+            <input type="text" name="user_id" class="form-control" placeholder="enter USER ID" value="" />
+        </div>
+        <div class="col-md-5 mb-3">
+            <label for="per_page">Results Per Request</label>
+            <input type="text" name="per_page" class="form-control" placeholder="enter per page value" value="40" disabled="disabled" />
+        </div>
+    </div>
+    <div class="mb-4"></div>
+    <legend id="shelf_list" class="h5">Included Shelves</legend>
     </form>
 </div>
 
-<br />
-<form method="POST" name="update" action="/admin/advanced">
+<form id="shelf_form" method="POST" onsubmit="return false">
+    <input type="hidden" name="api_key" placeholder="enter API KEY" value="" />
+</form>
+
+<form method="POST" name="update" id="books_form" action="/admin/advanced">
 $if books:
-    <input type="submit" name="submit" />  
-    <table>
+    <hr class="mb-4"> 
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>Book ID</th>
                 <th id="2">ISBN</th>
                 <th id="3">ISBN13</th>
                 <th id="4">Title</th>
-                <th id="5">Image Url</th>
                 <th id="6">Publication Year</th>
                 <th id="7">Ratings Count</th>
                 <th id="8">Average Rating</th>
                 <th id="9">Author</th>
-                <th id="10">Link</th>
                 <th id="11">Preference Adjustment</th>
-                <th>Score</th>
             </tr>
         </thead>
         <tbody>
@@ -58,87 +66,111 @@ $if books:
                 $for el in book:
                     $if col == 1:
                         $ book = el
-                    <td><div data-book="$book" data-attr="$col">$el</div></td>
+                    
+                    $if col < 12 and col != 5 and col != 10:
+                        <td><div data-book="$book" data-attr="$col">$el</div></td>
                     $ col += 1
             </tr>
             $ row += 1
             $ col = 1
         </tbody>
-    </table>
-    <input type="submit" name="submit" />    
+        </table> 
+    </div> 
 </form>
 
 <script type="text/javascript">
-  (function(){
+(function(){
+    'use strict';
+
     let counter = 0;
     let interval = setInterval(() => {
-      counter = counter+1;
-      if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
-        clear();
-        try {
-          let myForm = document.getElementById("settings_form") || {};
-          sorter.init(myForm);
-          //<input type="checkbox" disabled="disabled" name="to-read" checked="checked" />To-Read
-          let shelfList = (localStorage.getItem('shelf_list') || 'to-read').split(',');
-          let shelfParent = document.getElementById('shelf_list').parentNode
-          let el, label;
-          for (let i in shelfList) {
-            el = document.createElement('input');
-            el.type = "checkbox";
-            el.name = shelfList[i];
-            el.innerText = shelfList[i];
-            el.id = shelfList[i]
-            shelfParent.appendChild(el);
+        counter = counter+1;
+        if ((sorter && typeof sorter.init == 'function') || counter > 5) { 
+            clear();
+            try {
+                let myForm = document.getElementById("settings_form") || {};
+                sorter.init(myForm);
+                let shelfList = (localStorage.getItem('shelf_list') || 'to-read').split(',');
+                let shelfParent = document.getElementById('shelf_list').parentNode
+                let el, label, wrap;
+                
+                for (let i in shelfList) {
+                    wrap = document.createElement('div');
+                    wrap.className = "custom-control custom-checkbox";
 
-            label = document.createElement('label')
-            label.htmlFor = shelfList[i];
-            label.appendChild(document.createTextNode(shelfList[i]));
-            shelfParent.appendChild(label);
-          }
+                    el = document.createElement('input');
+                    el.type = "checkbox";
+                    el.name = shelfList[i];
+                    el.innerText = shelfList[i];
+                    el.className = "custom-control-input";
+                    el.id = shelfList[i]
+                    wrap.appendChild(el);
 
-          let shelForm = document.getElementById("shelf_form") || {};
-          sorter.init(shelForm);
-        } catch(err){
-          console.log(err);
+                    label = document.createElement('label')
+                    label.htmlFor = shelfList[i];
+                    label.className = "custom-control-label";
+                    label.appendChild(document.createTextNode(shelfList[i]));
+                    wrap.appendChild(label);
+
+                    shelfParent.appendChild(wrap);
+                }
+
+                let shelForm = document.getElementById("shelf_form") || {};
+                sorter.init(shelForm);
+            } catch(err){
+                console.log(err);
+            }
         }
-      }
-    }, 500);
-  
+    }, 100);
+
     let clear = () => {
-      clearInterval(interval);
+        clearInterval(interval);
     };
-  
+
+    document.getElementById('update').addEventListener("click", function(ev) {
+        let myForm = document.getElementById("settings_form"); 
+        sorter.updateSettings(myForm);
+        return location.reload()
+    });
+
     document.getElementById('get_shelves').addEventListener("click", function(ev) {
-      sorter.getShelves(document.getElementById('shelf_form'))
+        sorter.getShelves(document.getElementById('shelf_form'))
         .then(res => {
-          localStorage.setItem("shelf_list", res);
-          return false;
+            localStorage.setItem("shelf_list", res);
+            return location.reload();
         }).catch(error => {
-          console.log(error)
-          return false;
+            console.log(error)
+            return false;
         });
     });
 
     document.getElementById('import').addEventListener("click", function(ev) {
-      sorter.importBooks(document.getElementById('settings_form'))
+        sorter.importBooks(document.getElementById('settings_form'))
         .then(_ => {
-          return false;
+            return location.reload();
         }).catch(error => {
-          console.log(error)
-          return false;
+            console.log(error)
+            return false;
         });
     });
 
     let inputs = document.getElementsByTagName('td')
-    for (i in inputs) {
-      if (inputs.hasOwnProperty(i) && inputs[i].firstChild.dataset.attr > 1) {
-        let el = inputs[i];
-        let clickHandler =  function(ev) {
-          sorter.toggleEditable(this.firstChild);
-          el.removeEventListener('click', clickHandler, false);
+    for (let i in inputs) {
+        if (inputs.hasOwnProperty(i) && inputs[i].firstChild.dataset.attr > 1) {
+            let el = inputs[i];
+            let clickHandler =  function(ev) {
+                sorter.toggleEditable(this.firstChild);
+                el.removeEventListener('click', clickHandler, false);
+            }
+            el.addEventListener('click', clickHandler);
         }
-        el.addEventListener("click", clickHandler);
-      }
     }
-  })();
-  </script>
+
+    let update_button = document.getElementById('update_data');
+    if (update_button && update_button !== null) {
+        update_button.addEventListener('click', function(ev) {
+            document.getElementById('books_form').submit();
+        });
+    }
+})();
+</script>
