@@ -1,5 +1,5 @@
 let sorter = (function(console){ // eslint-disable-line no-unused-vars
-    'use strict';
+    "use strict";
 
     try {
         let LOG_ENUM = {

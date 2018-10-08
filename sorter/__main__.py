@@ -11,7 +11,7 @@ from sorter.lib.data_handler import get_books, clean_data, manually_update_books
 from sorter.lib.sorter_logger import sorter_logger
 from sorter.lib.rank import rank
 from sorter.lib.asset_handler import asset
-from sorter.lib.page_utils import page_loop, page_vars, query_vars, from_post, get_paginated
+from sorter.lib.page_utils import page_loop, page_vars, query_vars, from_post
 from sorter.lib.defaults import Defaults
 
 LOGGER = sorter_logger(__name__)
@@ -45,8 +45,7 @@ class Index(object):       # pylint: disable=too-few-public-methods,missing-docs
         else:
             books = None
 
-        pages = get_paginated(books)
-        return RENDER.index(books, pages)
+        return RENDER.index(books)
 
 class Import(object):   # pylint: disable=too-few-public-methods,missing-docstring
     @staticmethod
@@ -111,16 +110,14 @@ class Admin(object):                # pylint: disable=too-few-public-methods,mis
     def GET(page=False):            # pylint: disable=invalid-name,missing-docstring
 
         books = None
-        pages = 0
         if page == 'advanced':
             db_file = os.path.abspath(DB_NAME)
 
             if os.path.isfile(db_file):
                 data = get_books(db_file)
                 books = rank(data)
-                pages = get_paginated(books)
 
-        return RENDER.admin(books, pages)
+        return RENDER.admin(books)
 
     @staticmethod
     def POST(page):                 # pylint: disable=invalid-name,missing-docstring

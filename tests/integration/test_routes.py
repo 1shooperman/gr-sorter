@@ -15,7 +15,7 @@ def fake_read_url(url_string):
 def fake_asset_handler(asset_path):
     return (asset_path, 'bar')
 
-def bootstrap_data(foo):
+def bootstrap_data(addrank=False):
     database = sqlite3.connect(':memory:')
 
     qry = '''CREATE TABLE rankings
@@ -38,7 +38,14 @@ def bootstrap_data(foo):
         cur.execute(query, book)
         database.commit()
 
-    books = database.execute("select * from rankings").fetchall()
+    if addrank is True:
+        qry = '''select id, isbn, isbn13, title, image_url, publication_year, 
+                    ratings_count, average_rating, author, link, preference_adjustment, 1
+                from rankings'''
+    else:
+        qry = "select * from rankings"
+
+    books = database.execute(qry).fetchall()
 
     database.close()
     database = None
@@ -56,7 +63,7 @@ class TestRoutes(object):
 
     def test_index(self, monkeypatch):
         monkeypatch.setattr("sorter.__main__.DB_NAME", "")
-        books = bootstrap_data("")
+        books = bootstrap_data(True)
         monkeypatch.setattr("sorter.__main__.get_books", lambda foo: books)
         monkeypatch.setattr("sorter.__main__.rank", lambda foo: books)
         monkeypatch.setattr("sorter.__main__.os.path.isfile", lambda foo: True)

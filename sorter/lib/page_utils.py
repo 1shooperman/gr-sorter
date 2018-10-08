@@ -97,6 +97,3 @@ def from_post(post_data):
             })
 
     return books
-
-def get_paginated(books):
-    return len(books) / 10
