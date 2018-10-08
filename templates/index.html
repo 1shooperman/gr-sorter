@@ -1,5 +1,4 @@
-$def with (books)
-
+$def with (books, pages)
 $if books:
     <div class="table-responsive">
         <table class="table table-striped table-sm">
@@ -18,8 +17,10 @@ $if books:
             </tr>
         </thead>
         <tbody>
+        $ row = 1
+        $ page = 1
         $for book in books:    
-            <tr>
+            <tr class="page page$page">
                 <td>
                     <div class="book-title"><a href="$book[9]">$book[3]</a></div>
                 </td>
@@ -33,6 +34,11 @@ $if books:
                 <td>$book[10]</td>
                 <td>$book[11]</td>
             </tr>
+            $if row == 10: 
+                $ row = 1
+                $ page += 1
+            $else: 
+                $ row += 1
         </tbody>
         </table>
     </div>
