@@ -12,7 +12,7 @@ Key
     * Number of Ratings is the number of ratings for a book on goodreads
     * Total Ratings is the total number of ratings across all books on my reading list(s)
     * Avg Rating is the community sourced average rating for a book on goodreads
-    * 2010 is an arbitrary fixed year I picked
+    * 1990 is an arbitrary fixed year I picked, so is 1700
 
 Reasoning
     * Since newer books frequently build on older texts, pub year is factored into the rating.
@@ -65,16 +65,16 @@ def score_book(book, total_ratings):
         LOGGER.warn('book {%s}: {%s} missing ratings!', id_type, book_id)
         LOGGER.warn('book title: {%s}', book_title)
         book_ratings = 0
-    rating_weight = book_ratings / total_ratings
+    rating_weight = float(book_ratings) / float(total_ratings)
 
     book_year = book[5]
     if book_year is None:
         LOGGER.warn('book {%s}: {%s} missing year!', id_type, book_id)
         LOGGER.warn('book title: {%s}', book_title)
         book_year = base_year
-    
+
     if book_year > 1700:
-        year_weight = ((base_year - book_year) * 0.00001) * 100
+        year_weight = ((base_year - book_year) * 0.0000001) * 100
     else:
         year_weight = 0
 
@@ -89,7 +89,7 @@ def score_book(book, total_ratings):
 
     score = (book_avg_rating * weight) * 100
 
-    return score
+    return round(score, 3)
 
 def get_total_ratings(books):
     '''

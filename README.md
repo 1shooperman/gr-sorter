@@ -19,6 +19,10 @@ From this screen you have a few options.  You can enter your API Key and User ID
 ![Advanced Screen](https://1shooperman.github.io/gr-sorter/screenshots/adv_admin.png "Advanced Screen")
 From this screen, you have full control over your data.  You can do everything from the basic admin screen, as well as manually update individual pieces of data.
 
+## How do I?
+*Where do I get an API Key and User ID?*
+Until we integrate OAuth, these are specific to _your_ Goodreads account.  Head on over to https://www.goodreads.com/api/keys for your API Key.  Finding your User ID is a little more straight forward: head on over to Goodreads, navigate to "My Books", check out the URL. That last number in the URL is your User ID (ex. https://www.goodreads.com/review/list/123456789  <- 123456789 is your User ID).
+
 ## References / Tech
 1. Learn Python the Hard Way - https://learnpythonthehardway.org/
 1. Directory structure - https://docs.python-guide.org/writing/structure/
