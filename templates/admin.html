@@ -7,6 +7,8 @@ $def with (books, pages)
             <button id="update" class="btn btn-sm btn-outline-secondary">Update Settings</button>
             <button id="import" class="btn btn-sm btn-outline-secondary">Import Books</button>
             <button id="get_shelves" class="btn btn-sm btn-outline-secondary">Get Shelves</button>
+            $if books:
+                <button id="update_data" class="btn btn-sm btn-outline-secondary">Update Data</button>
         </div>
     </div>
 </div>
@@ -16,21 +18,21 @@ $def with (books, pages)
 <div class="col-md-8 order-md-1">
     <form id="settings_form" method="POST" onsubmit="return sorter.updateSettings(this);">
     <div class="row">
-    <div class="col-md-5 mb-3">
-        <label for="api_key">API Key</label>
-        <input type="text" name="api_key" class="form-control" placeholder="enter API KEY" value="" />
+        <div class="col-md-5 mb-3">
+            <label for="api_key">API Key</label>
+            <input type="text" name="api_key" class="form-control" placeholder="enter API KEY" value="" />
+        </div>
+        <div class="col-md-5 mb-3">
+            <label for="user_id">User ID</label>
+            <input type="text" name="user_id" class="form-control" placeholder="enter USER ID" value="" />
+        </div>
+        <div class="col-md-5 mb-3">
+            <label for="per_page">Results Per Request</label>
+            <input type="text" name="per_page" class="form-control" placeholder="enter per page value" value="40" disabled="disabled" />
+        </div>
     </div>
-    <div class="col-md-5 mb-3">
-        <label for="user_id">User ID</label>
-        <input type="text" name="user_id" class="form-control" placeholder="enter USER ID" value="" />
-    </div>
-    <div class="col-md-5 mb-3">
-        <label for="per_page">Results Per Request</label>
-        <input type="text" name="per_page" class="form-control" placeholder="enter per page value" value="40" disabled="disabled" />
-    </div>
-    </div>
-    <hr class="mb-4">
-    <legend id="shelf_list" class="h3">Included Shelves</legend>
+    <div class="mb-4"></div>
+    <legend id="shelf_list" class="h5">Included Shelves</legend>
     </form>
 </div>
 
@@ -40,25 +42,22 @@ $def with (books, pages)
     <input type="hidden" name="api_key" placeholder="enter API KEY" value="" />
 </form>
 
-<br />
-<form method="POST" name="update" action="/admin/advanced">
+<form method="POST" name="update" id="books_form" action="/admin/advanced">
 $if books:
-    <input type="submit" name="submit" />  
-    <table>
+    <hr class="mb-4"> 
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>Book ID</th>
                 <th id="2">ISBN</th>
                 <th id="3">ISBN13</th>
                 <th id="4">Title</th>
-                <th id="5">Image Url</th>
                 <th id="6">Publication Year</th>
                 <th id="7">Ratings Count</th>
                 <th id="8">Average Rating</th>
                 <th id="9">Author</th>
-                <th id="10">Link</th>
                 <th id="11">Preference Adjustment</th>
-                <th>Score</th>
             </tr>
         </thead>
         <tbody>
@@ -69,14 +68,16 @@ $if books:
                 $for el in book:
                     $if col == 1:
                         $ book = el
-                    <td><div data-book="$book" data-attr="$col">$el</div></td>
+                    
+                    $if col < 12 and col != 5 and col != 10:
+                        <td><div data-book="$book" data-attr="$col">$el</div></td>
                     $ col += 1
             </tr>
             $ row += 1
             $ col = 1
         </tbody>
-    </table>
-    <input type="submit" name="submit" />    
+        </table> 
+    </div> 
 </form>
 
 <script type="text/javascript">
@@ -122,7 +123,7 @@ $if books:
                 console.log(err);
             }
         }
-    }, 500);
+    }, 100);
 
     let clear = () => {
         clearInterval(interval);
@@ -159,6 +160,13 @@ $if books:
             }
             el.addEventListener('click', clickHandler);
         }
+    }
+
+    let update_button = document.getElementById('update_data');
+    if (update_button && update_button !== null) {
+        update_button.addEventListener('click', function(ev) {
+            document.getElementById('books_form').submit();
+        });
     }
 })();
 </script>
