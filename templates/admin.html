@@ -16,7 +16,7 @@ $def with (books)
 <h1 class="h2">Admin Settings</h1>
 
 <div class="col-md-8 order-md-1">
-    <form id="settings_form" method="POST" onsubmit="return sorter.updateSettings(this);">
+    <form id="settings_form" method="POST" onsubmit="return false;">
     <div class="row">
         <div class="col-md-5 mb-3">
             <label for="api_key">API Key</label>
@@ -35,8 +35,6 @@ $def with (books)
     <legend id="shelf_list" class="h5">Included Shelves</legend>
     </form>
 </div>
-
-<form method="POST" onsubmit="return false"></form>
 
 <form id="shelf_form" method="POST" onsubmit="return false">
     <input type="hidden" name="api_key" placeholder="enter API KEY" value="" />
@@ -129,11 +127,17 @@ $if books:
         clearInterval(interval);
     };
 
+    document.getElementById('update').addEventListener("click", function(ev) {
+        let myForm = document.getElementById("settings_form"); 
+        sorter.updateSettings(myForm);
+        return location.reload()
+    });
+
     document.getElementById('get_shelves').addEventListener("click", function(ev) {
         sorter.getShelves(document.getElementById('shelf_form'))
         .then(res => {
             localStorage.setItem("shelf_list", res);
-            return false;
+            return location.reload();
         }).catch(error => {
             console.log(error)
             return false;
@@ -143,7 +147,7 @@ $if books:
     document.getElementById('import').addEventListener("click", function(ev) {
         sorter.importBooks(document.getElementById('settings_form'))
         .then(_ => {
-            return false;
+            return location.reload();
         }).catch(error => {
             console.log(error)
             return false;
