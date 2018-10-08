@@ -58,7 +58,7 @@ def score_book(book, total_ratings):
             book_id = book[0] # Goodreads Id
             id_type = 'ID'
 
-    base_year = 2000
+    base_year = 1990
 
     book_ratings = book[6]
     if book_ratings is None:
@@ -72,7 +72,11 @@ def score_book(book, total_ratings):
         LOGGER.warn('book {%s}: {%s} missing year!', id_type, book_id)
         LOGGER.warn('book title: {%s}', book_title)
         book_year = base_year
-    year_weight = (base_year - book_year) * 0.001
+    
+    if book_year > 1700:
+        year_weight = ((base_year - book_year) * 0.00001) * 100
+    else:
+        year_weight = 0
 
     preference_adjustment = book[10]
     weight = rating_weight + year_weight + preference_adjustment
