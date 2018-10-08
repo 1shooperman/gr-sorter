@@ -22,7 +22,7 @@ class TestRank(object):
         fake_data = (1,2,3,4,5,6,7,8,9,10,0.2)
         foo = score_book(fake_data, 100)
 
-        assert foo == 1755.2
+        assert foo == 160.0
 
     def test_score_book_bad_year(self, monkeypatch):
         logger = FAKE_LOGGER()
@@ -39,7 +39,7 @@ class TestRank(object):
         fake_data = (1,2,3,4,5,6,None,8,9,None,0.2)
         foo = score_book(fake_data, 100)
 
-        assert foo == 1755.2
+        assert foo == 160.0
         assert logger.called_warn == True
 
     def test_score_book_bad_avg_ratings(self, monkeypatch):
