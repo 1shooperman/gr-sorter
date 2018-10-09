@@ -1,4 +1,7 @@
 # Book Sorter
+[![mit license](https://img.shields.io/badge/license-MIT-50CB22.svg)](https://opensource.org/licenses/MIT)
+[![python version](https://img.shields.io/badge/python-2.7-blue.svg)](https://docs.python.org/2/index.html)
+
 I am an avid reader.  Crowd sourced tools like [goodreads](https://www.goodreads.com/) help maintain my reading list.  It (goodreads) is a fantastic piece 
 of software that allows me to quickly add books, read synopses, and read reviews.  The only thing it was missing was the ability
 to add custom weights to the sorting.  This started off as an excel sheet and some weighting algorithms developed by my fantastic wife (who 
