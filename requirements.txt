@@ -21,7 +21,7 @@ Paste==2.0.3
 pathlib2==2.3.2
 pbr==4.2.0
 pluggy==0.7.1
-py==1.5.4
+py==1.10.0
 pylint==1.9.3
 pyparsing==2.2.0
 pytest==3.7.3
