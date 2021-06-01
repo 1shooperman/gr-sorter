@@ -31,6 +31,6 @@ scandir==1.9.0
 singledispatch==3.4.0.3
 six==1.11.0
 tzlocal==1.5.1
-urllib3==1.23
+urllib3==1.26.5
 web.py==0.39
 wrapt==1.10.11
